@@ -1,6 +1,7 @@
 :root {
     --colorMain: #ac4a71;
-    --gameFiledButtonPlayRandomColor: #ac4a71;
+    /*--gameFiledButtonPlayColor: #ac4a71;*/
+    --gameFiledButtonPlayColor: black;
 }
 
 #containerMainSectionHome {
@@ -17,6 +18,7 @@
     grid-column: 2 / 14;
     grid-template-rows: 1fr;
     grid-template-columns: 1fr;
+    /*color: skyblue;*/
 }
 
 #containerGameElements {
@@ -40,7 +42,8 @@
 }
 
 .buttonPlay {
-    background-color: #e9a610;
+    /*background-color: #e9a610;*/
+    background-color: var(--gameFiledButtonPlayColor);
     border: 0;
 }
 

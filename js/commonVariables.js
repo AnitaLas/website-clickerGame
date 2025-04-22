@@ -1,6 +1,7 @@
 // CSS variable
 let rootVariables = document.querySelector(":root");
-let cssSnowmanFigureColor = "--gameFiledButtonPlayRandomColor"
+let cssGameFiledButtonPlayColor = "--gameFiledButtonPlayColor";
+let gameFiledButtonPlayStartColor = "black";
 
 // container main
 const containerMain = "containerMain";
@@ -15,7 +16,7 @@ const containerMainHome = "containerMainHome";
 const containerGameElements = "containerGameElements";
 const containerGameFiledButtonPlay = "containerGameFiled-buttonPlay";
 const gameFiledButtonPlay = "buttonPlay";
-const functionNameOnclickPlayGameColor = "playGameColor";
+const functionNameOnclickPlayGameColor = "playClickerGame";
 
 
 const containerGameFiledButtonMain = "containerGameFiled-buttonsMain";
