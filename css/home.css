@@ -1,0 +1,258 @@
+:root {
+    --colorMain: #ac4a71;
+    --gameFiledButtonPlayRandomColor: #ac4a71;
+}
+
+#containerMainSectionHome {
+    display: grid;
+    grid-row: 1 / 1;
+    grid-column: 1 / 1;
+    grid-template-rows: 6fr 17fr 17fr 3fr 3fr 17fr 17fr 6fr;
+    grid-template-columns: 10fr 3fr 17fr 3fr 7fr 7fr 3fr 3fr 7fr 7fr 3fr 17fr 3fr 10fr;
+}
+
+#containerMainHome {
+    display: grid;
+    grid-row: 2 / 8;
+    grid-column: 2 / 14;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+}
+
+#containerGameElements {
+    display: grid;
+    grid-row: 1 / 1;
+    grid-column: 1 / 1;
+    grid-template-rows: 6fr 2fr 2fr 2fr;
+    grid-template-columns: 1fr;
+}
+
+#containerGameFiled-buttonPlay {
+    display: grid;
+    grid-row: 1 / 2;
+    grid-column: 1 / 1;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+}
+
+.containerGameFiled-buttonPlay {
+    box-shadow: 0 0px 17px 9px #ac4a71;
+}
+
+.buttonPlay {
+    background-color: #e9a610;
+    border: 0;
+}
+
+/*button start / stop*/
+#containerGameFiled-buttonsMain {
+    display: grid;
+    grid-row: 2 / 3;
+    grid-column: 1 / 1;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+}
+
+#containerGameFiled-buttonsMainParts {
+    display: grid;
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 0.05fr 1fr;
+}
+
+#containerGameFiled-buttonsMainStart {
+    display: grid;
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+}
+
+#gameFiledButtonMainStart {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+
+.gameFiledButtonMain {
+    width: 30%;
+    height: 50%;
+    border: 0;
+    padding: 0;
+}
+
+.buttonMainStart {
+    background-color: #2c3e3a;
+
+    /*align-items: center;*/
+    /*vertical-align: center;*/
+    /*horiz-align: center*/
+
+
+}
+
+#containerGameFiled-buttonsMainStop {
+    display: grid;
+    grid-row: 1 / 2;
+    grid-column: 3 / 4;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+}
+
+#gameFiledButtonMainStop {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+.buttonMainStop {
+    background-color: #e9a610;
+    border: 0;
+    padding: 0;
+}
+
+
+#containerGameFiled-statistics {
+    display: grid;
+    grid-row: 3 / 4;
+    grid-column: 1 / 1;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+}
+
+#containerGameFiled-statisticsParts {
+    display: grid;
+    grid-row: 1 / 1;
+    grid-column: 1 / 1;
+    grid-template-rows: 0.025fr 1fr 0.025fr;
+    grid-template-columns: 1fr repeat(3, 2fr);
+}
+
+#containerGameFiled-statisticsMainText {
+    display: grid;
+    grid-row: 2 / 3;
+    grid-column: 1 / 2;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+}
+
+#gameFiledStatisticsMainText {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+#statisticsMainText {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #2c3e3a;
+    width: 100%;
+    height: 50%;
+    text-align: center;
+    border: 0;
+    padding: 0;
+}
+
+
+#containerGameFiled-statisticsTimeMin {
+    display: grid;
+    grid-row: 2 / 3;
+    grid-column: 2 / 3;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+}
+
+#containerGameFiled-statisticsTimeAvg {
+    display: grid;
+    grid-row: 2 / 3;
+    grid-column: 3 / 4;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+}
+
+#containerGameFiled-statisticsTimeMax {
+    display: grid;
+    grid-row: 2 / 3;
+    grid-column: 4 / 5;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+}
+
+.containerGameFiled-statisticsTimeParts {
+    display: grid;
+    grid-row: 1 / 1;
+    grid-column: 1 / 1;
+    grid-template-rows: 6fr 4fr;
+    grid-template-columns: 1fr;
+}
+
+.containerGameFiled-statisticsTimeGamePlay {
+    display: grid;
+    grid-row: 1 / 1;
+    grid-column: 1 / 2;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+}
+
+.gameFiledStatisticsText {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.statisticsTimeGamePlay {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #2c3e3a;
+    width: 100%;
+    height: 50%;
+    text-align: center;
+    border: 0;
+    padding: 0;
+}
+
+
+.containerGameFiled-statisticsTimeText {
+    display: grid;
+    grid-row: 2 / 3;
+    grid-column: 1 / 2;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+}
+
+
+.statisticsTimeText {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #2c3e3a;
+    width: 100%;
+    height: 50%;
+    text-align: center;
+    border: 0;
+    padding: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
