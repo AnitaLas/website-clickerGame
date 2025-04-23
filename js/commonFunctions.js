@@ -2,6 +2,10 @@ function setFunctionOnclick(elementId, functionNameOnclick) {
     document.getElementById(elementId).setAttribute("onclick", functionNameOnclick + "(this.id)");
 }
 
+function removeFunctionOnclick(elementId) {
+    document.getElementById(elementId).removeAttribute("onclick");
+}
+
 function createContainerMainElements(containerMainSectionName, sectionName, containerSectionName, containerSectionMainName) {
     createElementDiv(containerMainSectionName, containerSectionName)
 
@@ -53,5 +57,9 @@ function setElementTextByClassName(className, text) {
 
 function setElementTextById(elementId, text) {
     document.getElementById(elementId).innerHTML = text;
+}
+
+function setNumberAsString(number){
+    return number.toString();
 }
 

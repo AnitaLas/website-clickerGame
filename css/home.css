@@ -87,12 +87,6 @@
 
 .buttonMainStart {
     background-color: #2c3e3a;
-
-    /*align-items: center;*/
-    /*vertical-align: center;*/
-    /*horiz-align: center*/
-
-
 }
 
 #containerGameFiled-buttonsMainStop {
@@ -116,7 +110,7 @@
 }
 
 
-#containerGameFiled-statistics {
+#containerGameFiled-statisticsTime {
     display: grid;
     grid-row: 3 / 4;
     grid-column: 1 / 1;
@@ -124,7 +118,7 @@
     grid-template-columns: 1fr;
 }
 
-#containerGameFiled-statisticsParts {
+#containerGameFiled-statisticsTimeParts {
     display: grid;
     grid-row: 1 / 1;
     grid-column: 1 / 1;
@@ -132,33 +126,13 @@
     grid-template-columns: 1fr repeat(3, 2fr);
 }
 
-#containerGameFiled-statisticsMainText {
+#containerGameFiled-statisticsTimeBest {
     display: grid;
     grid-row: 2 / 3;
     grid-column: 1 / 2;
     grid-template-rows: 1fr;
     grid-template-columns: 1fr;
 }
-
-#gameFiledStatisticsMainText {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-}
-
-#statisticsMainText {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #2c3e3a;
-    width: 100%;
-    height: 50%;
-    text-align: center;
-    border: 0;
-    padding: 0;
-}
-
 
 #containerGameFiled-statisticsTimeMin {
     display: grid;
@@ -184,42 +158,7 @@
     grid-template-columns: 1fr;
 }
 
-.containerGameFiled-statisticsTimeParts {
-    display: grid;
-    grid-row: 1 / 1;
-    grid-column: 1 / 1;
-    grid-template-rows: 6fr 4fr;
-    grid-template-columns: 1fr;
-}
-
-.containerGameFiled-statisticsTimeGamePlay {
-    display: grid;
-    grid-row: 1 / 1;
-    grid-column: 1 / 2;
-    grid-template-rows: 1fr;
-    grid-template-columns: 1fr;
-}
-
-.gameFiledStatisticsText {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.statisticsTimeGamePlay {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #2c3e3a;
-    width: 100%;
-    height: 50%;
-    text-align: center;
-    border: 0;
-    padding: 0;
-}
-
-
-.containerGameFiled-statisticsTimeText {
+#containerGameFiled-statisticsFraudBest {
     display: grid;
     grid-row: 2 / 3;
     grid-column: 1 / 2;
@@ -227,8 +166,69 @@
     grid-template-columns: 1fr;
 }
 
+#containerGameFiled-statisticsFraud {
+    display: grid;
+    grid-row: 4 / 5;
+    grid-column: 1 / 1;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+}
 
-.statisticsTimeText {
+#containerGameFiled-statisticsFraudParts {
+    display: grid;
+    grid-row: 1 / 1;
+    grid-column: 1 / 1;
+    grid-template-rows: 0.025fr 1fr 0.025fr;
+    grid-template-columns: 1fr 6fr;
+}
+
+#containerGameFiled-statisticsFraudCount {
+    display: grid;
+    grid-row: 2/ 3;
+    grid-column: 2 / 3;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+}
+
+#containerGameFiled-statisticsFraudCountText{
+    display: grid;
+    grid-row: 2 / 3;
+    grid-column: 1 / 2;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+}
+
+#containerGameFiled-statisticsFraudCountGamePlay{
+    display: grid;
+    grid-row: 1 / 1;
+    grid-column: 1 / 2;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+}
+
+.containerGameFiled-commonParts {
+    display: grid;
+    grid-row: 1 / 1;
+    grid-column: 1 / 1;
+    grid-template-rows: 6fr 4fr;
+    grid-template-columns: 1fr;
+}
+
+.containerGameFiled-commonGamePlayUpdate {
+    display: grid;
+    grid-row: 1 / 1;
+    grid-column: 1 / 2;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+}
+
+.commonGameFiledDisplay {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.commonGamePlayUpdateText {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -240,6 +240,46 @@
     padding: 0;
 }
 
+.containerGameFiled-commonStaticText {
+    display: grid;
+    grid-row: 2 / 3;
+    grid-column: 1 / 2;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+}
+
+.commonStaticText {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #2c3e3a;
+    width: 100%;
+    height: 50%;
+    text-align: center;
+    border: 0;
+    padding: 0;
+}
+
+
+
+.gameSnowmanLives{
+    background-color: #2c3e3a;
+    color: #232323;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 0.7rem;
+    font-weight: 900;
+    border: none;
+    border-radius: 0.45rem;
+    box-shadow: 0px 0px 1px 1px #1f130e;
+}
+
+.gameSnowmanLivesNumber{
+    color: #c18ead;
+    font-size: 1rem;
+    font-weight: 900;
+}
 
 
 
