@@ -101,7 +101,6 @@ const commonGamePlayUpdateTextTime = "commonGamePlayUpdateTextTime";
 const commonStaticText = "commonStaticText";
 const commonGameFiledDisplay = "commonGameFiledDisplay";
 
-
 const statisticsTimeMinGamePlayDisplay = "0.0001 ???";
 const statisticsTimeMinText = "statisticsTimeMinText";
 // const statisticsTimeMinTextDisplay = "min";
@@ -134,8 +133,6 @@ const containerGameFiledStatisticsFraudCountGamePlay = "containerGameFiled-stati
 const gameFiledStatisticsFraudCountGamePlay = "containerGameFiled-statisticsFraudCountGamePlay";
 const gameFiledStatisticsFraudCountText= "gameFiledStatisticsFraudCountText";
 const statisticsFraudCountGamePlay = "statisticsFraudCountGamePlay";
-const containerGameSnowmanLives = "containerGameSnowmanLives";
-const statisticsFraudCountGamePlayDisplay = "fraud ?";
 const statisticsFraudCountText = "statisticsFraudCountText";
 const fraudCountRoundUpdateSumNumber = "fraudCountRoundUpdateSumNumber";
 const fraudCountRound = "fraudCountRound";

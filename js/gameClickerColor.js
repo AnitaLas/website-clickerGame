@@ -1,12 +1,9 @@
-const maxClicksNumber = 1;
+const maxClicksNumber = 5;
 let countedClicksNumber = 0;
 
 let gameRandomColor = "white";
 let gameRandomTimeToChangeColor = 1;
 const gameRandomTimeMaxSecond = 10;
-// let maxTimeToChangeColor = 0;
-// let gameTimeNow = 0;
-// let gameTimeStart = gameTimeNow;
 let reactionTime = 0;
 let reactionTimeTimeout = 0;
 let startTime = 0;
@@ -29,15 +26,8 @@ const colors = fileWithColors.split(", ");
 let gameColors = colors;
 
 function playGameColorStart() {
-
-
-
-    // setGameConfigurationButtonStart();
-
     setGameButtonStartColor();
     setGameConfiguration();
-
-
     removeGameOverConfiguration();
 
     countedClicksNumber = 0;
@@ -50,38 +40,26 @@ function playGameColorStart() {
     gameStatisticTimeMaxInMilliseconds = 0;
 
     countedClicksNumber++;
-
-
 }
 
 
 function playGameColorStop() {
-    // console.log("f -> playGameColorStop")
-
-
-    clearTimeoutSetGameButtonPlayColor();
-    clearTimeoutSetFunctionOnclickPlayGameColor();
-    clearTimeoutSetStartTime();
+    // clearTimeoutSetGameButtonPlayColor();
+    // clearTimeoutSetFunctionOnclickPlayGameColor();
+    // clearTimeoutSetStartTime();
+    clearTimeoutButtonStop();
     setConfigurationGameContinue();
-
 
     fraudCountedNumber = 0;
     fraudCountRoundIndex = 0;
-    // random time cut down - stop
-
-
-    // console.log("S startTime: " + startTime);
-    // console.log("S endTime: " + endTime);
-    // console.log("S reactionTimeTimeout: " + reactionTimeTimeout);
 }
 
 let gameTimeTimeoutStart;
 
 function setConfigurationGameContinue() {
     let functionName = document.getElementById(gameFiledButtonPlay).getAttribute('onclick');
-    if (functionName !== null) {
+    if (functionName !== null)
         currentFunctionOnclickName = functionName.replace("(this.id)", "");
-    }
 
     setFunctionOnclick(buttonMainStop, functionNameOnclickPlayGameColorContinue);
     setElementTextById(buttonMainStop, containerGameFiledButtonsMainContinueTextDisplay);
@@ -90,136 +68,108 @@ function setConfigurationGameContinue() {
     setEndTime();
     setClickReactionTimeTimeout();
 
-    // console.log("11 startTime: " + startTime);
-    // console.log("11 endTime: " + endTime);
-    // console.log("11 reactionTimeTimeout: " + reactionTimeTimeout);
-
     startTime = 0;
     endTime = 0;
-
 }
 
-
 function playGameColorContinue() {
-    // console.log("f -> playGameColorContinue")
-
     setFunctionOnclick(buttonMainStop, functionNameOnclickPlayGameColorStop);
     setElementTextById(buttonMainStop, containerGameFiledButtonsMainStopTextDisplay);
 
-    // console.log("1 currentFunctionOnclickName: " + currentFunctionOnclickName);
-
-    if (currentFunctionOnclickName !== undefined) {
+    if (currentFunctionOnclickName !== undefined)
         setFunctionOnclick(gameFiledButtonPlay, currentFunctionOnclickName);
-    }
 
     gameRandomTimeToChangeColor = gameRandomTimeToChangeColor - gameTimeTimeoutStart;
 
-    // setTimeNow();
-    // console.log("C 2 startTime: " + startTime);
-    // console.log("C 2 endTime: " + endTime);
-    // console.log("C 2 reactionTimeTimeout: " + reactionTimeTimeout);
-
-    // console.log("C startTime: " + startTime);
-    // console.log("C endTime: " + endTime);
-    // console.log("C reactionTimeTimeout: " + reactionTimeTimeout);
-
-
-    runTimeoutSetGameButtonPlayColor();
-    runTimeoutSetFunctionOnclickPlayGameColor();
-    runTimeoutSetStartTime();
-    // runTimeoutSetGameStatisticFraudData();
-
-
+    // runTimeoutSetGameButtonPlayColor();
+    // runTimeoutSetFunctionOnclickPlayGameColor();
+    // runTimeoutSetStartTime();
+    runTimeoutButtonStop();
     gameTimeTimeoutStart = 0;
-
 }
 
-
 function getRandomNumber(maxNumber) {
-    // return Math.floor((Math.random() * (colors.length)));
     return Math.floor((Math.random() * maxNumber));
 }
 
-
 function setGameRandomColor() {
-
-    // console.log("S -> colors: " + colors);
-
     let randomNumber = getRandomNumber(colors.length);
-
-    console.log(">>>>>>>>>>> colors.length: " + colors.length);
-    console.log(">>>>>>>>>>> randomNumber: " + randomNumber);
-    console.log("S colors " + colors);
-
-
-    // console.log("colors["+randomNumber+"]: " + colors[randomNumber]);
-
-    // while(gameColor !== colors[randomNumber]){
-
     let tempColor = gameRandomColor;
-    // console.log("1 tempColor: " + tempColor);
 
     gameRandomColor = colors[randomNumber];
     console.log("COLOR: " + gameRandomColor);
 
     colors[randomNumber] = tempColor;
-    // console.log("colors["+randomNumber+"]: " + colors[randomNumber]);
-
-    console.log("S colors " + colors);
-    // console.log("F -> colors: " + colors);
-
 }
 
 function setGameFieldColor(colorName) {
     rootVariables.style.setProperty(cssGameFiledButtonPlayColor, colorName);
 }
 
-// button color
-let funButtonPlayColor = function setGameButtonPlayColor() {
+// // button color
+// let funButtonPlayColor = function setGameButtonPlayColor() {
+//     setGameFieldColor(gameRandomColor);
+// }
+//
+// let timeoutSetGameButtonPlayColor;
+//
+// function runTimeoutSetGameButtonPlayColor() {
+//     timeoutSetGameButtonPlayColor = setTimeout(funButtonPlayColor, gameRandomTimeToChangeColor);
+// }
+//
+// function clearTimeoutSetGameButtonPlayColor() {
+//     clearTimeout(timeoutSetGameButtonPlayColor);
+// }
+
+// // function play game
+// let funOnclickPlayGameColor = function setFunctionOnclickPlayGameColor() {
+//     setFunctionOnclick(gameFiledButtonPlay, functionNameOnclickPlayGameColor);
+// }
+//
+// let timeoutSetFunctionOnclickPlayGameColor;
+//
+// function runTimeoutSetFunctionOnclickPlayGameColor() {
+//     timeoutSetFunctionOnclickPlayGameColor = setTimeout(funOnclickPlayGameColor, gameRandomTimeToChangeColor);
+// }
+//
+// function clearTimeoutSetFunctionOnclickPlayGameColor() {
+//     clearTimeout(timeoutSetFunctionOnclickPlayGameColor);
+// }
+
+// // start time
+// let funStartTime = function getStartTime() {
+//     startTime = performance.now();
+// }
+//
+// let timeoutSetStartTime;
+//
+// function runTimeoutSetStartTime() {
+//     timeoutSetStartTime = setTimeout(funStartTime, gameRandomTimeToChangeColor);
+// }
+//
+// function clearTimeoutSetStartTime() {
+//     clearTimeout(timeoutSetStartTime);
+// }
+
+// timeout  one for all
+
+let funTimeoutButtonStop = function setTimeoutButtonStop() {
     setGameFieldColor(gameRandomColor);
-}
-
-let timeoutSetGameButtonPlayColor;
-
-function runTimeoutSetGameButtonPlayColor() {
-    timeoutSetGameButtonPlayColor = setTimeout(funButtonPlayColor, gameRandomTimeToChangeColor);
-}
-
-function clearTimeoutSetGameButtonPlayColor() {
-    clearTimeout(timeoutSetGameButtonPlayColor);
-}
-
-// function play game
-let funOnclickPlayGameColor = function setFunctionOnclickPlayGameColor() {
     setFunctionOnclick(gameFiledButtonPlay, functionNameOnclickPlayGameColor);
-}
-
-let timeoutSetFunctionOnclickPlayGameColor;
-
-function runTimeoutSetFunctionOnclickPlayGameColor() {
-    timeoutSetFunctionOnclickPlayGameColor = setTimeout(funOnclickPlayGameColor, gameRandomTimeToChangeColor);
-}
-
-function clearTimeoutSetFunctionOnclickPlayGameColor() {
-    clearTimeout(timeoutSetFunctionOnclickPlayGameColor);
-}
-
-// start time
-let funStartTime = function getStartTime() {
     startTime = performance.now();
 }
 
-let timeoutSetStartTime;
+let timeoutButtonStop;
 
-function runTimeoutSetStartTime() {
-    timeoutSetStartTime = setTimeout(funStartTime, gameRandomTimeToChangeColor);
+function runTimeoutButtonStop() {
+    timeoutButtonStop = setTimeout(funTimeoutButtonStop, gameRandomTimeToChangeColor);
 }
 
-function clearTimeoutSetStartTime() {
-    clearTimeout(timeoutSetStartTime);
+function clearTimeoutButtonStop() {
+    clearTimeout(timeoutButtonStop);
 }
 
-
+// ---
 function setFunctionOnclickPlayGameColorClickBeforeNewRound() {
     setFunctionOnclick(gameFiledButtonPlay, functionNameOnclickPlayGameColorClickBeforeNewRound);
 }
@@ -235,11 +185,6 @@ function setGameRandomTimeInMillisecondsToChangeColor() {
 }
 
 function getGameStatisticTimeInSeconds(timeInMilliseconds) {
-
-    // let timeIk = (timeInMilliseconds / 1000).toFixed(4);
-    // console.log(">  timeInMilliseconds / 1000: " + (timeInMilliseconds / 1000));
-    // console.log(">  timeIk: " + timeIk);
-    // return timeIk;
     return (timeInMilliseconds / 1000).toFixed(4);
 }
 
@@ -271,9 +216,8 @@ function setGameStatisticTimeInSeconds() {
 }
 
 function setGameStatisticTimeMinInMilliseconds() {
-    if (gameStatisticTimeMinInMilliseconds > reactionTime) {
+    if (gameStatisticTimeMinInMilliseconds > reactionTime)
         gameStatisticTimeMinInMilliseconds = reactionTime;
-    }
 }
 
 function setGameStatisticTimeSumInMilliseconds() {
@@ -285,15 +229,13 @@ function setGameStatisticTimeAvgInMilliseconds() {
 }
 
 function setGameStatisticTimeMaxInMilliseconds() {
-    if (gameStatisticTimeMaxInMilliseconds < reactionTime) {
+    if (gameStatisticTimeMaxInMilliseconds < reactionTime)
         gameStatisticTimeMaxInMilliseconds = reactionTime;
-    }
 }
 
 function setGameStatisticTimeBestInMilliseconds() {
-    if (gameStatisticTimeBestInMilliseconds > gameStatisticTimeMinInMilliseconds) {
+    if (gameStatisticTimeBestInMilliseconds > gameStatisticTimeMinInMilliseconds)
         gameStatisticTimeBestInMilliseconds = gameStatisticTimeMinInMilliseconds;
-    }
 }
 
 function setGameStatisticTimeInMilliseconds() {
@@ -304,23 +246,17 @@ function setGameStatisticTimeInMilliseconds() {
 }
 
 function playClickerGame() {
-
-    // console.log("countedClicksNumber: " + countedClicksNumber);
-
     setEndTime();
     setClickReactionTime();
     setGameStatisticTimeSumInMilliseconds();
     setGameStatisticTimeInMilliseconds();
     setGameStatisticTimeInSeconds();
-
     setGameStatisticFraudData();
 
     if (countedClicksNumber < maxClicksNumber) {
-        // setGameConfigurationButtonPlay();
         setGameConfiguration();
         countedClicksNumber++;
     } else {
-        // console.log("countedClicksNumber: " + countedClicksNumber);
         // console.log("GAME OVER");
         setGameOverConfiguration();
     }
@@ -328,35 +264,21 @@ function playClickerGame() {
 
 function setGameOverConfiguration() {
     removeFunctionOnclick(gameFiledButtonPlay);
-    // setGameFieldColor("skyblue");
     setElementTextById(gameFiledButtonPlay, gameFiledButtonPlayGameOverTextDisplay);
     setElementClassName(gameFiledButtonPlay, gameFiledButtonPlayGameOver);
 }
 
 function removeGameOverConfiguration() {
-    // removeFunctionOnclick(gameFiledButtonPlay);
-    // setGameFieldColor("skyblue");
     setElementTextById(gameFiledButtonPlay, "");
     document.getElementById(gameFiledButtonPlay).classList.remove(gameFiledButtonPlayGameOver);
 }
 
 function setClickReactionTime() {
-
-    // reactionTime = endTime - startTime;
     reactionTime = endTime - startTime + reactionTimeTimeout;
-    // console.log("===== FINAL  startTime: " + startTime);
-    // console.log("===== FINAL  endTime: " + endTime);
-    // console.log("===== FINAL  endTime - startTime: " + ( endTime - startTime));
-    // console.log("===== FINAL  reactionTimeTimeout: " + reactionTimeTimeout);
-    // console.log("===== FINAL reactionTime: " + reactionTime);
 }
 
 function setClickReactionTimeTimeout() {
-
     reactionTimeTimeout = endTime - startTime;
-    // console.log("endTime: " + endTime);
-    // console.log("startTime: " + startTime);
-    // console.log("====== reactionTimeTimeout: " + reactionTimeTimeout);
 }
 
 function setEndTime() {
@@ -373,32 +295,23 @@ function setGameConfiguration() {
     endTime = 0;
     reactionTimeTimeout = 0;
 
-    // console.log("1 startTime: " + startTime);
-    // console.log("1 endTime: " + endTime);
-    // console.log("1 reactionTimeTimeout: " + reactionTimeTimeout);
-
     setGameRandomColor();
     setGameRandomTimeInMillisecondsToChangeColor();
-    // setTimeNow();
-    // setGameButtonPlayColor();
-    // getStartTime();
-    runTimeoutSetStartTime();
+
+    // runTimeoutSetStartTime();
     setGameTimeTimeoutStart();
     setFunctionOnclickPlayGameColorClickBeforeNewRound();
 
-    runTimeoutSetGameButtonPlayColor();
-    runTimeoutSetFunctionOnclickPlayGameColor();
-    // runTimeoutSetGameStatisticFraudData();
-    // runTimeoutRemoveFunctionOnclickPlayGameColorClickBeforeNewRound();
+    // runTimeoutSetGameButtonPlayColor();
+    // runTimeoutSetFunctionOnclickPlayGameColor();
 
-
+    runTimeoutButtonStop()
 }
 
 function createContainerStatisticsFraudCountPerRound() {
     let parentElement = document.getElementById(containerGameFiledStatisticsFraudCountGamePlay)
 
-    let maxWrongShots = maxClicksNumber;
-    // let maxWrongShots= 5;
+    let fraudNumber = maxClicksNumber;
 
     let rowStart = 1;
     let columnStart = 1;
@@ -412,15 +325,14 @@ function createContainerStatisticsFraudCountPerRound() {
     parentElement.style.gridRowEnd = setNumberAsString(rowEnd);
     parentElement.style.gridColumnEnd = setNumberAsString(columnEnd);
     parentElement.style.gridTemplateRows = " repeat(1, 2fr 6fr 2fr) ";
-    // parentElement.style.gridTemplateColumns = " repeat(" + maxWrongShots + ", 5fr 100fr 5fr)";
-    parentElement.style.gridTemplateColumns = " repeat(" + maxWrongShots + ", 1fr 100fr 1fr)";
+    parentElement.style.gridTemplateColumns = " repeat(" + fraudNumber + ", 1fr 100fr 1fr)";
 
     let rowChildStart = 2;
     let columnChildStart = 2;
     let rowChildEnd = 3;
     let columnChildEnd = 3;
 
-    for (let i = 0; i < maxWrongShots; i++) {
+    for (let i = 0; i < fraudNumber; i++) {
 
         let newDiv = document.createElement("div");
         parentElement.append(newDiv);
@@ -465,7 +377,6 @@ function setGameSConfigurationStatisticFraud() {
 }
 
 function setGameStatisticFraudCountedNumber() {
-    console.log("fraudCountRoundIndex = " + fraudCountRoundIndex);
     document.getElementById(fraudCountRoundGamePlayUpdateNumber + fraudCountRoundIndex).innerHTML += fraudCountedNumber;
 }
 
