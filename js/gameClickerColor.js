@@ -398,16 +398,13 @@ function createContainerStatisticsFraudCountPerRound() {
 
     parentElement.style.display = "grid";
     parentElement.style.backgroundColor = "black";
-    // parentElement.style.gridRow = rowStart;
-    // parentElement.style.gridColumn = columnStart;
-    // parentElement.style.gridRowEnd = rowEnd;
-    // parentElement.style.gridColumnEnd = columnEnd;
     parentElement.style.gridRow = setNumberAsString(rowStart);
     parentElement.style.gridColumn = setNumberAsString(columnStart);
     parentElement.style.gridRowEnd = setNumberAsString(rowEnd);
     parentElement.style.gridColumnEnd = setNumberAsString(columnEnd);
     parentElement.style.gridTemplateRows = " repeat(1, 2fr 6fr 2fr) ";
-    parentElement.style.gridTemplateColumns = " repeat(" + maxWrongShots + ", 5fr 100fr 5fr)";
+    // parentElement.style.gridTemplateColumns = " repeat(" + maxWrongShots + ", 5fr 100fr 5fr)";
+    parentElement.style.gridTemplateColumns = " repeat(" + maxWrongShots + ", 1fr 100fr 1fr)";
 
     let rowChildStart = 2;
     let columnChildStart = 2;
@@ -419,25 +416,34 @@ function createContainerStatisticsFraudCountPerRound() {
         let newDiv = document.createElement("div");
         parentElement.append(newDiv);
         newDiv.style.display = "grid";
-        newDiv.classList.add("gameSnowmanLives");
+        newDiv.classList.add(fraudCountRound);
 
-        if (i === maxWrongShots - 1) {
-            newDiv.classList.add("gameSnowmanLivesNumber");
-        }
+        // if (i === maxWrongShots - 1) {
+        //     newDiv.classList.add(fraudCountRoundUpdateNumber);
+        // }
 
-        // newDiv.style.gridRow = rowChildStart;
-        // newDiv.style.gridColumn = columnChildStart;
-        // newDiv.style.gridRowEnd = rowChildEnd;
-        // newDiv.style.gridColumnEnd = columnChildEnd;
+        newDiv.classList.add(fraudCountRoundUpdateNumber);
+
         newDiv.style.gridRow = setNumberAsString(rowChildStart);
         newDiv.style.gridColumn = setNumberAsString(columnChildStart);
         newDiv.style.gridRowEnd = setNumberAsString(rowChildEnd);
         newDiv.style.gridColumnEnd = setNumberAsString(columnChildEnd);
         newDiv.style.gridTemplateRows = "1fr";
         newDiv.style.gridTemplateColumns = "1fr";
-        // newDiv.innerHTML += gameLivesChars[i];
-        newDiv.innerHTML += i;
-        newDiv.setAttribute("id", "fraudCount-round" + i);
+        // newDiv.innerHTML += gameLivesChars[i];,
+        newDiv.classList.add(fraudCountRound);
+
+        let newDivChild = document.createElement("div");
+        newDiv.append(newDivChild);
+        // newDivChild.style.display = "flex";
+        newDivChild.innerHTML = statisticsFraudCountNumberTextDisplay;
+        newDivChild.setAttribute("id", "fraudCountRound-" + i);
+        newDivChild.classList.add(commonGameFiledDisplay);
+        newDivChild.classList.add(commonStaticText);
+        // newDivChild.classList.add(fraudCountRound);
+
+
+
 
         columnChildStart += 3;
         columnChildEnd += 3;

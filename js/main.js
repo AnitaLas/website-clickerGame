@@ -102,6 +102,7 @@ function createContainerTimeBestDescription(){
 
     createElementDiv(gameFiledStatisticsTimeBestGamePlay, statisticsTimeBestGamePlay);
     setElementClassName(statisticsTimeBestGamePlay, commonGamePlayTextUpdate);
+    setElementClassName(statisticsTimeBestGamePlay, statisticsTimeBestGamePlay);
 
     setElementTextById(statisticsTimeBestGamePlay, statisticsTimeBestGamePlayDisplay);
 
@@ -136,6 +137,8 @@ function createContainerTimeMin(){
 
     createElementDiv(gameFiledStatisticsTimeMinGamePlay, statisticsTimeMinGamePlay);
     setElementClassName(statisticsTimeMinGamePlay, commonGamePlayTextUpdate);
+    setElementClassName(statisticsTimeMinGamePlay, commonGamePlayUpdateTextTime);
+    setElementClassName(statisticsTimeMinGamePlay, statisticsTimeMinGamePlay);
 
     setElementTextById(statisticsTimeMinGamePlay, statisticsTimeMinGamePlayDisplay);
 
@@ -149,6 +152,7 @@ function createContainerTimeMin(){
 
     createElementDiv(gameFiledStatisticsTimeMinText, statisticsTimeMinText);
     setElementClassName(statisticsTimeMinText, commonStaticText);
+    setElementClassName(statisticsTimeMinText, statisticsTimeMinText);
 
     setElementTextById(statisticsTimeMinText, statisticsTimeMinTextDisplay);
 }
@@ -169,6 +173,8 @@ function createContainerTimeAvg(){
 
     createElementDiv(gameFiledStatisticsTimeAvgGamePlay, statisticsTimeAvgGamePlay);
     setElementClassName(statisticsTimeAvgGamePlay, commonGamePlayTextUpdate);
+    setElementClassName(statisticsTimeAvgGamePlay, commonGamePlayUpdateTextTime);
+    setElementClassName(statisticsTimeAvgGamePlay, statisticsTimeAvgGamePlay);
 
     setElementTextById(statisticsTimeAvgGamePlay, statisticsTimeAvgGamePlayDisplay);
 
@@ -181,6 +187,7 @@ function createContainerTimeAvg(){
 
     createElementDiv(gameFiledStatisticsTimeAvgText, statisticsTimeAvgText);
     setElementClassName(statisticsTimeAvgText, commonStaticText);
+    setElementClassName(statisticsTimeAvgText, statisticsTimeAvgText);
 
     setElementTextById(statisticsTimeAvgText, statisticsTimeAvgTextDisplay);
 }
@@ -201,6 +208,8 @@ function createContainerTimeMax(){
 
     createElementDiv(gameFiledStatisticsTimeMaxGamePlay, statisticsTimeMaxGamePlay);
     setElementClassName(statisticsTimeMaxGamePlay, commonGamePlayTextUpdate);
+    setElementClassName(statisticsTimeMaxGamePlay, commonGamePlayUpdateTextTime);
+    setElementClassName(statisticsTimeMaxGamePlay, statisticsTimeMaxGamePlay);
 
     setElementTextById(statisticsTimeMaxGamePlay, statisticsTimeMaxGamePlayDisplay);
 
@@ -213,6 +222,7 @@ function createContainerTimeMax(){
 
     createElementDiv(gameFiledStatisticsTimeMaxText, statisticsTimeMaxText);
     setElementClassName(statisticsTimeMaxText, commonStaticText);
+    setElementClassName(statisticsTimeMaxText, statisticsTimeMaxText);
 
     setElementTextById(statisticsTimeMaxText, statisticsTimeMaxTextDisplay);
 }
@@ -236,7 +246,8 @@ function createContainerStatisticsFraudSum(){
 
     // game play - Fraud update
     createElementDiv(containerGameFiledStatisticsFraudBestParts, containerGameFiledStatisticsFraudBestGamePlay);
-    setElementClassName(containerGameFiledStatisticsFraudBestGamePlay, containerGameFiledCommonGamePlayUpdate)
+    // setElementClassName(containerGameFiledStatisticsFraudBestGamePlay, containerGameFiledCommonGamePlayUpdate)
+    setElementClassName(containerGameFiledStatisticsFraudBestGamePlay, fraudCountRoundUpdateSumNumber)
 
     createElementDiv(containerGameFiledStatisticsFraudBestGamePlay, gameFiledStatisticsFraudBestGamePlay);
     setElementClassName(gameFiledStatisticsFraudBestGamePlay, commonGameFiledDisplay);
@@ -256,6 +267,7 @@ function createContainerStatisticsFraudSum(){
 
     createElementDiv(gameFiledStatisticsFraudBestText, statisticsFraudBestText);
     setElementClassName(statisticsFraudBestText, commonStaticText);
+    setElementClassName(statisticsFraudBestText, statisticsFraudBestText);
 
     setElementTextById(statisticsFraudBestText, statisticsFraudBestTextDisplay);
 }
@@ -281,6 +293,7 @@ function createContainerStatisticsFraudCount(){
 
     createElementDiv(gameFiledStatisticsFraudCountText, statisticsFraudCountText);
     setElementClassName(statisticsFraudCountText, commonStaticText);
+    setElementClassName(statisticsFraudCountText, statisticsFraudCountText);
 
     setElementTextById(statisticsFraudCountText, statisticsFraudCountTextDisplay);
 }

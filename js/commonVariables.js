@@ -48,11 +48,11 @@ const containerGameFiledStatisticsTimeBestGamePlay = "containerGameFiled-statist
 const gameFiledStatisticsTimeBestGamePlay = "containerGameFiled-statisticsTimeBestGamePlay";
 const gameFiledStatisticsTimeBestText= "gameFiledStatisticsTimeBestText";
 const statisticsTimeBestGamePlay = "statisticsTimeBestGamePlay";
-const statisticsTimeBestGamePlayDisplay = "0.0002";
+const statisticsTimeBestGamePlayDisplay = "0.0000";
 const statisticsTimeBestText = "statisticsTimeBestText";
 // const statisticsTimeBestTextDisplay = "Best";
 const statisticsTimeBestTextDisplay = "<i class=\"fa-solid fa-star\"></i> &nbsp " +
-"<i class=\"fa-solid fa-clock\"></i> &nbsp " +
+"<i class=\"fa-solid fa-clock fa-timeBest\"></i> &nbsp " +
 "<i class=\"fa-solid fa-star\"></i> ";
 
 const containerGameFiledStatisticsTimeMin = "containerGameFiled-statisticsTimeMin";
@@ -73,7 +73,7 @@ const statisticsTimeAvgGamePlay = "statisticsTimeAvgGamePlay";
 const statisticsTimeAvgGamePlayDisplay = "0.0002";
 const statisticsTimeAvgText = "statisticsTimeAvgText";
 // const statisticsTimeAvgTextDisplay = "avg";
-const statisticsTimeAvgTextDisplay = "<i class=\"fa-solid fa-clock\"></i> &nbsp avg";
+const statisticsTimeAvgTextDisplay = "<i class=\"fa-solid fa-clock fa-timeAvg\"></i> &nbsp avg";
 
 const containerGameFiledStatisticsTimeMax = "containerGameFiled-statisticsTimeMax";
 const containerGameFiledStatisticsTimeMaxParts = "containerGameFiled-statisticsTimeMaxParts";
@@ -85,7 +85,7 @@ const statisticsTimeMaxGamePlay = "statisticsTimeMaxGamePlay";
 const statisticsTimeMaxGamePlayDisplay = "0.0003";
 const statisticsTimeMaxText = "statisticsTimeMaxText";
 // const statisticsTimeMaxTextDisplay = "max";
-const statisticsTimeMaxTextDisplay = "<i class=\"fa-solid fa-clock\"></i> &nbsp max";
+const statisticsTimeMaxTextDisplay = "<i class=\"fa-solid fa-clock fa-timeMax\"></i> &nbsp max";
 
 
 // class NAME
@@ -94,6 +94,7 @@ const containerGameFiledCommonParts = "containerGameFiled-commonParts";
 const containerGameFiledCommonStaticText = "containerGameFiled-commonStaticText";
 const containerGameFiledCommonGamePlayUpdate = "containerGameFiled-commonGamePlayUpdate";
 const commonGamePlayTextUpdate = "commonGamePlayUpdateText";
+const commonGamePlayUpdateTextTime = "commonGamePlayUpdateTextTime";
 const commonStaticText = "commonStaticText";
 const commonGameFiledDisplay = "commonGameFiledDisplay";
 
@@ -101,7 +102,7 @@ const commonGameFiledDisplay = "commonGameFiledDisplay";
 const statisticsTimeMinGamePlayDisplay = "0.0001";
 const statisticsTimeMinText = "statisticsTimeMinText";
 // const statisticsTimeMinTextDisplay = "min";
-const statisticsTimeMinTextDisplay = "<i class=\"fa-solid fa-clock\"></i> &nbsp min";
+const statisticsTimeMinTextDisplay = "<i class=\"fa-solid fa-clock fa-timeMin\"></i> &nbsp min";
 
 // fraud
 const containerGameFiledStatisticsFraud = "containerGameFiled-statisticsFraud";
@@ -133,10 +134,15 @@ const statisticsFraudCountGamePlay = "statisticsFraudCountGamePlay";
 const containerGameSnowmanLives = "containerGameSnowmanLives";
 const statisticsFraudCountGamePlayDisplay = "fraud";
 const statisticsFraudCountText = "statisticsFraudCountText";
+const fraudCountRoundUpdateSumNumber = "fraudCountRoundUpdateSumNumber";
+const fraudCountRound = "fraudCountRound";
+const fraudCountRoundUpdateNumber = "fraudCountRoundUpdateNumber";
 // const statisticsFraudCountTextDisplay = "Count";
 // const statisticsFraudCountTextDisplay = "<i class=\"fa-solid fa-gem\"></i> &nbsp sum"
 // const statisticsFraudCountTextDisplay = " statistic fraud count "
-const statisticsFraudCountTextDisplay = " STATISTIC FRAUD COUNT "
+// const statisticsFraudCountTextDisplay = "STATISTIC FRAUD COUNT"
+const statisticsFraudCountTextDisplay = "FRAUD COUNT"
+const statisticsFraudCountNumberTextDisplay = "<i class=\"fa-solid fa-whiskey-glass\"></i> &nbsp : &nbsp"
 
 // menu
 const sectionMenu = "sectionMenu";
