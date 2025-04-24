@@ -16,6 +16,9 @@ const containerMainHome = "containerMainHome";
 const containerGameElements = "containerGameElements";
 const containerGameFiledButtonPlay = "containerGameFiled-buttonPlay";
 const gameFiledButtonPlay = "buttonPlay";
+const gameFiledButtonPlayGameOver = "gameFiledButtonPlayGameOver";
+// const gameFiledButtonPlayGameOverTextDisplay = "You did well ! <br /><br /> game over";
+const gameFiledButtonPlayGameOverTextDisplay = "You did well ! <br /> game over";
 const functionNameOnclickPlayGameColor = "playClickerGame";
 const functionNameOnclickPlayGameColorClickBeforeNewRound = "playClickerGameClickBeforeNewRound";
 
@@ -48,7 +51,7 @@ const containerGameFiledStatisticsTimeBestGamePlay = "containerGameFiled-statist
 const gameFiledStatisticsTimeBestGamePlay = "containerGameFiled-statisticsTimeBestGamePlay";
 const gameFiledStatisticsTimeBestText= "gameFiledStatisticsTimeBestText";
 const statisticsTimeBestGamePlay = "statisticsTimeBestGamePlay";
-const statisticsTimeBestGamePlayDisplay = "0.0000";
+const statisticsTimeBestGamePlayDisplay = "0.0000 ??? ";
 const statisticsTimeBestText = "statisticsTimeBestText";
 // const statisticsTimeBestTextDisplay = "Best";
 const statisticsTimeBestTextDisplay = "<i class=\"fa-solid fa-star\"></i> &nbsp " +
@@ -70,7 +73,7 @@ const containerGameFiledStatisticsTimeAvgGamePlay = "containerGameFiled-statisti
 const gameFiledStatisticsTimeAvgGamePlay = "containerGameFiled-statisticsTimeAvgGamePlay";
 const gameFiledStatisticsTimeAvgText= "gameFiledStatisticsTimeAvgText";
 const statisticsTimeAvgGamePlay = "statisticsTimeAvgGamePlay";
-const statisticsTimeAvgGamePlayDisplay = "0.0002";
+const statisticsTimeAvgGamePlayDisplay = "0.0002 ??? ";
 const statisticsTimeAvgText = "statisticsTimeAvgText";
 // const statisticsTimeAvgTextDisplay = "avg";
 const statisticsTimeAvgTextDisplay = "<i class=\"fa-solid fa-clock fa-timeAvg\"></i> &nbsp avg";
@@ -82,7 +85,7 @@ const containerGameFiledStatisticsTimeMaxGamePlay = "containerGameFiled-statisti
 const gameFiledStatisticsTimeMaxGamePlay = "containerGameFiled-statisticsTimeMaxGamePlay";
 const gameFiledStatisticsTimeMaxText= "gameFiledStatisticsTimeMaxText";
 const statisticsTimeMaxGamePlay = "statisticsTimeMaxGamePlay";
-const statisticsTimeMaxGamePlayDisplay = "0.0003";
+const statisticsTimeMaxGamePlayDisplay = "0.0003 ???";
 const statisticsTimeMaxText = "statisticsTimeMaxText";
 // const statisticsTimeMaxTextDisplay = "max";
 const statisticsTimeMaxTextDisplay = "<i class=\"fa-solid fa-clock fa-timeMax\"></i> &nbsp max";
@@ -99,7 +102,7 @@ const commonStaticText = "commonStaticText";
 const commonGameFiledDisplay = "commonGameFiledDisplay";
 
 
-const statisticsTimeMinGamePlayDisplay = "0.0001";
+const statisticsTimeMinGamePlayDisplay = "0.0001 ???";
 const statisticsTimeMinText = "statisticsTimeMinText";
 // const statisticsTimeMinTextDisplay = "min";
 const statisticsTimeMinTextDisplay = "<i class=\"fa-solid fa-clock fa-timeMin\"></i> &nbsp min";
@@ -115,7 +118,7 @@ const containerGameFiledStatisticsFraudBestGamePlay = "containerGameFiled-statis
 const gameFiledStatisticsFraudBestGamePlay = "containerGameFiled-statisticsFraudBestGamePlay";
 const gameFiledStatisticsFraudBestText= "gameFiledStatisticsFraudBestText";
 const statisticsFraudBestGamePlay = "statisticsFraudBestGamePlay";
-const statisticsFraudBestGamePlayDisplay = "fraud";
+const statisticsFraudBestGamePlayDisplay = " ??? ";
 const statisticsFraudBestText = "statisticsFraudBestText";
 // const statisticsFraudBestTextDisplay = "Best";
 // const statisticsFraudBestTextDisplay = "<i class=\"fa-solid fa-mask\"></i> &nbsp sum"
@@ -132,17 +135,19 @@ const gameFiledStatisticsFraudCountGamePlay = "containerGameFiled-statisticsFrau
 const gameFiledStatisticsFraudCountText= "gameFiledStatisticsFraudCountText";
 const statisticsFraudCountGamePlay = "statisticsFraudCountGamePlay";
 const containerGameSnowmanLives = "containerGameSnowmanLives";
-const statisticsFraudCountGamePlayDisplay = "fraud";
+const statisticsFraudCountGamePlayDisplay = "fraud ?";
 const statisticsFraudCountText = "statisticsFraudCountText";
 const fraudCountRoundUpdateSumNumber = "fraudCountRoundUpdateSumNumber";
 const fraudCountRound = "fraudCountRound";
+const fraudCountRoundGamePlayUpdateNumber = "fraudCountRound-";
 const fraudCountRoundUpdateNumber = "fraudCountRoundUpdateNumber";
+const fraudCountRoundCommon = "fraudCountRoundCommon";
 // const statisticsFraudCountTextDisplay = "Count";
 // const statisticsFraudCountTextDisplay = "<i class=\"fa-solid fa-gem\"></i> &nbsp sum"
 // const statisticsFraudCountTextDisplay = " statistic fraud count "
 // const statisticsFraudCountTextDisplay = "STATISTIC FRAUD COUNT"
 const statisticsFraudCountTextDisplay = "FRAUD COUNT"
-const statisticsFraudCountNumberTextDisplay = "<i class=\"fa-solid fa-whiskey-glass\"></i> &nbsp : &nbsp"
+const statisticsFraudCountNumberTextDisplay = "<i class=\"fa-solid fa-whiskey-glass\"></i> &nbsp &nbsp"
 
 // menu
 const sectionMenu = "sectionMenu";
