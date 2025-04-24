@@ -30,7 +30,8 @@ const containerGameFiledButtonsMainStart = "containerGameFiled-buttonsMainStart"
 const gameFiledButtonMainStart = "gameFiledButtonMainStart";
 const buttonMainStart = "buttonMainStart";
 const functionNameOnclickPlayGameColorStart = "playGameColorStart";
-const containerGameFiledButtonsMainStartTextDisplay = "START";
+// const containerGameFiledButtonsMainStartTextDisplay = "START";
+const containerGameFiledButtonsMainStartTextDisplay = "<i class=\"fa-solid fa-play\"></i>";
 const gameFiledButtonMain = "gameFiledButtonMain";
 
 const containerGameFiledButtonsMainStop = "containerGameFiled-buttonsMainStop";
@@ -38,7 +39,8 @@ const gameFiledButtonMainStop = "gameFiledButtonMainStop";
 const buttonMainStop = "buttonMainStop";
 const functionNameOnclickPlayGameColorStop = "playGameColorStop";
 const functionNameOnclickPlayGameColorContinue = "playGameColorContinue";
-const containerGameFiledButtonsMainStopTextDisplay = "STOP";
+// const containerGameFiledButtonsMainStopTextDisplay = "STOP";
+const containerGameFiledButtonsMainStopTextDisplay = "<i class=\"fa-solid fa-stop\"></i>";
 const containerGameFiledButtonsMainContinueTextDisplay = "CONTINUE";
 
 const containerGameFiledStatisticsTime = "containerGameFiled-statisticsTime";
@@ -118,12 +120,15 @@ const gameFiledStatisticsFraudBestGamePlay = "containerGameFiled-statisticsFraud
 const gameFiledStatisticsFraudBestText= "gameFiledStatisticsFraudBestText";
 const statisticsFraudBestGamePlay = "statisticsFraudBestGamePlay";
 const statisticsFraudBestGamePlayDisplay = " ??? ";
+// const statisticsFraudBestGamePlayDisplay = "<i class=\"fa-solid fa-whiskey-glass fa-fraudBest\"></i> &nbsp &nbsp";
 const statisticsFraudBestText = "statisticsFraudBestText";
+const statisticsFraudBestUpdateNumber = "statisticsFraudBestUpdateNumber";
 // const statisticsFraudBestTextDisplay = "Best";
 // const statisticsFraudBestTextDisplay = "<i class=\"fa-solid fa-mask\"></i> &nbsp sum"
 // const statisticsFraudBestTextDisplay = "<i class=\"fa-solid fa-user-ninja\"></i> &nbsp sum"
 // const statisticsFraudBestTextDisplay = "<i class=\"fa-solid fa-gem\"></i> &nbsp sum"
-const statisticsFraudBestTextDisplay = "<i class=\"fa-solid fa-gem\"></i> &nbsp SUM &nbsp <i class=\"fa-solid fa-gem\"></i>"
+// const statisticsFraudBestTextDisplay = "<i class=\"fa-solid fa-gem\"></i> &nbsp SUM &nbsp <i class=\"fa-solid fa-gem\"></i>"
+const statisticsFraudBestTextDisplay = "<i class=\"fa-solid fa-gem\"></i> &nbsp <i class=\"fa-solid fa-whiskey-glass fa-fraudBest\"></i> &nbsp <i class=\"fa-solid fa-gem\"></i>"
 // const statisticsFraudBestTextDisplay = "<i class=\"fa-solid fa-person-military-rifle\"></i> &nbsp sum"
 
 const containerGameFiledStatisticsFraudCount = "containerGameFiled-statisticsFraudCount";
@@ -150,6 +155,11 @@ const statisticsFraudCountNumberTextDisplay = "<i class=\"fa-solid fa-whiskey-gl
 const sectionMenu = "sectionMenu";
 const containerSectionMenu = "containerSectionMenu";
 const containerMenuMain = "containerMenuMain";
+const containerMenuMainParts = "containerMenuMainParts";
+const containerMenuTitleMain = "containerMenuTitleMain";
+const menuTitle = "menuTitle";
+const menuTitleText = "menuTitleText";
+const menuTitleTextDisplay = "Clicker Game";
 
 //footer
 const containerSectionFooter = "containerSectionFooter";

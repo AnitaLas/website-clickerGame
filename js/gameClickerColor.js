@@ -26,6 +26,9 @@ const colors = fileWithColors.split(", ");
 let gameColors = colors;
 
 function playGameColorStart() {
+    removeContainersGameFiledButtonsMainStop();
+    createContainersGameFiledButtonsMainStop();
+    removeContainersGameFiledStatistics();
     setGameButtonStartColor();
     setGameConfiguration();
     removeGameOverConfiguration();
@@ -50,8 +53,9 @@ function playGameColorStop() {
     clearTimeoutButtonStop();
     setConfigurationGameContinue();
 
-    fraudCountedNumber = 0;
-    fraudCountRoundIndex = 0;
+
+    // fraudCountedNumber = 0;
+    // fraudCountRoundIndex = 0;
 }
 
 let gameTimeTimeoutStart;
@@ -79,6 +83,7 @@ function playGameColorContinue() {
     if (currentFunctionOnclickName !== undefined)
         setFunctionOnclick(gameFiledButtonPlay, currentFunctionOnclickName);
 
+    // gameTimeTimeoutStart - minus time from the begging
     gameRandomTimeToChangeColor = gameRandomTimeToChangeColor - gameTimeTimeoutStart;
 
     // runTimeoutSetGameButtonPlayColor();
@@ -105,53 +110,6 @@ function setGameRandomColor() {
 function setGameFieldColor(colorName) {
     rootVariables.style.setProperty(cssGameFiledButtonPlayColor, colorName);
 }
-
-// // button color
-// let funButtonPlayColor = function setGameButtonPlayColor() {
-//     setGameFieldColor(gameRandomColor);
-// }
-//
-// let timeoutSetGameButtonPlayColor;
-//
-// function runTimeoutSetGameButtonPlayColor() {
-//     timeoutSetGameButtonPlayColor = setTimeout(funButtonPlayColor, gameRandomTimeToChangeColor);
-// }
-//
-// function clearTimeoutSetGameButtonPlayColor() {
-//     clearTimeout(timeoutSetGameButtonPlayColor);
-// }
-
-// // function play game
-// let funOnclickPlayGameColor = function setFunctionOnclickPlayGameColor() {
-//     setFunctionOnclick(gameFiledButtonPlay, functionNameOnclickPlayGameColor);
-// }
-//
-// let timeoutSetFunctionOnclickPlayGameColor;
-//
-// function runTimeoutSetFunctionOnclickPlayGameColor() {
-//     timeoutSetFunctionOnclickPlayGameColor = setTimeout(funOnclickPlayGameColor, gameRandomTimeToChangeColor);
-// }
-//
-// function clearTimeoutSetFunctionOnclickPlayGameColor() {
-//     clearTimeout(timeoutSetFunctionOnclickPlayGameColor);
-// }
-
-// // start time
-// let funStartTime = function getStartTime() {
-//     startTime = performance.now();
-// }
-//
-// let timeoutSetStartTime;
-//
-// function runTimeoutSetStartTime() {
-//     timeoutSetStartTime = setTimeout(funStartTime, gameRandomTimeToChangeColor);
-// }
-//
-// function clearTimeoutSetStartTime() {
-//     clearTimeout(timeoutSetStartTime);
-// }
-
-// timeout  one for all
 
 let funTimeoutButtonStop = function setTimeoutButtonStop() {
     setGameFieldColor(gameRandomColor);
@@ -246,6 +204,10 @@ function setGameStatisticTimeInMilliseconds() {
 }
 
 function playClickerGame() {
+
+    if(countedClicksNumber === 1)
+        createContainersGameFiledStatistics();
+
     setEndTime();
     setClickReactionTime();
     setGameStatisticTimeSumInMilliseconds();
@@ -264,6 +226,7 @@ function playClickerGame() {
 
 function setGameOverConfiguration() {
     removeFunctionOnclick(gameFiledButtonPlay);
+    removeFunctionOnclick(buttonMainStop);
     setElementTextById(gameFiledButtonPlay, gameFiledButtonPlayGameOverTextDisplay);
     setElementClassName(gameFiledButtonPlay, gameFiledButtonPlayGameOver);
 }
@@ -381,8 +344,30 @@ function setGameStatisticFraudCountedNumber() {
 }
 
 function setGameStatisticFraudCountedSumNumber() {
+    // document.getElementById(statisticsFraudBestGamePlay).innerHTML += fraudCountedSumNumber;
     document.getElementById(statisticsFraudBestGamePlay).innerHTML = fraudCountedSumNumber;
 }
+
+
+function createContainersGameFiledStatistics() {
+    createGameFieldStatistics();
+    createGameFieldStatisticsFraud();
+}
+
+function removeContainersGameFiledStatistics() {
+    removeElementsById(containerGameFiledStatisticsTimeParts);
+    removeElementsById(containerGameFiledStatisticsFraudParts);
+}
+
+function createContainersGameFiledButtonsMainStop() {
+    createGameFieldPButtonMainStop();
+}
+
+function removeContainersGameFiledButtonsMainStop() {
+    removeElementsById(containerGameFiledButtonsMainStop);
+}
+
+
 
 
 

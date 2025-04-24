@@ -46,9 +46,17 @@ function createElementDivWithTheSameValueForIdAndClassName(parentId, elementIdAn
 
 function removeElementsById(elementId) {
     let element = document.getElementById(elementId);
-    if (element != null) {
+    if (element !== null) {
         element.remove();
     }
+}
+
+function isElementsExistById(elementId) {
+    let element = document.getElementById(elementId);
+    let result = false;
+    if(element !== null)
+        result = true;
+    return result;
 }
 
 function setElementTextByClassName(className, text) {

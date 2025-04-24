@@ -1,0 +1,40 @@
+#containerSectionMenu {
+    display: grid;
+    grid-template-rows: 20fr 60fr 20fr;
+    grid-template-columns: 15fr 15fr 55fr 15fr;
+}
+
+.containerMenuMain {
+    display: grid;
+    grid-row: 2 / 2;
+    grid-column: 2 / 4;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+}
+
+#containerMenuMainParts {
+    display: grid;
+    grid-row: 1 / 1;
+    grid-column: 1 / 1;
+    grid-template-rows: 1fr;
+    grid-template-columns: 5fr 5fr;
+}
+
+.containerMenuTitleMain {
+    display: grid;
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+}
+
+.menuTitleText {
+    margin: 0;
+    padding: 0;
+    /*color: #FFDEADFF;*/
+    color: #ac4a71;
+    opacity: 0.9;
+    font-size: 2.1rem;
+    font-weight: 400;
+}
+

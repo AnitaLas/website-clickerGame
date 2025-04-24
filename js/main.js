@@ -11,11 +11,26 @@ createFooter();
 
 function createMenu() {
     createContainerMainMenu();
+    createContainerMainMenuParts();
+    createContainerManuTitle();
 }
 
 // menu
 function createContainerMainMenu() {
     createContainerMainElements(containerMainSectionMenu, sectionMenu, containerSectionMenu, containerMenuMain);
+}
+
+function createContainerMainMenuParts() {
+    createElementDivWithTheSameValueForIdAndClassName(containerMenuMain, containerMenuMainParts);
+}
+
+function createContainerManuTitle() {
+    createElementDivWithTheSameValueForIdAndClassName(containerMenuMainParts, containerMenuTitleMain);
+    createElementDiv(containerMenuTitleMain, menuTitle);
+    setElementClassName(menuTitle, menuTitle)
+    createElementP(menuTitle, menuTitleText);
+    setElementClassName(menuTitleText, menuTitleText)
+    setElementTextById(menuTitleText, menuTitleTextDisplay);
 }
 
 
@@ -41,16 +56,15 @@ function createContainerGameElements() {
     createMainContainerGameElements();
     createGameFieldPButtonPlay();
     createGameFieldPButtonMain();
-    createGameFieldStatistics();
-    createGameFieldStatisticsFraud();
-
+    // createGameFieldStatistics();
+    // createGameFieldStatisticsFraud();
 }
 
 function createGameFieldPButtonMain(){
     // start and stop
     createElementDiv(containerGameFiledButtonMain,containerGameFiledButtonsMainParts);
     createGameFieldPButtonMainStart();
-    createGameFieldPButtonMainStop();
+    // createGameFieldPButtonMainStop();
 }
 
 function createGameFieldPButtonPlay(){
@@ -70,23 +84,19 @@ function createGameFieldPButtonMainStart(){
 }
 
 function createGameFieldPButtonMainStop(){
-    createElementDivWithTheSameValueForIdAndClassName(containerGameFiledButtonsMainParts,containerGameFiledButtonsMainStop);
-    createElementDivWithTheSameValueForIdAndClassName(containerGameFiledButtonsMainStop, gameFiledButtonMainStop);
-    createElementButton(gameFiledButtonMainStop, buttonMainStop);
-    setElementClassName(buttonMainStop, gameFiledButtonMain);
-    setElementClassName(buttonMainStop, buttonMainStop);
-    setFunctionOnclick(buttonMainStop, functionNameOnclickPlayGameColorStop);
-    setElementTextById(buttonMainStop, containerGameFiledButtonsMainStopTextDisplay);
+   let result = isElementsExistById(containerGameFiledButtonsMainStop);
+    if(!result){
+        createElementDivWithTheSameValueForIdAndClassName(containerGameFiledButtonsMainParts,containerGameFiledButtonsMainStop);
+        createElementDivWithTheSameValueForIdAndClassName(containerGameFiledButtonsMainStop, gameFiledButtonMainStop);
+        createElementButton(gameFiledButtonMainStop, buttonMainStop);
+        setElementClassName(buttonMainStop, gameFiledButtonMain);
+        setElementClassName(buttonMainStop, buttonMainStop);
+        setFunctionOnclick(buttonMainStop, functionNameOnclickPlayGameColorStop);
+        setElementTextById(buttonMainStop, containerGameFiledButtonsMainStopTextDisplay);
+    }
 }
 
 function createContainerTimeBestDescription(){
-    // time - description
-    // createElementDivWithTheSameValueForIdAndClassName(containerGameFiledStatisticsParts, containerGameFiledStatisticsMainText);
-    // createElementDivWithTheSameValueForIdAndClassName(containerGameFiledStatisticsMainText, gameFiledStatisticsMainText);
-    // createElementDivWithTheSameValueForIdAndClassName(gameFiledStatisticsMainText, statisticsMainText);
-    // setElementClassName(statisticsMainText, statisticsMainText);
-    // setElementTextById(statisticsMainText, statisticsMainTextDisplay);
-
     // container main
     createElementDiv(containerGameFiledStatisticsTimeParts, containerGameFiledStatisticsTimeBest);
     createElementDiv(containerGameFiledStatisticsTimeBest, containerGameFiledStatisticsTimeBestParts);
@@ -254,6 +264,7 @@ function createContainerStatisticsFraudSum(){
 
     createElementDiv(gameFiledStatisticsFraudBestGamePlay, statisticsFraudBestGamePlay);
     setElementClassName(statisticsFraudBestGamePlay, commonGamePlayTextUpdate);
+    setElementClassName(statisticsFraudBestGamePlay, statisticsFraudBestUpdateNumber);
 
     setElementTextById(statisticsFraudBestGamePlay, statisticsFraudBestGamePlayDisplay);
 
@@ -304,7 +315,6 @@ function createGameFieldStatisticsFraud(){
     createContainerStatisticsFraudCount();
     createContainerStatisticsFraudCountPerRound();
 }
-
 
 
 // footer
