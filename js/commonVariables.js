@@ -53,14 +53,14 @@ const containerGameFiledStatisticsTimeBestParts = "containerGameFiled-statistics
 const containerGameFiledStatisticsTimeBestText = "containerGameFiled-statisticsTimeBestText";
 const containerGameFiledStatisticsTimeBestGamePlay = "containerGameFiled-statisticsTimeBestGamePlay";
 const gameFiledStatisticsTimeBestGamePlay = "containerGameFiled-statisticsTimeBestGamePlay";
-const gameFiledStatisticsTimeBestText= "gameFiledStatisticsTimeBestText";
+const gameFiledStatisticsTimeBestText = "gameFiledStatisticsTimeBestText";
 const statisticsTimeBestGamePlay = "statisticsTimeBestGamePlay";
 const statisticsTimeBestGamePlayDisplay = "0.0000 ??? ";
 const statisticsTimeBestText = "statisticsTimeBestText";
 // const statisticsTimeBestTextDisplay = "Best";
 const statisticsTimeBestTextDisplay = "<i class=\"fa-solid fa-star\"></i> &nbsp " +
-"<i class=\"fa-solid fa-clock fa-timeBest\"></i> &nbsp " +
-"<i class=\"fa-solid fa-star\"></i> ";
+    "<i class=\"fa-solid fa-clock fa-timeBest\"></i> &nbsp " +
+    "<i class=\"fa-solid fa-star\"></i> ";
 
 const containerGameFiledStatisticsTimeMin = "containerGameFiled-statisticsTimeMin";
 const containerGameFiledStatisticsTimeMinParts = "containerGameFiled-statisticsTimeMinParts";
@@ -68,14 +68,14 @@ const containerGameFiledStatisticsTimeMinText = "containerGameFiled-statisticsTi
 const containerGameFiledStatisticsTimeMinGamePlay = "containerGameFiled-statisticsTimeMinGamePlay";
 const gameFiledStatisticsTimeMinGamePlay = "gameFiledStatisticsTimeMinGamePlay";
 const statisticsTimeMinGamePlay = "statisticsTimeMinGamePlay";
-const gameFiledStatisticsTimeMinText= "gameFiledStatisticsTimeMinText";
+const gameFiledStatisticsTimeMinText = "gameFiledStatisticsTimeMinText";
 
 const containerGameFiledStatisticsTimeAvg = "containerGameFiled-statisticsTimeAvg";
 const containerGameFiledStatisticsTimeAvgParts = "containerGameFiled-statisticsTimeAvgParts";
 const containerGameFiledStatisticsTimeAvgText = "containerGameFiled-statisticsTimeAvgText";
 const containerGameFiledStatisticsTimeAvgGamePlay = "containerGameFiled-statisticsTimeAvgGamePlay";
 const gameFiledStatisticsTimeAvgGamePlay = "containerGameFiled-statisticsTimeAvgGamePlay";
-const gameFiledStatisticsTimeAvgText= "gameFiledStatisticsTimeAvgText";
+const gameFiledStatisticsTimeAvgText = "gameFiledStatisticsTimeAvgText";
 const statisticsTimeAvgGamePlay = "statisticsTimeAvgGamePlay";
 const statisticsTimeAvgGamePlayDisplay = "0.0002 ??? ";
 const statisticsTimeAvgText = "statisticsTimeAvgText";
@@ -87,13 +87,12 @@ const containerGameFiledStatisticsTimeMaxParts = "containerGameFiled-statisticsT
 const containerGameFiledStatisticsTimeMaxText = "containerGameFiled-statisticsTimeMaxText";
 const containerGameFiledStatisticsTimeMaxGamePlay = "containerGameFiled-statisticsTimeMaxGamePlay";
 const gameFiledStatisticsTimeMaxGamePlay = "containerGameFiled-statisticsTimeMaxGamePlay";
-const gameFiledStatisticsTimeMaxText= "gameFiledStatisticsTimeMaxText";
+const gameFiledStatisticsTimeMaxText = "gameFiledStatisticsTimeMaxText";
 const statisticsTimeMaxGamePlay = "statisticsTimeMaxGamePlay";
 const statisticsTimeMaxGamePlayDisplay = "0.0003 ???";
 const statisticsTimeMaxText = "statisticsTimeMaxText";
 // const statisticsTimeMaxTextDisplay = "max";
 const statisticsTimeMaxTextDisplay = "<i class=\"fa-solid fa-clock fa-timeMax\"></i> &nbsp max";
-
 
 // class NAME
 // const containerGameFiledStatisticsTime = "containerGameFiled-statisticsTime";
@@ -119,7 +118,7 @@ const containerGameFiledStatisticsFraudBestParts = "containerGameFiled-statistic
 const containerGameFiledStatisticsFraudBestText = "containerGameFiled-statisticsFraudBestText";
 const containerGameFiledStatisticsFraudBestGamePlay = "containerGameFiled-statisticsFraudBestGamePlay";
 const gameFiledStatisticsFraudBestGamePlay = "containerGameFiled-statisticsFraudBestGamePlay";
-const gameFiledStatisticsFraudBestText= "gameFiledStatisticsFraudBestText";
+const gameFiledStatisticsFraudBestText = "gameFiledStatisticsFraudBestText";
 const statisticsFraudBestGamePlay = "statisticsFraudBestGamePlay";
 const statisticsFraudBestGamePlayDisplay = " ??? ";
 // const statisticsFraudBestGamePlayDisplay = "<i class=\"fa-solid fa-whiskey-glass fa-fraudBest\"></i> &nbsp &nbsp";
@@ -138,7 +137,7 @@ const containerGameFiledStatisticsFraudCountParts = "containerGameFiled-statisti
 const containerGameFiledStatisticsFraudCountText = "containerGameFiled-statisticsFraudCountText";
 const containerGameFiledStatisticsFraudCountGamePlay = "containerGameFiled-statisticsFraudCountGamePlay";
 const gameFiledStatisticsFraudCountGamePlay = "containerGameFiled-statisticsFraudCountGamePlay";
-const gameFiledStatisticsFraudCountText= "gameFiledStatisticsFraudCountText";
+const gameFiledStatisticsFraudCountText = "gameFiledStatisticsFraudCountText";
 const statisticsFraudCountGamePlay = "statisticsFraudCountGamePlay";
 const statisticsFraudCountText = "statisticsFraudCountText";
 const fraudCountRoundUpdateSumNumber = "fraudCountRoundUpdateSumNumber";

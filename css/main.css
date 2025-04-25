@@ -6,7 +6,7 @@ body {
     display: flex;
 }
 
-.button{
+.button {
     background-color: #000000;
 }
 
@@ -26,7 +26,7 @@ body {
     grid-template-columns: 1fr;
 }
 
-#containerMainSectionActions{
+#containerMainSectionActions {
     display: grid;
     grid-row: 2 / 3;
     grid-column: 1 / 2;
@@ -41,13 +41,3 @@ body {
     grid-template-rows: 1fr;
     grid-template-columns: 1fr;
 }
-
-
-
-
-
-
-
-
-
-

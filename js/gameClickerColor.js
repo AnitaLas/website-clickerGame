@@ -21,7 +21,6 @@ let fraudCountedNumber = 0;
 let fraudCountedSumNumber = 0;
 let fraudCountRoundIndex = 0;
 
-// const fileWithColors = "pink, orange, yellow, blue, red, darkslategrey, greenyellow, palegreen,";
 const fileWithColors = "#1A1A1D, #3B1C32, #6A1E55, #A64D79, #251B37, #372948, #FFCACA, #FFECEF, " +
     "#F3F2DA, #4E8D7C, #045762, #EA97AD, #FAD9E6, #E4AEC5, #5F7464, #243D25";
 const colors = fileWithColors.split(", ");
@@ -44,7 +43,6 @@ function playGameColorStart() {
     gameStatisticTimeAvgInMilliseconds = 0;
     gameStatisticTimeSumInMilliseconds = 0;
     gameStatisticTimeMaxInMilliseconds = 0;
-
     countedClicksNumber++;
 }
 

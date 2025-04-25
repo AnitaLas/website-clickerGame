@@ -54,7 +54,7 @@ function removeElementsById(elementId) {
 function isElementsExistById(elementId) {
     let element = document.getElementById(elementId);
     let result = false;
-    if(element !== null)
+    if (element !== null)
         result = true;
     return result;
 }
@@ -67,7 +67,6 @@ function setElementTextById(elementId, text) {
     document.getElementById(elementId).innerHTML = text;
 }
 
-function setNumberAsString(number){
+function setNumberAsString(number) {
     return number.toString();
 }
-
