@@ -28,11 +28,18 @@
     grid-template-columns: 1fr;
 }
 
+#menuTitle{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
 .menuTitleText {
     margin: 0;
     padding: 0;
-    /*color: #FFDEADFF;*/
     color: #ac4a71;
+    /*color: #243D25;*/
+    /*color: #EA97AD;*/
     opacity: 0.9;
     font-size: 2.1rem;
     font-weight: 400;

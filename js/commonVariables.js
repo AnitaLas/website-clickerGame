@@ -31,7 +31,7 @@ const gameFiledButtonMainStart = "gameFiledButtonMainStart";
 const buttonMainStart = "buttonMainStart";
 const functionNameOnclickPlayGameColorStart = "playGameColorStart";
 // const containerGameFiledButtonsMainStartTextDisplay = "START";
-const containerGameFiledButtonsMainStartTextDisplay = "<i class=\"fa-solid fa-play\"></i>";
+const containerGameFiledButtonsMainStartTextDisplay = "<i class=\"fa-solid fa-play fa-playGameAction\"></i>";
 const gameFiledButtonMain = "gameFiledButtonMain";
 
 const containerGameFiledButtonsMainStop = "containerGameFiled-buttonsMainStop";
@@ -40,8 +40,10 @@ const buttonMainStop = "buttonMainStop";
 const functionNameOnclickPlayGameColorStop = "playGameColorStop";
 const functionNameOnclickPlayGameColorContinue = "playGameColorContinue";
 // const containerGameFiledButtonsMainStopTextDisplay = "STOP";
-const containerGameFiledButtonsMainStopTextDisplay = "<i class=\"fa-solid fa-stop\"></i>";
-const containerGameFiledButtonsMainContinueTextDisplay = "CONTINUE";
+const containerGameFiledButtonsMainStopTextDisplay = "<i class=\"fa-solid fa-stop fa-playGameAction\"></i>";
+// const containerGameFiledButtonsMainStopTextDisplay = "<i class=\"fa-solid fa-pause fa-playGameAction\"></i>";
+// const containerGameFiledButtonsMainContinueTextDisplay = "CONTINUE";
+const containerGameFiledButtonsMainContinueTextDisplay = "<i class=\"fa-solid fa-forward fa-playGameAction\"></i>";
 
 const containerGameFiledStatisticsTime = "containerGameFiled-statisticsTime";
 const containerGameFiledStatisticsTimeParts = "containerGameFiled-statisticsTimeParts";
@@ -168,47 +170,3 @@ const containerFooterAuthor = "containerFooterAuthor";
 const footerAuthor = "footerAuthor";
 const footerAuthorData = "Copyright &copy 2025 Anita Łaszczak";
 const sectionFooter = "sectionFooter";
-
-
-
-
-
-
-
-// let timeoutSetFunctionOnclickPlayGameColor;
-//
-// function runTimeoutSetFunctionOnclickPlayGameColor(){
-//     timeoutSetFunctionOnclickPlayGameColor =  setTimeout(setFunctionOnclickPlayGameColor,  gameRandomTimeToChangeColor);
-// }
-//
-// function clearTimeoutSetFunctionOnclickPlayGameColor(){
-//     clearTimeout(timeoutSetFunctionOnclickPlayGameColor);
-// }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

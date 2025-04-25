@@ -1,13 +1,14 @@
 const maxClicksNumber = 5;
 let countedClicksNumber = 0;
 
-let gameRandomColor = "white";
+let gameRandomColor = "#ac4a71";
 let gameRandomTimeToChangeColor = 1;
 const gameRandomTimeMaxSecond = 10;
 let reactionTime = 0;
 let reactionTimeTimeout = 0;
 let startTime = 0;
 let endTime = 0;
+let gameTimeTimeoutStart;
 
 let gameStatisticTimeMinInMilliseconds = 1300000;
 let gameStatisticTimeAvgInMilliseconds = 0;
@@ -20,7 +21,9 @@ let fraudCountedNumber = 0;
 let fraudCountedSumNumber = 0;
 let fraudCountRoundIndex = 0;
 
-const fileWithColors = "pink, orange, yellow, blue, red, darkslategrey, greenyellow, palegreen,";
+// const fileWithColors = "pink, orange, yellow, blue, red, darkslategrey, greenyellow, palegreen,";
+const fileWithColors = "#1A1A1D, #3B1C32, #6A1E55, #A64D79, #251B37, #372948, #FFCACA, #FFECEF, " +
+    "#F3F2DA, #4E8D7C, #045762, #EA97AD, #FAD9E6, #E4AEC5, #5F7464, #243D25";
 const colors = fileWithColors.split(", ");
 
 let gameColors = colors;
@@ -45,21 +48,20 @@ function playGameColorStart() {
     countedClicksNumber++;
 }
 
-
 function playGameColorStop() {
-    // clearTimeoutSetGameButtonPlayColor();
-    // clearTimeoutSetFunctionOnclickPlayGameColor();
-    // clearTimeoutSetStartTime();
     clearTimeoutButtonStop();
-    setConfigurationGameContinue();
-
-
-    // fraudCountedNumber = 0;
-    // fraudCountRoundIndex = 0;
+    // [extension V1] button continue is active -> // setConfigurationGameStop();
+    setConfigurationGameStop();
+    // [extension V1] do not even think of removing this function !!!
+    // setConfigurationGameContinue();
 }
 
-let gameTimeTimeoutStart;
+function setConfigurationGameStop() {
+    removeFunctionOnclick(gameFiledButtonPlay);
+    removeFunctionOnclick(buttonMainStop);
+}
 
+// [extension V1] do not even think of removing this function !!!
 function setConfigurationGameContinue() {
     let functionName = document.getElementById(gameFiledButtonPlay).getAttribute('onclick');
     if (functionName !== null)
@@ -68,7 +70,6 @@ function setConfigurationGameContinue() {
     setFunctionOnclick(buttonMainStop, functionNameOnclickPlayGameColorContinue);
     setElementTextById(buttonMainStop, containerGameFiledButtonsMainContinueTextDisplay);
     removeFunctionOnclick(gameFiledButtonPlay);
-
     setEndTime();
     setClickReactionTimeTimeout();
 
@@ -76,6 +77,7 @@ function setConfigurationGameContinue() {
     endTime = 0;
 }
 
+// [extension V1] do not even think of removing this function !!!
 function playGameColorContinue() {
     setFunctionOnclick(buttonMainStop, functionNameOnclickPlayGameColorStop);
     setElementTextById(buttonMainStop, containerGameFiledButtonsMainStopTextDisplay);
@@ -83,12 +85,8 @@ function playGameColorContinue() {
     if (currentFunctionOnclickName !== undefined)
         setFunctionOnclick(gameFiledButtonPlay, currentFunctionOnclickName);
 
-    // gameTimeTimeoutStart - minus time from the begging
+    // ???
     gameRandomTimeToChangeColor = gameRandomTimeToChangeColor - gameTimeTimeoutStart;
-
-    // runTimeoutSetGameButtonPlayColor();
-    // runTimeoutSetFunctionOnclickPlayGameColor();
-    // runTimeoutSetStartTime();
     runTimeoutButtonStop();
     gameTimeTimeoutStart = 0;
 }
@@ -100,10 +98,8 @@ function getRandomNumber(maxNumber) {
 function setGameRandomColor() {
     let randomNumber = getRandomNumber(colors.length);
     let tempColor = gameRandomColor;
-
     gameRandomColor = colors[randomNumber];
-    console.log("COLOR: " + gameRandomColor);
-
+    // console.log("COLOR: " + gameRandomColor);
     colors[randomNumber] = tempColor;
 }
 
@@ -127,7 +123,6 @@ function clearTimeoutButtonStop() {
     clearTimeout(timeoutButtonStop);
 }
 
-// ---
 function setFunctionOnclickPlayGameColorClickBeforeNewRound() {
     setFunctionOnclick(gameFiledButtonPlay, functionNameOnclickPlayGameColorClickBeforeNewRound);
 }
@@ -139,7 +134,7 @@ function setGameButtonStartColor() {
 function setGameRandomTimeInMillisecondsToChangeColor() {
     let randomSecond = getRandomNumber(gameRandomTimeMaxSecond) + 1;
     gameRandomTimeToChangeColor = randomSecond * 1000;
-    console.log("BREAK TIME: " + gameRandomTimeToChangeColor);
+    // console.log("BREAK TIME: " + gameRandomTimeToChangeColor);
 }
 
 function getGameStatisticTimeInSeconds(timeInMilliseconds) {
@@ -205,7 +200,7 @@ function setGameStatisticTimeInMilliseconds() {
 
 function playClickerGame() {
 
-    if(countedClicksNumber === 1)
+    if (countedClicksNumber === 1)
         createContainersGameFiledStatistics();
 
     setEndTime();
@@ -260,20 +255,13 @@ function setGameConfiguration() {
 
     setGameRandomColor();
     setGameRandomTimeInMillisecondsToChangeColor();
-
-    // runTimeoutSetStartTime();
     setGameTimeTimeoutStart();
     setFunctionOnclickPlayGameColorClickBeforeNewRound();
-
-    // runTimeoutSetGameButtonPlayColor();
-    // runTimeoutSetFunctionOnclickPlayGameColor();
-
-    runTimeoutButtonStop()
+    runTimeoutButtonStop();
 }
 
 function createContainerStatisticsFraudCountPerRound() {
-    let parentElement = document.getElementById(containerGameFiledStatisticsFraudCountGamePlay)
-
+    let parentElement = document.getElementById(containerGameFiledStatisticsFraudCountGamePlay);
     let fraudNumber = maxClicksNumber;
 
     let rowStart = 1;
@@ -344,10 +332,8 @@ function setGameStatisticFraudCountedNumber() {
 }
 
 function setGameStatisticFraudCountedSumNumber() {
-    // document.getElementById(statisticsFraudBestGamePlay).innerHTML += fraudCountedSumNumber;
     document.getElementById(statisticsFraudBestGamePlay).innerHTML = fraudCountedSumNumber;
 }
-
 
 function createContainersGameFiledStatistics() {
     createGameFieldStatistics();
@@ -366,8 +352,3 @@ function createContainersGameFiledButtonsMainStop() {
 function removeContainersGameFiledButtonsMainStop() {
     removeElementsById(containerGameFiledButtonsMainStop);
 }
-
-
-
-
-
