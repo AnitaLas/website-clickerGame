@@ -45,6 +45,21 @@ const containerGameFiledButtonsMainStopTextDisplay = "<i class=\"fa-solid fa-sto
 // const containerGameFiledButtonsMainContinueTextDisplay = "CONTINUE";
 const containerGameFiledButtonsMainContinueTextDisplay = "<i class=\"fa-solid fa-forward fa-playGameAction\"></i>";
 
+// statistic time
+const timeKindMin = "Min";
+const timeKindAvg = "Avg";
+const timeKindMax = "Max";
+const timeKindBest = "Best";
+
+const containerGameFiledStatisticsTimeKind = "containerGameFiled-statisticsTimeKind";
+const containerGameFiledStatisticsTimeKindParts = "containerGameFiled-statisticsTimeKindParts";
+const containerGameFiledStatisticsTimeKindText = "containerGameFiled-statisticsTimeKindText";
+const containerGameFiledStatisticsTimeKindGamePlay = "containerGameFiled-statisticsTimeKindGamePlay";
+const gameFiledStatisticsTimeKindGamePlay = "containerGameFiled-statisticsTimeKindGamePlay";
+const gameFiledStatisticsTimeKindText = "gameFiledStatisticsTimeKindText";
+const statisticsTimeKindGamePlay = "statisticsTimeKindGamePlay";
+const statisticsTimeKindText = "statisticsTimeKindText";
+const statisticsTimeKindGamePlayDisplay = "0.0000 ??? ";
 const containerGameFiledStatisticsTime = "containerGameFiled-statisticsTime";
 const containerGameFiledStatisticsTimeParts = "containerGameFiled-statisticsTimeParts";
 
@@ -109,7 +124,7 @@ const statisticsTimeMinText = "statisticsTimeMinText";
 // const statisticsTimeMinTextDisplay = "min";
 const statisticsTimeMinTextDisplay = "<i class=\"fa-solid fa-clock fa-timeMin\"></i> &nbsp min";
 
-// fraud
+// statistic fraud
 const containerGameFiledStatisticsFraud = "containerGameFiled-statisticsFraud";
 const containerGameFiledStatisticsFraudParts = "containerGameFiled-statisticsFraudParts";
 
@@ -162,6 +177,22 @@ const menuTitle = "menuTitle";
 const menuTitleText = "menuTitleText";
 const menuTitleTextDisplay = "Clicker Game";
 
+const containerMenuGameConfiguration = "containerMenuGameConfiguration";
+const containerMenuGameConfigurationParts = "containerMenuGameConfigurationParts";
+const menuGameConfigurationDisplay = "menuGameConfigurationDisplay";
+const containerMenuGameConfigurationText = "containerMenuGameConfigurationText";
+const menuGameConfigurationText = "menuGameConfigurationText";
+const menuGameConfigurationTextDisplay = "<i class=\"fa-solid fa-screwdriver-wrench\"></i>";
+const containerMenuGameConfigurationGameKind = "containerMenuGameConfigurationGameKind";
+const containerMenuGameConfigurationClickNumber = "containerMenuGameConfigurationClickNumber";
+const containerMenuGameConfigurationClickNumberParts = "containerMenuGameConfigurationClickNumberParts";
+const containerMenuGameConfigurationClickNumberRow0 = "containerMenuGameConfigurationClickNumber-row0";
+const containerMenuGameConfigurationClickNumberPartsRow0 = "containerMenuGameConfigurationClickNumberParts-row0";
+const containerMenuGameConfigurationClickNumberRow1 = "containerMenuGameConfigurationClickNumber-row1";
+const containerMenuGameConfigurationClickNumberPartsRow1 = "containerMenuGameConfigurationClickNumberParts-row1";
+const containerMenuGameConfigurationClickNumberPartsRow = "containerMenuGameConfigurationClickNumberParts-row";
+const menuGameConfigurationClickNumberTextDisplay = "<i class=\"fa-solid fa-computer-mouse\"></i> &nbsp &nbsp"
+
 //footer
 const containerSectionFooter = "containerSectionFooter";
 const containerMainFooter = "containerMainFooter";
@@ -170,20 +201,4 @@ const footerAuthor = "footerAuthor";
 const footerAuthorData = "Copyright &copy 2025 Anita Łaszczak";
 const sectionFooter = "sectionFooter";
 
-
-// test
-const timeKindMin = "Min";
-const timeKindAvg = "Avg";
-const timeKindMax = "Max";
-const timeKindBest = "Best";
-
-const containerGameFiledStatisticsTimeKind = "containerGameFiled-statisticsTimeKind";
-const containerGameFiledStatisticsTimeKindParts = "containerGameFiled-statisticsTimeKindParts";
-const containerGameFiledStatisticsTimeKindText = "containerGameFiled-statisticsTimeKindText";
-const containerGameFiledStatisticsTimeKindGamePlay = "containerGameFiled-statisticsTimeKindGamePlay";
-const gameFiledStatisticsTimeKindGamePlay = "containerGameFiled-statisticsTimeKindGamePlay";
-const gameFiledStatisticsTimeKindText = "gameFiledStatisticsTimeKindText";
-const statisticsTimeKindGamePlay = "statisticsTimeKindGamePlay";
-const statisticsTimeKindText = "statisticsTimeKindText";
-const statisticsTimeKindGamePlayDisplay = "0.0000 ??? ";
 

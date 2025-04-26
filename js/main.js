@@ -1,3 +1,5 @@
+let clickNumberButton = 1;
+
 function setContainerMainSection() {
     createElementDiv(containerMain, containerMainSectionMenu);
     createElementDiv(containerMain, containerMainSectionActions);
@@ -17,6 +19,7 @@ function createMenu() {
     createContainerMainMenu();
     createContainerMainMenuParts();
     createContainerManuTitle();
+    createContainerManuConfiguration();
 }
 
 // menu
@@ -35,6 +38,109 @@ function createContainerManuTitle() {
     createElementP(menuTitle, menuTitleText);
     setElementClassName(menuTitleText, menuTitleText);
     setElementTextById(menuTitleText, menuTitleTextDisplay);
+}
+
+function createContainerManuConfiguration() {
+    createMainContainerManuConfiguration();
+    createContainerMenuConfigurationText();
+    // createContainerMenuConfigurationGameKind();
+    createContainerMenuConfigurationClickNumber();
+}
+
+function createMainContainerManuConfiguration() {
+    createElementDivWithTheSameValueForIdAndClassName(containerMenuMainParts, containerMenuGameConfiguration);
+    createElementDiv(containerMenuGameConfiguration, containerMenuGameConfigurationParts);
+}
+
+function createContainerMenuConfigurationText(){
+    createElementDiv(containerMenuGameConfigurationParts, containerMenuGameConfigurationText);
+    createElementDiv(containerMenuGameConfigurationText, menuGameConfigurationText);
+    setElementClassName(menuGameConfigurationText, menuGameConfigurationDisplay);
+    setElementTextById(menuGameConfigurationText, menuGameConfigurationTextDisplay);
+}
+
+function createContainerMenuConfigurationGameKind(){
+    createElementDiv(containerMenuGameConfigurationParts, containerMenuGameConfigurationGameKind);
+}
+
+function createContainerMenuConfigurationClickNumber(){
+    createElementDiv(containerMenuGameConfigurationParts, containerMenuGameConfigurationClickNumber);
+    createElementDiv(containerMenuGameConfigurationClickNumber, containerMenuGameConfigurationClickNumberParts);
+    createContainersMenuConfigurationClickNumberButton();
+}
+
+
+function createContainersMenuConfigurationClickNumberButton(){
+    createContainersMenuConfigurationClickNumberRows();
+    createContainersMenuConfigurationClickNumberAllRows();
+}
+
+function createContainersMenuConfigurationClickNumberRows(){
+    createElementDiv(containerMenuGameConfigurationClickNumberParts, containerMenuGameConfigurationClickNumberRow0);
+    createElementDiv(containerMenuGameConfigurationClickNumberRow0, containerMenuGameConfigurationClickNumberPartsRow0);
+    createElementDiv(containerMenuGameConfigurationClickNumberParts, containerMenuGameConfigurationClickNumberRow1);
+    createElementDiv(containerMenuGameConfigurationClickNumberRow1, containerMenuGameConfigurationClickNumberPartsRow1);
+}
+
+function  createContainersMenuConfigurationClickNumberAllRows(){
+    for(let rowNumber =0; rowNumber<2; rowNumber++){
+        createContainersMenuConfigurationClickNumberPerRow(rowNumber);
+    }
+}
+
+function createContainersMenuConfigurationClickNumberPerRow(rowNumber) {
+    // console.log("rowNumber: " +rowNumber);
+    let parentElement = document.getElementById(containerMenuGameConfigurationClickNumberPartsRow+rowNumber);
+
+    // console.log("containerMenuGameConfigurationClickNumberRow: " + containerMenuGameConfigurationClickNumberRow+rowNumber);
+    let clicksNumberPerRow = 5;
+
+    let rowStart = 1;
+    let columnStart = 1;
+    let rowEnd = 2;
+    let columnEnd = 2;
+
+    parentElement.style.display = "grid";
+    parentElement.style.backgroundColor = "black";
+    parentElement.style.gridRow = setNumberAsString(rowStart);
+    parentElement.style.gridColumn = setNumberAsString(columnStart);
+    parentElement.style.gridRowEnd = setNumberAsString(rowEnd);
+    parentElement.style.gridColumnEnd = setNumberAsString(columnEnd);
+    parentElement.style.gridTemplateRows = " repeat(1, 2fr 6fr 2fr) ";
+    parentElement.style.gridTemplateColumns = " repeat(" + clicksNumberPerRow + ", 1fr 100fr 1fr)";
+
+    let rowChildStart = 2;
+    let columnChildStart = 2;
+    let rowChildEnd = 3;
+    let columnChildEnd = 3;
+
+    for (let i = 0; i < clicksNumberPerRow; i++) {
+
+        let newDiv = document.createElement("div");
+        parentElement.append(newDiv);
+        newDiv.style.display = "grid";
+        newDiv.classList.add(fraudCountRound);
+        newDiv.classList.add(fraudCountRoundUpdateNumber);
+        newDiv.style.gridRow = setNumberAsString(rowChildStart);
+        newDiv.style.gridColumn = setNumberAsString(columnChildStart);
+        newDiv.style.gridRowEnd = setNumberAsString(rowChildEnd);
+        newDiv.style.gridColumnEnd = setNumberAsString(columnChildEnd);
+        newDiv.style.gridTemplateRows = "1fr";
+        newDiv.style.gridTemplateColumns = "1fr";
+        newDiv.classList.add(fraudCountRound);
+
+        let newDivChild = document.createElement("div");
+        newDiv.append(newDivChild);
+        newDivChild.innerHTML = menuGameConfigurationClickNumberTextDisplay + setNumberAsString(clickNumberButton);
+        newDivChild.setAttribute("id", fraudCountRoundGamePlayUpdateNumber + i);
+        newDivChild.classList.add(commonGameFiledDisplay);
+        newDivChild.classList.add(commonStaticText);
+        newDivChild.classList.add(fraudCountRoundCommon);
+
+        columnChildStart += 3;
+        columnChildEnd += 3;
+        clickNumberButton += 1;
+    }
 }
 
 // main section
@@ -99,7 +205,7 @@ function createGameFieldPButtonMainStop() {
     }
 }
 
-function createVariableName(baseVariableName, partToSwitch){
+function createVariableName(baseVariableName, partToSwitch) {
     let timeKind = "Kind";
     return baseVariableName.replace(timeKind, partToSwitch);
 }
@@ -149,121 +255,18 @@ function createContainerTime(timeKind, newStatisticsTimeKindTextDisplay) {
 }
 
 function createContainerTimeBest() {
-    // // container main
-    // createElementDiv(containerGameFiledStatisticsTimeParts, containerGameFiledStatisticsTimeBest);
-    // createElementDiv(containerGameFiledStatisticsTimeBest, containerGameFiledStatisticsTimeBestParts);
-    // setElementClassName(containerGameFiledStatisticsTimeBestParts, containerGameFiledCommonParts);
-    //
-    // // game play - time update
-    // createElementDiv(containerGameFiledStatisticsTimeBestParts, containerGameFiledStatisticsTimeBestGamePlay);
-    // setElementClassName(containerGameFiledStatisticsTimeBestGamePlay, containerGameFiledCommonGamePlayUpdate);
-    // createElementDiv(containerGameFiledStatisticsTimeBestGamePlay, gameFiledStatisticsTimeBestGamePlay);
-    // setElementClassName(gameFiledStatisticsTimeBestGamePlay, commonGameFiledDisplay);
-    // createElementDiv(gameFiledStatisticsTimeBestGamePlay, statisticsTimeBestGamePlay);
-    // setElementClassName(statisticsTimeBestGamePlay, commonGamePlayTextUpdate);
-    // setElementClassName(statisticsTimeBestGamePlay, statisticsTimeBestGamePlay);
-    // setElementTextById(statisticsTimeBestGamePlay, statisticsTimeBestGamePlayDisplay);
-    //
-    // // text - static
-    // createElementDiv(containerGameFiledStatisticsTimeBestParts, containerGameFiledStatisticsTimeBestText);
-    // setElementClassName(containerGameFiledStatisticsTimeBestText, containerGameFiledCommonStaticText);
-    // createElementDiv(containerGameFiledStatisticsTimeBestText, gameFiledStatisticsTimeBestText);
-    // setElementClassName(gameFiledStatisticsTimeBestText, commonGameFiledDisplay);
-    // createElementDiv(gameFiledStatisticsTimeBestText, statisticsTimeBestText);
-    // setElementClassName(statisticsTimeBestText, commonStaticText);
-    // setElementTextById(statisticsTimeBestText, statisticsTimeBestTextDisplay);
-
-    // let timeKind = timeKindBest;
     createContainerTime(timeKindBest, statisticsTimeBestTextDisplay);
 }
 
 function createContainerTimeMin() {
-    // // container main
-    // createElementDiv(containerGameFiledStatisticsTimeParts, containerGameFiledStatisticsTimeMin);
-    // createElementDiv(containerGameFiledStatisticsTimeMin, containerGameFiledStatisticsTimeMinParts);
-    // setElementClassName(containerGameFiledStatisticsTimeMinParts, containerGameFiledCommonParts);
-    //
-    // // game play - time update
-    // createElementDiv(containerGameFiledStatisticsTimeMinParts, containerGameFiledStatisticsTimeMinGamePlay);
-    // setElementClassName(containerGameFiledStatisticsTimeMinGamePlay, containerGameFiledCommonGamePlayUpdate);
-    // createElementDiv(containerGameFiledStatisticsTimeMinGamePlay, gameFiledStatisticsTimeMinGamePlay);
-    // setElementClassName(gameFiledStatisticsTimeMinGamePlay, commonGameFiledDisplay);
-    // createElementDiv(gameFiledStatisticsTimeMinGamePlay, statisticsTimeMinGamePlay);
-    // setElementClassName(statisticsTimeMinGamePlay, commonGamePlayTextUpdate);
-    // setElementClassName(statisticsTimeMinGamePlay, commonGamePlayUpdateTextTime);
-    // setElementClassName(statisticsTimeMinGamePlay, statisticsTimeMinGamePlay);
-    // setElementTextById(statisticsTimeMinGamePlay, statisticsTimeMinGamePlayDisplay);
-    //
-    // // text - static
-    // createElementDiv(containerGameFiledStatisticsTimeMinParts, containerGameFiledStatisticsTimeMinText);
-    // setElementClassName(containerGameFiledStatisticsTimeMinText, containerGameFiledCommonStaticText);
-    // createElementDiv(containerGameFiledStatisticsTimeMinText, gameFiledStatisticsTimeMinText);
-    // setElementClassName(gameFiledStatisticsTimeMinText, commonGameFiledDisplay);
-    // createElementDiv(gameFiledStatisticsTimeMinText, statisticsTimeMinText);
-    // setElementClassName(statisticsTimeMinText, commonStaticText);
-    // setElementClassName(statisticsTimeMinText, statisticsTimeMinText);
-    // setElementTextById(statisticsTimeMinText, statisticsTimeMinTextDisplay);
-
     createContainerTime(timeKindMin, statisticsTimeMinTextDisplay);
 }
 
 function createContainerTimeAvg() {
-    // // container main
-    // createElementDiv(containerGameFiledStatisticsTimeParts, containerGameFiledStatisticsTimeAvg);
-    // createElementDiv(containerGameFiledStatisticsTimeAvg, containerGameFiledStatisticsTimeAvgParts);
-    // setElementClassName(containerGameFiledStatisticsTimeAvgParts, containerGameFiledCommonParts);
-    //
-    // // game play - time update
-    // createElementDiv(containerGameFiledStatisticsTimeAvgParts, containerGameFiledStatisticsTimeAvgGamePlay);
-    // setElementClassName(containerGameFiledStatisticsTimeAvgGamePlay, containerGameFiledCommonGamePlayUpdate);
-    // createElementDiv(containerGameFiledStatisticsTimeAvgGamePlay, gameFiledStatisticsTimeAvgGamePlay);
-    // setElementClassName(gameFiledStatisticsTimeAvgGamePlay, commonGameFiledDisplay);
-    // createElementDiv(gameFiledStatisticsTimeAvgGamePlay, statisticsTimeAvgGamePlay);
-    // setElementClassName(statisticsTimeAvgGamePlay, commonGamePlayTextUpdate);
-    // setElementClassName(statisticsTimeAvgGamePlay, commonGamePlayUpdateTextTime);
-    // setElementClassName(statisticsTimeAvgGamePlay, statisticsTimeAvgGamePlay);
-    // setElementTextById(statisticsTimeAvgGamePlay, statisticsTimeAvgGamePlayDisplay);
-    //
-    // // text - static
-    // createElementDiv(containerGameFiledStatisticsTimeAvgParts, containerGameFiledStatisticsTimeAvgText);
-    // setElementClassName(containerGameFiledStatisticsTimeAvgText, containerGameFiledCommonStaticText);
-    // createElementDiv(containerGameFiledStatisticsTimeAvgText, gameFiledStatisticsTimeAvgText);
-    // setElementClassName(gameFiledStatisticsTimeAvgText, commonGameFiledDisplay);
-    // createElementDiv(gameFiledStatisticsTimeAvgText, statisticsTimeAvgText);
-    // setElementClassName(statisticsTimeAvgText, commonStaticText);
-    // setElementClassName(statisticsTimeAvgText, statisticsTimeAvgText);
-    // setElementTextById(statisticsTimeAvgText, statisticsTimeAvgTextDisplay);
-
     createContainerTime(timeKindAvg, statisticsTimeAvgTextDisplay);
 }
 
 function createContainerTimeMax() {
-    // // container main
-    // createElementDiv(containerGameFiledStatisticsTimeParts, containerGameFiledStatisticsTimeMax);
-    // createElementDiv(containerGameFiledStatisticsTimeMax, containerGameFiledStatisticsTimeMaxParts);
-    // setElementClassName(containerGameFiledStatisticsTimeMaxParts, containerGameFiledCommonParts);
-    //
-    // // game play - time update
-    // createElementDiv(containerGameFiledStatisticsTimeMaxParts, containerGameFiledStatisticsTimeMaxGamePlay);
-    // setElementClassName(containerGameFiledStatisticsTimeMaxGamePlay, containerGameFiledCommonGamePlayUpdate);
-    // createElementDiv(containerGameFiledStatisticsTimeMaxGamePlay, gameFiledStatisticsTimeMaxGamePlay);
-    // setElementClassName(gameFiledStatisticsTimeMaxGamePlay, commonGameFiledDisplay);
-    // createElementDiv(gameFiledStatisticsTimeMaxGamePlay, statisticsTimeMaxGamePlay);
-    // setElementClassName(statisticsTimeMaxGamePlay, commonGamePlayTextUpdate);
-    // setElementClassName(statisticsTimeMaxGamePlay, commonGamePlayUpdateTextTime);
-    // setElementClassName(statisticsTimeMaxGamePlay, statisticsTimeMaxGamePlay);
-    // setElementTextById(statisticsTimeMaxGamePlay, statisticsTimeMaxGamePlayDisplay);
-    //
-    // // text - static
-    // createElementDiv(containerGameFiledStatisticsTimeMaxParts, containerGameFiledStatisticsTimeMaxText);
-    // setElementClassName(containerGameFiledStatisticsTimeMaxText, containerGameFiledCommonStaticText);
-    // createElementDiv(containerGameFiledStatisticsTimeMaxText, gameFiledStatisticsTimeMaxText);
-    // setElementClassName(gameFiledStatisticsTimeMaxText, commonGameFiledDisplay);
-    // createElementDiv(gameFiledStatisticsTimeMaxText, statisticsTimeMaxText);
-    // setElementClassName(statisticsTimeMaxText, commonStaticText);
-    // setElementClassName(statisticsTimeMaxText, statisticsTimeMaxText);
-    // setElementTextById(statisticsTimeMaxText, statisticsTimeMaxTextDisplay);
-
     createContainerTime(timeKindMax, statisticsTimeMaxTextDisplay);
 }
 
