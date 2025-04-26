@@ -59,8 +59,8 @@ function createContainerGameElements() {
     createMainContainerGameElements();
     createGameFieldPButtonPlay();
     createGameFieldPButtonMain();
-    // createGameFieldStatistics();
-    // createGameFieldStatisticsFraud();
+    createGameFieldStatistics();
+    createGameFieldStatisticsFraud();
 }
 
 function createGameFieldPButtonMain() {
@@ -99,119 +99,177 @@ function createGameFieldPButtonMainStop() {
     }
 }
 
-function createContainerTimeBestDescription() {
+function createVariableName(baseVariableName, partToSwitch){
+    let timeKind = "Kind";
+    return baseVariableName.replace(timeKind, partToSwitch);
+}
+
+function createContainerTime(timeKind, newStatisticsTimeKindTextDisplay) {
     // container main
-    createElementDiv(containerGameFiledStatisticsTimeParts, containerGameFiledStatisticsTimeBest);
-    createElementDiv(containerGameFiledStatisticsTimeBest, containerGameFiledStatisticsTimeBestParts);
-    setElementClassName(containerGameFiledStatisticsTimeBestParts, containerGameFiledCommonParts);
+    let newContainerGameFiledStatisticsTimeKind = createVariableName(containerGameFiledStatisticsTimeKind, timeKind);
+    createElementDiv(containerGameFiledStatisticsTimeParts, newContainerGameFiledStatisticsTimeKind);
+
+    let newContainerGameFiledStatisticsTimeKindParts = createVariableName(containerGameFiledStatisticsTimeKindParts, timeKind);
+    createElementDiv(newContainerGameFiledStatisticsTimeKind, newContainerGameFiledStatisticsTimeKindParts);
+    setElementClassName(newContainerGameFiledStatisticsTimeKindParts, containerGameFiledCommonParts);
+    setElementClassName(newContainerGameFiledStatisticsTimeKindParts, containerGameFiledCommonParts);
 
     // game play - time update
-    createElementDiv(containerGameFiledStatisticsTimeBestParts, containerGameFiledStatisticsTimeBestGamePlay);
-    setElementClassName(containerGameFiledStatisticsTimeBestGamePlay, containerGameFiledCommonGamePlayUpdate);
-    createElementDiv(containerGameFiledStatisticsTimeBestGamePlay, gameFiledStatisticsTimeBestGamePlay);
-    setElementClassName(gameFiledStatisticsTimeBestGamePlay, commonGameFiledDisplay);
-    createElementDiv(gameFiledStatisticsTimeBestGamePlay, statisticsTimeBestGamePlay);
-    setElementClassName(statisticsTimeBestGamePlay, commonGamePlayTextUpdate);
-    setElementClassName(statisticsTimeBestGamePlay, statisticsTimeBestGamePlay);
-    setElementTextById(statisticsTimeBestGamePlay, statisticsTimeBestGamePlayDisplay);
+    let newContainerGameFiledStatisticsTimeKindGamePlay = createVariableName(containerGameFiledStatisticsTimeKindGamePlay, timeKind);
+    createElementDiv(newContainerGameFiledStatisticsTimeKindParts, newContainerGameFiledStatisticsTimeKindGamePlay);
+    setElementClassName(newContainerGameFiledStatisticsTimeKindGamePlay, containerGameFiledCommonGamePlayUpdate);
+
+    let newGameFiledStatisticsTimeKindGamePlay = createVariableName(gameFiledStatisticsTimeKindGamePlay, timeKind);
+    createElementDiv(newContainerGameFiledStatisticsTimeKindGamePlay, newGameFiledStatisticsTimeKindGamePlay);
+    setElementClassName(newGameFiledStatisticsTimeKindGamePlay, commonGameFiledDisplay);
+
+    let newStatisticsTimeKindGamePlay = createVariableName(statisticsTimeKindGamePlay, timeKind);
+    createElementDiv(newGameFiledStatisticsTimeKindGamePlay, newStatisticsTimeKindGamePlay);
+    setElementClassName(createVariableName(newStatisticsTimeKindGamePlay, timeKind), commonGamePlayTextUpdate);
+    setElementClassName(createVariableName(newStatisticsTimeKindGamePlay, timeKind), commonGamePlayUpdateTextTime);
+    setElementClassName(createVariableName(newStatisticsTimeKindGamePlay, timeKind), newStatisticsTimeKindGamePlay);
+
+    let newStatisticsTimeKindGamePlayTextDisplay = createVariableName(statisticsTimeKindGamePlayDisplay, timeKind);
+    setElementTextById(createVariableName(newStatisticsTimeKindGamePlay, timeKind), newStatisticsTimeKindGamePlayTextDisplay);
 
     // text - static
-    createElementDiv(containerGameFiledStatisticsTimeBestParts, containerGameFiledStatisticsTimeBestText);
-    setElementClassName(containerGameFiledStatisticsTimeBestText, containerGameFiledCommonStaticText);
-    createElementDiv(containerGameFiledStatisticsTimeBestText, gameFiledStatisticsTimeBestText);
-    setElementClassName(gameFiledStatisticsTimeBestText, commonGameFiledDisplay);
-    createElementDiv(gameFiledStatisticsTimeBestText, statisticsTimeBestText);
-    setElementClassName(statisticsTimeBestText, commonStaticText);
-    setElementTextById(statisticsTimeBestText, statisticsTimeBestTextDisplay);
+    let newContainerGameFiledStatisticsTimeKindText = createVariableName(containerGameFiledStatisticsTimeKindText, timeKind);
+    createElementDiv(newContainerGameFiledStatisticsTimeKindParts, newContainerGameFiledStatisticsTimeKindText);
+    setElementClassName(newContainerGameFiledStatisticsTimeKindText, containerGameFiledCommonStaticText);
+
+    let newGameFiledStatisticsTimeKindText = createVariableName(gameFiledStatisticsTimeKindText, timeKind);
+    createElementDiv(newContainerGameFiledStatisticsTimeKindText, newGameFiledStatisticsTimeKindText);
+    setElementClassName(newGameFiledStatisticsTimeKindText, commonGameFiledDisplay);
+
+    let newStatisticsTimeKindText = createVariableName(statisticsTimeKindText, timeKind);
+    createElementDiv(newGameFiledStatisticsTimeKindText, newStatisticsTimeKindText);
+    setElementClassName(newStatisticsTimeKindText, commonStaticText);
+    setElementClassName(newStatisticsTimeKindText, newStatisticsTimeKindText);
+    setElementTextById(newStatisticsTimeKindText, newStatisticsTimeKindTextDisplay);
+}
+
+function createContainerTimeBest() {
+    // // container main
+    // createElementDiv(containerGameFiledStatisticsTimeParts, containerGameFiledStatisticsTimeBest);
+    // createElementDiv(containerGameFiledStatisticsTimeBest, containerGameFiledStatisticsTimeBestParts);
+    // setElementClassName(containerGameFiledStatisticsTimeBestParts, containerGameFiledCommonParts);
+    //
+    // // game play - time update
+    // createElementDiv(containerGameFiledStatisticsTimeBestParts, containerGameFiledStatisticsTimeBestGamePlay);
+    // setElementClassName(containerGameFiledStatisticsTimeBestGamePlay, containerGameFiledCommonGamePlayUpdate);
+    // createElementDiv(containerGameFiledStatisticsTimeBestGamePlay, gameFiledStatisticsTimeBestGamePlay);
+    // setElementClassName(gameFiledStatisticsTimeBestGamePlay, commonGameFiledDisplay);
+    // createElementDiv(gameFiledStatisticsTimeBestGamePlay, statisticsTimeBestGamePlay);
+    // setElementClassName(statisticsTimeBestGamePlay, commonGamePlayTextUpdate);
+    // setElementClassName(statisticsTimeBestGamePlay, statisticsTimeBestGamePlay);
+    // setElementTextById(statisticsTimeBestGamePlay, statisticsTimeBestGamePlayDisplay);
+    //
+    // // text - static
+    // createElementDiv(containerGameFiledStatisticsTimeBestParts, containerGameFiledStatisticsTimeBestText);
+    // setElementClassName(containerGameFiledStatisticsTimeBestText, containerGameFiledCommonStaticText);
+    // createElementDiv(containerGameFiledStatisticsTimeBestText, gameFiledStatisticsTimeBestText);
+    // setElementClassName(gameFiledStatisticsTimeBestText, commonGameFiledDisplay);
+    // createElementDiv(gameFiledStatisticsTimeBestText, statisticsTimeBestText);
+    // setElementClassName(statisticsTimeBestText, commonStaticText);
+    // setElementTextById(statisticsTimeBestText, statisticsTimeBestTextDisplay);
+
+    // let timeKind = timeKindBest;
+    createContainerTime(timeKindBest, statisticsTimeBestTextDisplay);
 }
 
 function createContainerTimeMin() {
-    // container main
-    createElementDiv(containerGameFiledStatisticsTimeParts, containerGameFiledStatisticsTimeMin);
-    createElementDiv(containerGameFiledStatisticsTimeMin, containerGameFiledStatisticsTimeMinParts);
-    setElementClassName(containerGameFiledStatisticsTimeMinParts, containerGameFiledCommonParts);
+    // // container main
+    // createElementDiv(containerGameFiledStatisticsTimeParts, containerGameFiledStatisticsTimeMin);
+    // createElementDiv(containerGameFiledStatisticsTimeMin, containerGameFiledStatisticsTimeMinParts);
+    // setElementClassName(containerGameFiledStatisticsTimeMinParts, containerGameFiledCommonParts);
+    //
+    // // game play - time update
+    // createElementDiv(containerGameFiledStatisticsTimeMinParts, containerGameFiledStatisticsTimeMinGamePlay);
+    // setElementClassName(containerGameFiledStatisticsTimeMinGamePlay, containerGameFiledCommonGamePlayUpdate);
+    // createElementDiv(containerGameFiledStatisticsTimeMinGamePlay, gameFiledStatisticsTimeMinGamePlay);
+    // setElementClassName(gameFiledStatisticsTimeMinGamePlay, commonGameFiledDisplay);
+    // createElementDiv(gameFiledStatisticsTimeMinGamePlay, statisticsTimeMinGamePlay);
+    // setElementClassName(statisticsTimeMinGamePlay, commonGamePlayTextUpdate);
+    // setElementClassName(statisticsTimeMinGamePlay, commonGamePlayUpdateTextTime);
+    // setElementClassName(statisticsTimeMinGamePlay, statisticsTimeMinGamePlay);
+    // setElementTextById(statisticsTimeMinGamePlay, statisticsTimeMinGamePlayDisplay);
+    //
+    // // text - static
+    // createElementDiv(containerGameFiledStatisticsTimeMinParts, containerGameFiledStatisticsTimeMinText);
+    // setElementClassName(containerGameFiledStatisticsTimeMinText, containerGameFiledCommonStaticText);
+    // createElementDiv(containerGameFiledStatisticsTimeMinText, gameFiledStatisticsTimeMinText);
+    // setElementClassName(gameFiledStatisticsTimeMinText, commonGameFiledDisplay);
+    // createElementDiv(gameFiledStatisticsTimeMinText, statisticsTimeMinText);
+    // setElementClassName(statisticsTimeMinText, commonStaticText);
+    // setElementClassName(statisticsTimeMinText, statisticsTimeMinText);
+    // setElementTextById(statisticsTimeMinText, statisticsTimeMinTextDisplay);
 
-    // game play - time update
-    createElementDiv(containerGameFiledStatisticsTimeMinParts, containerGameFiledStatisticsTimeMinGamePlay);
-    setElementClassName(containerGameFiledStatisticsTimeMinGamePlay, containerGameFiledCommonGamePlayUpdate);
-    createElementDiv(containerGameFiledStatisticsTimeMinGamePlay, gameFiledStatisticsTimeMinGamePlay);
-    setElementClassName(gameFiledStatisticsTimeMinGamePlay, commonGameFiledDisplay);
-    createElementDiv(gameFiledStatisticsTimeMinGamePlay, statisticsTimeMinGamePlay);
-    setElementClassName(statisticsTimeMinGamePlay, commonGamePlayTextUpdate);
-    setElementClassName(statisticsTimeMinGamePlay, commonGamePlayUpdateTextTime);
-    setElementClassName(statisticsTimeMinGamePlay, statisticsTimeMinGamePlay);
-    setElementTextById(statisticsTimeMinGamePlay, statisticsTimeMinGamePlayDisplay);
-
-    // text - static
-    createElementDiv(containerGameFiledStatisticsTimeMinParts, containerGameFiledStatisticsTimeMinText);
-    setElementClassName(containerGameFiledStatisticsTimeMinText, containerGameFiledCommonStaticText);
-    createElementDiv(containerGameFiledStatisticsTimeMinText, gameFiledStatisticsTimeMinText);
-    setElementClassName(gameFiledStatisticsTimeMinText, commonGameFiledDisplay);
-    createElementDiv(gameFiledStatisticsTimeMinText, statisticsTimeMinText);
-    setElementClassName(statisticsTimeMinText, commonStaticText);
-    setElementClassName(statisticsTimeMinText, statisticsTimeMinText);
-    setElementTextById(statisticsTimeMinText, statisticsTimeMinTextDisplay);
+    createContainerTime(timeKindMin, statisticsTimeMinTextDisplay);
 }
 
 function createContainerTimeAvg() {
-    // container main
-    createElementDiv(containerGameFiledStatisticsTimeParts, containerGameFiledStatisticsTimeAvg);
-    createElementDiv(containerGameFiledStatisticsTimeAvg, containerGameFiledStatisticsTimeAvgParts);
-    setElementClassName(containerGameFiledStatisticsTimeAvgParts, containerGameFiledCommonParts);
+    // // container main
+    // createElementDiv(containerGameFiledStatisticsTimeParts, containerGameFiledStatisticsTimeAvg);
+    // createElementDiv(containerGameFiledStatisticsTimeAvg, containerGameFiledStatisticsTimeAvgParts);
+    // setElementClassName(containerGameFiledStatisticsTimeAvgParts, containerGameFiledCommonParts);
+    //
+    // // game play - time update
+    // createElementDiv(containerGameFiledStatisticsTimeAvgParts, containerGameFiledStatisticsTimeAvgGamePlay);
+    // setElementClassName(containerGameFiledStatisticsTimeAvgGamePlay, containerGameFiledCommonGamePlayUpdate);
+    // createElementDiv(containerGameFiledStatisticsTimeAvgGamePlay, gameFiledStatisticsTimeAvgGamePlay);
+    // setElementClassName(gameFiledStatisticsTimeAvgGamePlay, commonGameFiledDisplay);
+    // createElementDiv(gameFiledStatisticsTimeAvgGamePlay, statisticsTimeAvgGamePlay);
+    // setElementClassName(statisticsTimeAvgGamePlay, commonGamePlayTextUpdate);
+    // setElementClassName(statisticsTimeAvgGamePlay, commonGamePlayUpdateTextTime);
+    // setElementClassName(statisticsTimeAvgGamePlay, statisticsTimeAvgGamePlay);
+    // setElementTextById(statisticsTimeAvgGamePlay, statisticsTimeAvgGamePlayDisplay);
+    //
+    // // text - static
+    // createElementDiv(containerGameFiledStatisticsTimeAvgParts, containerGameFiledStatisticsTimeAvgText);
+    // setElementClassName(containerGameFiledStatisticsTimeAvgText, containerGameFiledCommonStaticText);
+    // createElementDiv(containerGameFiledStatisticsTimeAvgText, gameFiledStatisticsTimeAvgText);
+    // setElementClassName(gameFiledStatisticsTimeAvgText, commonGameFiledDisplay);
+    // createElementDiv(gameFiledStatisticsTimeAvgText, statisticsTimeAvgText);
+    // setElementClassName(statisticsTimeAvgText, commonStaticText);
+    // setElementClassName(statisticsTimeAvgText, statisticsTimeAvgText);
+    // setElementTextById(statisticsTimeAvgText, statisticsTimeAvgTextDisplay);
 
-    // game play - time update
-    createElementDiv(containerGameFiledStatisticsTimeAvgParts, containerGameFiledStatisticsTimeAvgGamePlay);
-    setElementClassName(containerGameFiledStatisticsTimeAvgGamePlay, containerGameFiledCommonGamePlayUpdate);
-    createElementDiv(containerGameFiledStatisticsTimeAvgGamePlay, gameFiledStatisticsTimeAvgGamePlay);
-    setElementClassName(gameFiledStatisticsTimeAvgGamePlay, commonGameFiledDisplay);
-    createElementDiv(gameFiledStatisticsTimeAvgGamePlay, statisticsTimeAvgGamePlay);
-    setElementClassName(statisticsTimeAvgGamePlay, commonGamePlayTextUpdate);
-    setElementClassName(statisticsTimeAvgGamePlay, commonGamePlayUpdateTextTime);
-    setElementClassName(statisticsTimeAvgGamePlay, statisticsTimeAvgGamePlay);
-    setElementTextById(statisticsTimeAvgGamePlay, statisticsTimeAvgGamePlayDisplay);
-
-    // text - static
-    createElementDiv(containerGameFiledStatisticsTimeAvgParts, containerGameFiledStatisticsTimeAvgText);
-    setElementClassName(containerGameFiledStatisticsTimeAvgText, containerGameFiledCommonStaticText);
-    createElementDiv(containerGameFiledStatisticsTimeAvgText, gameFiledStatisticsTimeAvgText);
-    setElementClassName(gameFiledStatisticsTimeAvgText, commonGameFiledDisplay);
-    createElementDiv(gameFiledStatisticsTimeAvgText, statisticsTimeAvgText);
-    setElementClassName(statisticsTimeAvgText, commonStaticText);
-    setElementClassName(statisticsTimeAvgText, statisticsTimeAvgText);
-    setElementTextById(statisticsTimeAvgText, statisticsTimeAvgTextDisplay);
+    createContainerTime(timeKindAvg, statisticsTimeAvgTextDisplay);
 }
 
 function createContainerTimeMax() {
-    // container main
-    createElementDiv(containerGameFiledStatisticsTimeParts, containerGameFiledStatisticsTimeMax);
-    createElementDiv(containerGameFiledStatisticsTimeMax, containerGameFiledStatisticsTimeMaxParts);
-    setElementClassName(containerGameFiledStatisticsTimeMaxParts, containerGameFiledCommonParts);
+    // // container main
+    // createElementDiv(containerGameFiledStatisticsTimeParts, containerGameFiledStatisticsTimeMax);
+    // createElementDiv(containerGameFiledStatisticsTimeMax, containerGameFiledStatisticsTimeMaxParts);
+    // setElementClassName(containerGameFiledStatisticsTimeMaxParts, containerGameFiledCommonParts);
+    //
+    // // game play - time update
+    // createElementDiv(containerGameFiledStatisticsTimeMaxParts, containerGameFiledStatisticsTimeMaxGamePlay);
+    // setElementClassName(containerGameFiledStatisticsTimeMaxGamePlay, containerGameFiledCommonGamePlayUpdate);
+    // createElementDiv(containerGameFiledStatisticsTimeMaxGamePlay, gameFiledStatisticsTimeMaxGamePlay);
+    // setElementClassName(gameFiledStatisticsTimeMaxGamePlay, commonGameFiledDisplay);
+    // createElementDiv(gameFiledStatisticsTimeMaxGamePlay, statisticsTimeMaxGamePlay);
+    // setElementClassName(statisticsTimeMaxGamePlay, commonGamePlayTextUpdate);
+    // setElementClassName(statisticsTimeMaxGamePlay, commonGamePlayUpdateTextTime);
+    // setElementClassName(statisticsTimeMaxGamePlay, statisticsTimeMaxGamePlay);
+    // setElementTextById(statisticsTimeMaxGamePlay, statisticsTimeMaxGamePlayDisplay);
+    //
+    // // text - static
+    // createElementDiv(containerGameFiledStatisticsTimeMaxParts, containerGameFiledStatisticsTimeMaxText);
+    // setElementClassName(containerGameFiledStatisticsTimeMaxText, containerGameFiledCommonStaticText);
+    // createElementDiv(containerGameFiledStatisticsTimeMaxText, gameFiledStatisticsTimeMaxText);
+    // setElementClassName(gameFiledStatisticsTimeMaxText, commonGameFiledDisplay);
+    // createElementDiv(gameFiledStatisticsTimeMaxText, statisticsTimeMaxText);
+    // setElementClassName(statisticsTimeMaxText, commonStaticText);
+    // setElementClassName(statisticsTimeMaxText, statisticsTimeMaxText);
+    // setElementTextById(statisticsTimeMaxText, statisticsTimeMaxTextDisplay);
 
-    // game play - time update
-    createElementDiv(containerGameFiledStatisticsTimeMaxParts, containerGameFiledStatisticsTimeMaxGamePlay);
-    setElementClassName(containerGameFiledStatisticsTimeMaxGamePlay, containerGameFiledCommonGamePlayUpdate);
-    createElementDiv(containerGameFiledStatisticsTimeMaxGamePlay, gameFiledStatisticsTimeMaxGamePlay);
-    setElementClassName(gameFiledStatisticsTimeMaxGamePlay, commonGameFiledDisplay);
-    createElementDiv(gameFiledStatisticsTimeMaxGamePlay, statisticsTimeMaxGamePlay);
-    setElementClassName(statisticsTimeMaxGamePlay, commonGamePlayTextUpdate);
-    setElementClassName(statisticsTimeMaxGamePlay, commonGamePlayUpdateTextTime);
-    setElementClassName(statisticsTimeMaxGamePlay, statisticsTimeMaxGamePlay);
-    setElementTextById(statisticsTimeMaxGamePlay, statisticsTimeMaxGamePlayDisplay);
-
-    // text - static
-    createElementDiv(containerGameFiledStatisticsTimeMaxParts, containerGameFiledStatisticsTimeMaxText);
-    setElementClassName(containerGameFiledStatisticsTimeMaxText, containerGameFiledCommonStaticText);
-    createElementDiv(containerGameFiledStatisticsTimeMaxText, gameFiledStatisticsTimeMaxText);
-    setElementClassName(gameFiledStatisticsTimeMaxText, commonGameFiledDisplay);
-    createElementDiv(gameFiledStatisticsTimeMaxText, statisticsTimeMaxText);
-    setElementClassName(statisticsTimeMaxText, commonStaticText);
-    setElementClassName(statisticsTimeMaxText, statisticsTimeMaxText);
-    setElementTextById(statisticsTimeMaxText, statisticsTimeMaxTextDisplay);
+    createContainerTime(timeKindMax, statisticsTimeMaxTextDisplay);
 }
 
 function createGameFieldStatistics() {
     createElementDivWithTheSameValueForIdAndClassName(containerGameFiledStatisticsTime, containerGameFiledStatisticsTimeParts);
-    createContainerTimeBestDescription();
+    createContainerTimeBest();
     createContainerTimeMin();
     createContainerTimeAvg();
     createContainerTimeMax();

@@ -169,3 +169,21 @@ const containerFooterAuthor = "containerFooterAuthor";
 const footerAuthor = "footerAuthor";
 const footerAuthorData = "Copyright &copy 2025 Anita Łaszczak";
 const sectionFooter = "sectionFooter";
+
+
+// test
+const timeKindMin = "Min";
+const timeKindAvg = "Avg";
+const timeKindMax = "Max";
+const timeKindBest = "Best";
+
+const containerGameFiledStatisticsTimeKind = "containerGameFiled-statisticsTimeKind";
+const containerGameFiledStatisticsTimeKindParts = "containerGameFiled-statisticsTimeKindParts";
+const containerGameFiledStatisticsTimeKindText = "containerGameFiled-statisticsTimeKindText";
+const containerGameFiledStatisticsTimeKindGamePlay = "containerGameFiled-statisticsTimeKindGamePlay";
+const gameFiledStatisticsTimeKindGamePlay = "containerGameFiled-statisticsTimeKindGamePlay";
+const gameFiledStatisticsTimeKindText = "gameFiledStatisticsTimeKindText";
+const statisticsTimeKindGamePlay = "statisticsTimeKindGamePlay";
+const statisticsTimeKindText = "statisticsTimeKindText";
+const statisticsTimeKindGamePlayDisplay = "0.0000 ??? ";
+
