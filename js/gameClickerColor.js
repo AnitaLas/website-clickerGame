@@ -1,4 +1,5 @@
 let maxClicksNumber = 5;
+let maxClicksNumberSetByUser = maxClicksNumber;
 let countedClicksNumber = 0;
 
 let gameRandomColor = "#ac4a71";
@@ -28,8 +29,7 @@ const colors = fileWithColors.split(", ");
 let gameColors = colors;
 
 function setConfigurationClickNumber(clickedId){
-    maxClicksNumber = getElementValue(clickedId);
-    // console.log("maxClicksNumber: " + maxClicksNumber);
+    maxClicksNumberSetByUser = getElementValue(clickedId);
     setConfigurationClickNumberButtonChanges();
 }
 
@@ -38,22 +38,18 @@ function setConfigurationClickNumberButtonChanges(){
         let confButton =  document.getElementById(menuGameConfigurationButtonClickNumber + setNumberAsString(clickNumber));
         confButton.classList.remove(menuGameConfigurationButtonCurrentNumber);
 
-        if(setNumberAsString(maxClicksNumber) === setNumberAsString(clickNumber))
+        if(setNumberAsString(maxClicksNumberSetByUser) === setNumberAsString(clickNumber))
             confButton.classList.add(menuGameConfigurationButtonCurrentNumber);
     }
 }
 
-function setConfigurationClickNumberButtonGameOn(){
-    for(let clickNumber =1; clickNumber<=10; clickNumber++){
-        let confButton =  document.getElementById(menuGameConfigurationButtonClickNumber + setNumberAsString(clickNumber));
-        confButton.classList.remove(menuGameConfigurationButtonClickNumberGameOn);
-        removeFunctionOnclick(menuGameConfigurationButtonClickNumber + setNumberAsString(clickNumber), functionNameOnclickSetConfigurationClickNumber);
-    }
+function setConfigurationMaxClicksNumber(){
+    maxClicksNumber = maxClicksNumberSetByUser;
 }
 
 
 function playGameColorStart() {
-    setConfigurationClickNumberButtonGameOn();
+    setConfigurationMaxClicksNumber();
     removeContainersGameFiledButtonsMainStop();
     createContainersGameFiledButtonsMainStop();
     removeContainersGameFiledStatistics();
