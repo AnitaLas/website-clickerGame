@@ -106,8 +106,10 @@ function createContainersMenuConfigurationClickNumberPerRow(rowNumber) {
     parentElement.style.gridColumn = setNumberAsString(columnStart);
     parentElement.style.gridRowEnd = setNumberAsString(rowEnd);
     parentElement.style.gridColumnEnd = setNumberAsString(columnEnd);
-    parentElement.style.gridTemplateRows = " repeat(1, 2fr 6fr 2fr) ";
-    parentElement.style.gridTemplateColumns = " repeat(" + clicksNumberPerRow + ", 1fr 100fr 1fr)";
+    // parentElement.style.gridTemplateRows = " repeat(1, 2fr 6fr 2fr) ";
+    parentElement.style.gridTemplateRows = " repeat(1, 1fr 7fr 1fr) ";
+    // parentElement.style.gridTemplateColumns = " repeat(" + clicksNumberPerRow + ", 1fr 100fr 1fr)";
+    parentElement.style.gridTemplateColumns = " repeat(" + clicksNumberPerRow + ", 1fr 38fr 1fr)";
 
     let rowChildStart = 2;
     let columnChildStart = 2;
@@ -119,23 +121,30 @@ function createContainersMenuConfigurationClickNumberPerRow(rowNumber) {
         let newDiv = document.createElement("div");
         parentElement.append(newDiv);
         newDiv.style.display = "grid";
-        newDiv.classList.add(fraudCountRound);
-        newDiv.classList.add(fraudCountRoundUpdateNumber);
+        // newDiv.classList.add(fraudCountRound);
+        // newDiv.classList.add(fraudCountRoundUpdateNumber);
         newDiv.style.gridRow = setNumberAsString(rowChildStart);
         newDiv.style.gridColumn = setNumberAsString(columnChildStart);
         newDiv.style.gridRowEnd = setNumberAsString(rowChildEnd);
         newDiv.style.gridColumnEnd = setNumberAsString(columnChildEnd);
         newDiv.style.gridTemplateRows = "1fr";
         newDiv.style.gridTemplateColumns = "1fr";
-        newDiv.classList.add(fraudCountRound);
 
-        let newDivChild = document.createElement("div");
-        newDiv.append(newDivChild);
-        newDivChild.innerHTML = menuGameConfigurationClickNumberTextDisplay + setNumberAsString(clickNumberButton);
-        newDivChild.setAttribute("id", fraudCountRoundGamePlayUpdateNumber + i);
-        newDivChild.classList.add(commonGameFiledDisplay);
-        newDivChild.classList.add(commonStaticText);
-        newDivChild.classList.add(fraudCountRoundCommon);
+        let newButton = document.createElement("button");
+        newDiv.append(newButton);
+        newButton.innerHTML = menuGameConfigurationClickNumberTextDisplay + setNumberAsString(clickNumberButton);
+        newButton.setAttribute("id", menuGameConfigurationButtonClickNumber + setNumberAsString(clickNumberButton));
+        newButton.classList.add(commonGameFiledDisplay);
+        // newButton.classList.add(fraudCountRound);
+        newButton.classList.add(menuGameConfigurationText);
+        newButton.classList.add(menuGameConfigurationButton);
+        newButton.value = clickNumberButton;
+        setFunctionOnclick(menuGameConfigurationButtonClickNumber + setNumberAsString(clickNumberButton), functionNameOnclickSetConfigurationClickNumber);
+
+        if(clickNumberButton === 5){
+            newButton.classList.add(menuGameConfigurationButtonCurrentNumber);
+        }
+
 
         columnChildStart += 3;
         columnChildEnd += 3;

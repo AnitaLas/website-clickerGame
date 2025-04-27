@@ -70,3 +70,8 @@ function setElementTextById(elementId, text) {
 function setNumberAsString(number) {
     return number.toString();
 }
+
+function getElementValue(clickedId) {
+    let element = document.getElementById(clickedId);
+    return element.getAttribute("value");
+}

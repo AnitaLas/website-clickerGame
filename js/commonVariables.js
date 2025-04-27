@@ -182,6 +182,11 @@ const containerMenuGameConfigurationParts = "containerMenuGameConfigurationParts
 const menuGameConfigurationDisplay = "menuGameConfigurationDisplay";
 const containerMenuGameConfigurationText = "containerMenuGameConfigurationText";
 const menuGameConfigurationText = "menuGameConfigurationText";
+const menuGameConfigurationButton = "menuGameConfigurationButton";
+const menuGameConfigurationButtonCurrentNumber = "menuGameConfigurationButtonCurrentNumber";
+const functionNameOnclickSetConfigurationClickNumber = "setConfigurationClickNumber";
+const menuGameConfigurationButtonClickNumber = "menuGameConfigurationButtonClickNumber-";
+const menuGameConfigurationButtonClickNumberGameOn = "menuGameConfigurationButtonClickNumberGameOn";
 const menuGameConfigurationTextDisplay = "<i class=\"fa-solid fa-screwdriver-wrench\"></i>";
 const containerMenuGameConfigurationGameKind = "containerMenuGameConfigurationGameKind";
 const containerMenuGameConfigurationClickNumber = "containerMenuGameConfigurationClickNumber";

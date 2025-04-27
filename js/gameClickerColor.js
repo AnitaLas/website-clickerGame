@@ -1,4 +1,4 @@
-const maxClicksNumber = 5;
+let maxClicksNumber = 5;
 let countedClicksNumber = 0;
 
 let gameRandomColor = "#ac4a71";
@@ -27,7 +27,33 @@ const colors = fileWithColors.split(", ");
 
 let gameColors = colors;
 
+function setConfigurationClickNumber(clickedId){
+    maxClicksNumber = getElementValue(clickedId);
+    // console.log("maxClicksNumber: " + maxClicksNumber);
+    setConfigurationClickNumberButtonChanges();
+}
+
+function setConfigurationClickNumberButtonChanges(){
+    for(let clickNumber =1; clickNumber<=10; clickNumber++){
+        let confButton =  document.getElementById(menuGameConfigurationButtonClickNumber + setNumberAsString(clickNumber));
+        confButton.classList.remove(menuGameConfigurationButtonCurrentNumber);
+
+        if(setNumberAsString(maxClicksNumber) === setNumberAsString(clickNumber))
+            confButton.classList.add(menuGameConfigurationButtonCurrentNumber);
+    }
+}
+
+function setConfigurationClickNumberButtonGameOn(){
+    for(let clickNumber =1; clickNumber<=10; clickNumber++){
+        let confButton =  document.getElementById(menuGameConfigurationButtonClickNumber + setNumberAsString(clickNumber));
+        confButton.classList.remove(menuGameConfigurationButtonClickNumberGameOn);
+        removeFunctionOnclick(menuGameConfigurationButtonClickNumber + setNumberAsString(clickNumber), functionNameOnclickSetConfigurationClickNumber);
+    }
+}
+
+
 function playGameColorStart() {
+    setConfigurationClickNumberButtonGameOn();
     removeContainersGameFiledButtonsMainStop();
     createContainersGameFiledButtonsMainStop();
     removeContainersGameFiledStatistics();

@@ -93,6 +93,42 @@
     text-shadow: 0px 0px 40px #EC7998;
 }
 
+.menuGameConfigurationButton{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    border: none;
+    /*background-color: #000000;*/
+    background-color: #2c3e3a;
+    /*color: #ac4a71;*/
+    /*color: #ac4a71;*/
+    color: #FFFFFF;
+    opacity: 0.5;
+    padding: 0px;
+    font-size: 0.9rem;
+    font-weight: 200;
+    border-radius: 0.45rem;
+    box-shadow: 0px 0px 1px 1px #2a1e1e;
+}
+
+.menuGameConfigurationButtonCurrentNumber{
+    color: #ac4a71;
+    color: #FFFFFF;
+    /*box-shadow: 0px 0px 3px 1px #FFFFFF;*/
+    box-shadow: 0px 0px 3px 1px #ac4a71;
+    opacity: 0.9;
+}
+
+.menuGameConfigurationButtonClickNumberGameOn{
+    opacity: 0.5;
+}
+
+.menuGameConfigurationButtonCurrentNumber .fa-computer-mouse{
+    color: #FFFFFF;
+}
+
 #containerMenuGameConfigurationGameKind{
     display: grid;
     grid-row: 1 / 2;
