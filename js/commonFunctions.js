@@ -39,6 +39,10 @@ function setElementClassName(elementId, className) {
     document.getElementById(elementId).classList.add(className);
 }
 
+function removeElementClassName(elementId, className) {
+    document.getElementById(elementId).classList.remove(className);
+}
+
 function createElementDivWithTheSameValueForIdAndClassName(parentId, elementIdAndClassName) {
     createElementDiv(parentId, elementIdAndClassName);
     setElementClassName(elementIdAndClassName, elementIdAndClassName);

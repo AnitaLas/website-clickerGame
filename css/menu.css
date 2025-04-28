@@ -114,10 +114,7 @@
 }
 
 .menuGameConfigurationButtonCurrentNumber{
-    color: #ac4a71;
-    color: #FFFFFF;
-    /*box-shadow: 0px 0px 3px 1px #FFFFFF;*/
-    box-shadow: 0px 0px 3px 1px #ac4a71;
+    box-shadow: 0px 0px 3px 1px #FFFFFF;
     opacity: 0.8;
 }
 
@@ -125,8 +122,10 @@
     opacity: 0.5;
 }
 
-.menuGameConfigurationButtonCurrentNumber .fa-computer-mouse{
-    color: #FFFFFF;
+.menuGameConfigurationButtonChosenNumber {
+    color: #e9a610;
+    opacity: 1;
+    box-shadow: 0px 0px 3px 1px #e9a610;
 }
 
 #containerMenuGameConfigurationGameKind{

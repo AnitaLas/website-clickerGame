@@ -28,34 +28,90 @@ const colors = fileWithColors.split(", ");
 
 let gameColors = colors;
 
-function setConfigurationClickNumber(clickedId){
+function setConfigurationClickNumber(clickedId) {
     maxClicksNumberSetByUser = getElementValue(clickedId);
     setConfigurationClickNumberButtonChanges();
 }
 
-function setConfigurationClickNumberButtonChanges(){
-    for(let clickNumber =1; clickNumber<=10; clickNumber++){
-        let confButton =  document.getElementById(menuGameConfigurationButtonClickNumber + setNumberAsString(clickNumber));
+function setConfigurationClickNumberButtonChanges() {
+    for (let clickNumber = 1; clickNumber <= 10; clickNumber++) {
+        let confButton = document.getElementById(menuGameConfigurationButtonClickNumber + setNumberAsString(clickNumber));
         confButton.classList.remove(menuGameConfigurationButtonCurrentNumber);
 
-        if(setNumberAsString(maxClicksNumberSetByUser) === setNumberAsString(clickNumber))
+        if (setNumberAsString(maxClicksNumberSetByUser) === setNumberAsString(clickNumber))
             confButton.classList.add(menuGameConfigurationButtonCurrentNumber);
     }
 }
 
-function setConfigurationMaxClicksNumber(){
-    maxClicksNumber = maxClicksNumberSetByUser;
+function setConfigurationMaxClicksNumberButtonChosen() {
+    for (let clickNumber = 1; clickNumber <= 10; clickNumber++) {
+
+        let confButton = document.getElementById(menuGameConfigurationButtonClickNumber + setNumberAsString(clickNumber));
+        confButton.classList.remove(menuGameConfigurationButtonChosenNumber);
+
+        if (setNumberAsString(maxClicksNumberSetByUser) === setNumberAsString(clickNumber)) {
+            confButton.classList.add(menuGameConfigurationButtonChosenNumber);
+            confButton.classList.remove(menuGameConfigurationButtonClickNumberGameOn);
+        }
+    }
 }
 
+function removeConfigurationButtonChosenNumber() {
+    for (let clickNumber = 1; clickNumber <= 10; clickNumber++) {
+        let confButton = document.getElementById(menuGameConfigurationButtonClickNumber + setNumberAsString(clickNumber));
+
+        if (setNumberAsString(maxClicksNumberSetByUser) === setNumberAsString(clickNumber)) {
+            confButton.classList.remove(menuGameConfigurationButtonChosenNumber);
+            confButton.classList.add(menuGameConfigurationButtonCurrentNumber);
+        }
+    }
+}
+
+function setConfigurationButtonMainAfterClick(elementId) {
+    let buttonPlay = document.getElementById(elementId);
+    buttonPlay.classList.remove(gameFiledButtonMainTextDecorationBeforeClick);
+    buttonPlay.classList.add(gameFiledButtonMainTextDecorationAfterClick);
+}
+
+function removeConfigurationButtonMainAfterClick(elementId) {
+    let buttonPlay = document.getElementById(elementId);
+    if(buttonPlay !== null){
+        buttonPlay.classList.remove(gameFiledButtonMainTextDecorationAfterClick);
+        buttonPlay.classList.add(gameFiledButtonMainTextDecorationBeforeClick);
+    }
+}
+
+function setConfigurationButtonMainGameStart(){
+    setConfigurationButtonMainAfterClick(containerGameFiledButtonsMainStartTextDisplayId);
+    removeConfigurationButtonMainAfterClick(containerGameFiledButtonsMainStopTextDisplayId);
+    removeElementClassName(gameFiledButtonMainStop, gameFiledButtonMainInactive);
+}
+
+function setConfigurationButtonMainGameStop(){
+    setConfigurationButtonMainAfterClick(containerGameFiledButtonsMainStopTextDisplayId);
+    removeConfigurationButtonMainAfterClick(containerGameFiledButtonsMainStartTextDisplayId);
+}
+
+function setConfigurationButtonMainGameOver(){
+    removeConfigurationButtonMainAfterClick(containerGameFiledButtonsMainStartTextDisplayId);
+    setElementClassName(gameFiledButtonMainStop, gameFiledButtonMainInactive);
+}
+
+function setConfigurationMaxClicksNumber() {
+    maxClicksNumber = maxClicksNumberSetByUser;
+    setConfigurationMaxClicksNumberButtonChosen();
+}
 
 function playGameColorStart() {
-    setConfigurationMaxClicksNumber();
     removeContainersGameFiledButtonsMainStop();
     createContainersGameFiledButtonsMainStop();
     removeContainersGameFiledStatistics();
     setGameButtonStartColor();
-    setGameConfiguration();
-    removeGameOverConfiguration();
+    setConfigurationGame();
+    removeConfigurationGameOver();
+    setConfigurationMaxClicksNumber();
+    setConfigurationButtonMainGameStart();
+
 
     countedClicksNumber = 0;
     fraudCountedNumber = 0;
@@ -79,6 +135,8 @@ function playGameColorStop() {
 function setConfigurationGameStop() {
     removeFunctionOnclick(gameFiledButtonPlay);
     removeFunctionOnclick(buttonMainStop);
+    removeConfigurationButtonChosenNumber();
+    setConfigurationButtonMainGameStop();
 }
 
 // [extension V1] do not even think of removing this function !!!
@@ -231,22 +289,24 @@ function playClickerGame() {
     setGameStatisticFraudData();
 
     if (countedClicksNumber < maxClicksNumber) {
-        setGameConfiguration();
+        setConfigurationGame();
         countedClicksNumber++;
     } else {
         // console.log("GAME OVER");
-        setGameOverConfiguration();
+        setConfigurationGameOver();
     }
 }
 
-function setGameOverConfiguration() {
+function setConfigurationGameOver() {
     removeFunctionOnclick(gameFiledButtonPlay);
     removeFunctionOnclick(buttonMainStop);
     setElementTextById(gameFiledButtonPlay, gameFiledButtonPlayGameOverTextDisplay);
     setElementClassName(gameFiledButtonPlay, gameFiledButtonPlayGameOver);
+    setConfigurationButtonMainGameOver();
+    removeConfigurationButtonChosenNumber();
 }
 
-function removeGameOverConfiguration() {
+function removeConfigurationGameOver() {
     setElementTextById(gameFiledButtonPlay, "");
     document.getElementById(gameFiledButtonPlay).classList.remove(gameFiledButtonPlayGameOver);
 }
@@ -267,7 +327,7 @@ function setGameTimeTimeoutStart() {
     gameTimeTimeoutStart = performance.now();
 }
 
-function setGameConfiguration() {
+function setConfigurationGame() {
     gameColors = colors;
     startTime = 0;
     endTime = 0;
@@ -356,7 +416,7 @@ function setGameStatisticFraudCountedSumNumber() {
 }
 
 function createContainersGameFiledStatistics() {
-    createGameFieldStatistics();
+    createGameFieldStatisticsTime();
     createGameFieldStatisticsFraud();
 }
 

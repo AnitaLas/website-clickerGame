@@ -121,8 +121,6 @@ function createContainersMenuConfigurationClickNumberPerRow(rowNumber) {
         let newDiv = document.createElement("div");
         parentElement.append(newDiv);
         newDiv.style.display = "grid";
-        // newDiv.classList.add(fraudCountRound);
-        // newDiv.classList.add(fraudCountRoundUpdateNumber);
         newDiv.style.gridRow = setNumberAsString(rowChildStart);
         newDiv.style.gridColumn = setNumberAsString(columnChildStart);
         newDiv.style.gridRowEnd = setNumberAsString(rowChildEnd);
@@ -135,7 +133,6 @@ function createContainersMenuConfigurationClickNumberPerRow(rowNumber) {
         newButton.innerHTML = menuGameConfigurationClickNumberTextDisplay + setNumberAsString(clickNumberButton);
         newButton.setAttribute("id", menuGameConfigurationButtonClickNumber + setNumberAsString(clickNumberButton));
         newButton.classList.add(commonGameFiledDisplay);
-        // newButton.classList.add(fraudCountRound);
         newButton.classList.add(menuGameConfigurationText);
         newButton.classList.add(menuGameConfigurationButton);
         newButton.value = clickNumberButton;
@@ -144,7 +141,6 @@ function createContainersMenuConfigurationClickNumberPerRow(rowNumber) {
         if(clickNumberButton === 5){
             newButton.classList.add(menuGameConfigurationButtonCurrentNumber);
         }
-
 
         columnChildStart += 3;
         columnChildEnd += 3;
@@ -174,8 +170,8 @@ function createContainerGameElements() {
     createMainContainerGameElements();
     createGameFieldPButtonPlay();
     createGameFieldPButtonMain();
-    createGameFieldStatistics();
-    createGameFieldStatisticsFraud();
+    // createGameFieldStatisticsTime();
+    // createGameFieldStatisticsFraud();
 }
 
 function createGameFieldPButtonMain() {
@@ -196,7 +192,6 @@ function createGameFieldPButtonMainStart() {
     createElementDivWithTheSameValueForIdAndClassName(containerGameFiledButtonsMainStart, gameFiledButtonMainStart);
     createElementButton(gameFiledButtonMainStart, buttonMainStart);
     setElementClassName(buttonMainStart, gameFiledButtonMain);
-    // setElementClassName(buttonMainStart, buttonMainStart);
     setFunctionOnclick(buttonMainStart, functionNameOnclickPlayGameColorStart);
     setElementTextById(buttonMainStart, containerGameFiledButtonsMainStartTextDisplay);
 }
@@ -208,83 +203,82 @@ function createGameFieldPButtonMainStop() {
         createElementDivWithTheSameValueForIdAndClassName(containerGameFiledButtonsMainStop, gameFiledButtonMainStop);
         createElementButton(gameFiledButtonMainStop, buttonMainStop);
         setElementClassName(buttonMainStop, gameFiledButtonMain);
-        // setElementClassName(buttonMainStop, buttonMainStop);
         setFunctionOnclick(buttonMainStop, functionNameOnclickPlayGameColorStop);
         setElementTextById(buttonMainStop, containerGameFiledButtonsMainStopTextDisplay);
     }
 }
 
-function createVariableName(baseVariableName, partToSwitch) {
+function createCSSVariableName(baseVariableName, partToSwitch) {
     let timeKind = "Kind";
     return baseVariableName.replace(timeKind, partToSwitch);
 }
 
-function createContainerTime(timeKind, newStatisticsTimeKindTextDisplay) {
+function createContainerStatisticsTime(timeKind, newStatisticsTimeKindTextDisplay) {
     // container main
-    let newContainerGameFiledStatisticsTimeKind = createVariableName(containerGameFiledStatisticsTimeKind, timeKind);
+    let newContainerGameFiledStatisticsTimeKind = createCSSVariableName(containerGameFiledStatisticsTimeKind, timeKind);
     createElementDiv(containerGameFiledStatisticsTimeParts, newContainerGameFiledStatisticsTimeKind);
 
-    let newContainerGameFiledStatisticsTimeKindParts = createVariableName(containerGameFiledStatisticsTimeKindParts, timeKind);
+    let newContainerGameFiledStatisticsTimeKindParts = createCSSVariableName(containerGameFiledStatisticsTimeKindParts, timeKind);
     createElementDiv(newContainerGameFiledStatisticsTimeKind, newContainerGameFiledStatisticsTimeKindParts);
     setElementClassName(newContainerGameFiledStatisticsTimeKindParts, containerGameFiledCommonParts);
     setElementClassName(newContainerGameFiledStatisticsTimeKindParts, containerGameFiledCommonParts);
 
     // game play - time update
-    let newContainerGameFiledStatisticsTimeKindGamePlay = createVariableName(containerGameFiledStatisticsTimeKindGamePlay, timeKind);
+    let newContainerGameFiledStatisticsTimeKindGamePlay = createCSSVariableName(containerGameFiledStatisticsTimeKindGamePlay, timeKind);
     createElementDiv(newContainerGameFiledStatisticsTimeKindParts, newContainerGameFiledStatisticsTimeKindGamePlay);
     setElementClassName(newContainerGameFiledStatisticsTimeKindGamePlay, containerGameFiledCommonGamePlayUpdate);
 
-    let newGameFiledStatisticsTimeKindGamePlay = createVariableName(gameFiledStatisticsTimeKindGamePlay, timeKind);
+    let newGameFiledStatisticsTimeKindGamePlay = createCSSVariableName(gameFiledStatisticsTimeKindGamePlay, timeKind);
     createElementDiv(newContainerGameFiledStatisticsTimeKindGamePlay, newGameFiledStatisticsTimeKindGamePlay);
     setElementClassName(newGameFiledStatisticsTimeKindGamePlay, commonGameFiledDisplay);
 
-    let newStatisticsTimeKindGamePlay = createVariableName(statisticsTimeKindGamePlay, timeKind);
+    let newStatisticsTimeKindGamePlay = createCSSVariableName(statisticsTimeKindGamePlay, timeKind);
     createElementDiv(newGameFiledStatisticsTimeKindGamePlay, newStatisticsTimeKindGamePlay);
-    setElementClassName(createVariableName(newStatisticsTimeKindGamePlay, timeKind), commonGamePlayTextUpdate);
-    setElementClassName(createVariableName(newStatisticsTimeKindGamePlay, timeKind), commonGamePlayUpdateTextTime);
-    setElementClassName(createVariableName(newStatisticsTimeKindGamePlay, timeKind), newStatisticsTimeKindGamePlay);
+    setElementClassName(createCSSVariableName(newStatisticsTimeKindGamePlay, timeKind), commonGamePlayTextUpdate);
+    setElementClassName(createCSSVariableName(newStatisticsTimeKindGamePlay, timeKind), commonGamePlayUpdateTextTime);
+    setElementClassName(createCSSVariableName(newStatisticsTimeKindGamePlay, timeKind), newStatisticsTimeKindGamePlay);
 
-    let newStatisticsTimeKindGamePlayTextDisplay = createVariableName(statisticsTimeKindGamePlayDisplay, timeKind);
-    setElementTextById(createVariableName(newStatisticsTimeKindGamePlay, timeKind), newStatisticsTimeKindGamePlayTextDisplay);
+    let newStatisticsTimeKindGamePlayTextDisplay = createCSSVariableName(statisticsTimeKindGamePlayDisplay, timeKind);
+    setElementTextById(createCSSVariableName(newStatisticsTimeKindGamePlay, timeKind), newStatisticsTimeKindGamePlayTextDisplay);
 
     // text - static
-    let newContainerGameFiledStatisticsTimeKindText = createVariableName(containerGameFiledStatisticsTimeKindText, timeKind);
+    let newContainerGameFiledStatisticsTimeKindText = createCSSVariableName(containerGameFiledStatisticsTimeKindText, timeKind);
     createElementDiv(newContainerGameFiledStatisticsTimeKindParts, newContainerGameFiledStatisticsTimeKindText);
     setElementClassName(newContainerGameFiledStatisticsTimeKindText, containerGameFiledCommonStaticText);
 
-    let newGameFiledStatisticsTimeKindText = createVariableName(gameFiledStatisticsTimeKindText, timeKind);
+    let newGameFiledStatisticsTimeKindText = createCSSVariableName(gameFiledStatisticsTimeKindText, timeKind);
     createElementDiv(newContainerGameFiledStatisticsTimeKindText, newGameFiledStatisticsTimeKindText);
     setElementClassName(newGameFiledStatisticsTimeKindText, commonGameFiledDisplay);
 
-    let newStatisticsTimeKindText = createVariableName(statisticsTimeKindText, timeKind);
+    let newStatisticsTimeKindText = createCSSVariableName(statisticsTimeKindText, timeKind);
     createElementDiv(newGameFiledStatisticsTimeKindText, newStatisticsTimeKindText);
     setElementClassName(newStatisticsTimeKindText, commonStaticText);
     setElementClassName(newStatisticsTimeKindText, newStatisticsTimeKindText);
     setElementTextById(newStatisticsTimeKindText, newStatisticsTimeKindTextDisplay);
 }
 
-function createContainerTimeBest() {
-    createContainerTime(timeKindBest, statisticsTimeBestTextDisplay);
+function createContainerStatisticsTimeBest() {
+    createContainerStatisticsTime(timeKindBest, statisticsTimeBestTextDisplay);
 }
 
-function createContainerTimeMin() {
-    createContainerTime(timeKindMin, statisticsTimeMinTextDisplay);
+function createContainerStatisticsTimeMin() {
+    createContainerStatisticsTime(timeKindMin, statisticsTimeMinTextDisplay);
 }
 
-function createContainerTimeAvg() {
-    createContainerTime(timeKindAvg, statisticsTimeAvgTextDisplay);
+function createContainerStatisticsTimeAvg() {
+    createContainerStatisticsTime(timeKindAvg, statisticsTimeAvgTextDisplay);
 }
 
-function createContainerTimeMax() {
-    createContainerTime(timeKindMax, statisticsTimeMaxTextDisplay);
+function createContainerStatisticsTimeMax() {
+    createContainerStatisticsTime(timeKindMax, statisticsTimeMaxTextDisplay);
 }
 
-function createGameFieldStatistics() {
+function createGameFieldStatisticsTime() {
     createElementDivWithTheSameValueForIdAndClassName(containerGameFiledStatisticsTime, containerGameFiledStatisticsTimeParts);
-    createContainerTimeBest();
-    createContainerTimeMin();
-    createContainerTimeAvg();
-    createContainerTimeMax();
+    createContainerStatisticsTimeBest();
+    createContainerStatisticsTimeMin();
+    createContainerStatisticsTimeAvg();
+    createContainerStatisticsTimeMax();
 }
 
 function createContainerStatisticsFraudSum() {

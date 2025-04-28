@@ -96,6 +96,10 @@
     box-shadow: 0px 0px 1px 1px #1f130e;
 }
 
+.gameFiledButtonMain-inactive{
+    opacity: 0.5;
+}
+
 #containerGameFiled-buttonsMainStop {
     display: grid;
     grid-row: 1 / 2;
@@ -382,9 +386,15 @@
 }
 
 /* commonVariables.js -> <i fa-... ></i> */
-.fa-playGameAction {
+.fa-playGameAction-beforeClick {
     color: #FFFFFF;
     opacity: 0.7;
+    font-size: 1.3rem;
+}
+
+.fa-playGameAction-afterClick{
+    color: #e9a610;
+    opacity: 1;
     font-size: 1.3rem;
 }
 
