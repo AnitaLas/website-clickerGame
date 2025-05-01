@@ -92,6 +92,14 @@ function setConfigurationButtonMainGameStop(){
     removeConfigurationButtonMainAfterClick(containerGameFiledButtonsMainStartTextDisplayId);
 }
 
+function setConfigurationButtonMainGameContinue(){
+    setConfigurationButtonMainAfterClick(containerGameFiledButtonsMainStartTextDisplayId);
+}
+
+function removeConfigurationButtonMainGameContinue(){
+    removeConfigurationButtonMainAfterClick(containerGameFiledButtonsMainStartTextDisplayId);
+}
+
 function setConfigurationButtonMainGameOver(){
     removeConfigurationButtonMainAfterClick(containerGameFiledButtonsMainStartTextDisplayId);
     setElementClassName(gameFiledButtonMainStop, gameFiledButtonMainInactive);
@@ -111,7 +119,6 @@ function playGameColorStart() {
     removeConfigurationGameOver();
     setConfigurationMaxClicksNumber();
     setConfigurationButtonMainGameStart();
-
 
     countedClicksNumber = 0;
     fraudCountedNumber = 0;
@@ -150,6 +157,7 @@ function setConfigurationGameContinue() {
     removeFunctionOnclick(gameFiledButtonPlay);
     setEndTime();
     setClickReactionTimeTimeout();
+    removeConfigurationButtonMainGameContinue();
 
     startTime = 0;
     endTime = 0;
@@ -159,6 +167,7 @@ function setConfigurationGameContinue() {
 function playGameColorContinue() {
     setFunctionOnclick(buttonMainStop, functionNameOnclickPlayGameColorStop);
     setElementTextById(buttonMainStop, containerGameFiledButtonsMainStopTextDisplay);
+    setConfigurationButtonMainGameContinue();
 
     if (currentFunctionOnclickName !== undefined)
         setFunctionOnclick(gameFiledButtonPlay, currentFunctionOnclickName);

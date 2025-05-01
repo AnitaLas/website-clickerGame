@@ -48,7 +48,8 @@ const containerGameFiledButtonsMainStopTextDisplayId = "fa-stop";
 const containerGameFiledButtonsMainStopTextDisplay = "<i id=\"fa-stop\" class=\"fa-solid fa-stop fa-playGameAction-beforeClick\"></i>";
 // const containerGameFiledButtonsMainStopTextDisplay = "<i class=\"fa-solid fa-pause fa-playGameAction\"></i>";
 // const containerGameFiledButtonsMainContinueTextDisplay = "CONTINUE";
-const containerGameFiledButtonsMainContinueTextDisplay = "<i id=\"fa-forward\" class=\"fa-solid fa-forward fa-playGameAction-beforeClick\"></i>";
+// const containerGameFiledButtonsMainContinueTextDisplay = "<i id=\"fa-forward\" class=\"fa-solid fa-forward fa-playGameAction-beforeClick\"></i>";
+const containerGameFiledButtonsMainContinueTextDisplay = "<i id=\"fa-forward\" class=\"fa-solid fa-forward fa-playGameAction-afterClick\"></i>";
 
 // statistic time
 const timeKindMin = "Min";
