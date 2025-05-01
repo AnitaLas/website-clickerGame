@@ -43,8 +43,9 @@ function createContainerManuTitle() {
 function createContainerManuConfiguration() {
     createMainContainerManuConfiguration();
     createContainerMenuConfigurationText();
-    // createContainerMenuConfigurationGameKind();
+    createContainerMenuConfigurationGameKind();
     createContainerMenuConfigurationClickNumber();
+
 }
 
 function createMainContainerManuConfiguration() {
