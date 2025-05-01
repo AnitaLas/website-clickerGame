@@ -196,6 +196,13 @@ const menuGameConfigurationButtonClickNumberGameOn = "menuGameConfigurationButto
 const menuGameConfigurationButtonChosenNumber = "menuGameConfigurationButtonChosenNumber";
 const menuGameConfigurationTextDisplay = "<i class=\"fa-solid fa-screwdriver-wrench\"></i>";
 const containerMenuGameConfigurationGameKind = "containerMenuGameConfigurationGameKind";
+const containerMenuGameConfigurationGameKindParts = "containerMenuGameConfigurationGameKindParts";
+const containerMenuGameConfigurationGameKindColor = "containerMenuGameConfigurationGameKind-color";
+const menuGameConfigurationGameKindColor = "menuGameConfigurationGameKind-color";
+const menuGameConfigurationGameKindColorTextDisplay = "<i class=\"fa-solid fa-palette\"></i>";
+const containerMenuGameConfigurationGameKindKeyboard = "containerMenuGameConfigurationGameKind-keyboard";
+const menuGameConfigurationGameKindKeyboard = "menuGameConfigurationGameKind-keyboard";
+const menuGameConfigurationGameKindKeyboardTextDisplay = "<i class=\"fa-solid fa-keyboard\"></i>";
 const containerMenuGameConfigurationClickNumber = "containerMenuGameConfigurationClickNumber";
 const containerMenuGameConfigurationClickNumberParts = "containerMenuGameConfigurationClickNumberParts";
 const containerMenuGameConfigurationClickNumberRow0 = "containerMenuGameConfigurationClickNumber-row0";

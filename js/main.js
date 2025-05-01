@@ -62,7 +62,19 @@ function createContainerMenuConfigurationText(){
 
 function createContainerMenuConfigurationGameKind(){
     createElementDiv(containerMenuGameConfigurationParts, containerMenuGameConfigurationGameKind);
+    createElementDiv(containerMenuGameConfigurationGameKind, containerMenuGameConfigurationGameKindParts);
+
+    createElementDiv(containerMenuGameConfigurationGameKindParts, containerMenuGameConfigurationGameKindColor);
+    createElementDiv(containerMenuGameConfigurationGameKindColor, menuGameConfigurationGameKindColor);
+    setElementClassName(menuGameConfigurationGameKindColor, menuGameConfigurationDisplay);
+    setElementTextById(menuGameConfigurationGameKindColor, menuGameConfigurationGameKindColorTextDisplay);
+
+    createElementDiv(containerMenuGameConfigurationGameKindParts, containerMenuGameConfigurationGameKindKeyboard);
+    createElementDiv(containerMenuGameConfigurationGameKindKeyboard, menuGameConfigurationGameKindKeyboard);
+    setElementClassName(menuGameConfigurationGameKindKeyboard, menuGameConfigurationDisplay);
+    setElementTextById(menuGameConfigurationGameKindKeyboard, menuGameConfigurationGameKindKeyboardTextDisplay);
 }
+
 
 function createContainerMenuConfigurationClickNumber(){
     createElementDiv(containerMenuGameConfigurationParts, containerMenuGameConfigurationClickNumber);

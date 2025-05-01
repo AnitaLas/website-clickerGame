@@ -136,6 +136,48 @@
     grid-template-columns: 1fr;
 }
 
+#containerMenuGameConfigurationGameKindParts{
+    display: grid;
+    grid-row: 1 / 1;
+    grid-column: 1 / 1;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr;
+}
+
+#containerMenuGameConfigurationGameKind-color{
+    display: grid;
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+}
+
+.menuGameConfigurationGameKind-color{
+    display: grid;
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+}
+
+.fa-palette{
+    color: #e9a610;
+}
+
+.fa-keyboard{
+    color: #e9a610;
+}
+
+
+
+#containerMenuGameConfigurationGameKind-keyboard{
+    display: grid;
+    grid-row: 2 / 3;
+    grid-column: 1 / 2;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+}
+
 #containerMenuGameConfigurationClickNumber{
     display: grid;
     grid-row: 1 / 2;
