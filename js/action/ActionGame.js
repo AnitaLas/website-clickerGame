@@ -54,7 +54,7 @@ import * as variablesGameStatisticsTimeGeneral from "../common/variable/clickerG
 // }
 
 
-export class GameAction {
+export class ActionGame {
 
 
     constructor(gameRoundAction) {

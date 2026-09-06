@@ -8,9 +8,6 @@ import {
 
 import * as variablesGameStatisticsTimeFraud from "../common/variable/clickerGame/variablesGameStatisticsTimeFraud.js";
 import * as variablesGameStatisticsTimeGeneral from "../common/variable/clickerGame/variablesGameStatisticsTimeGeneral.js";
-import {ViewGameStatisticsTimeGeneral} from "./ViewGameStatisticsTimeGeneral.js";
-
-const viewGameStatisticsTimeGeneral = new ViewGameStatisticsTimeGeneral();
 
 export class ViewGameStatisticsTimeFraud {
 
@@ -47,15 +44,15 @@ export class ViewGameStatisticsTimeFraud {
         createElementDivWithIdAndSetClassName(variablesGameStatisticsTimeFraud.containerGameFiledStatisticsFraudCount, variablesGameStatisticsTimeFraud.containerGameFiledStatisticsFraudCountParts, variablesGameStatisticsTimeGeneral.containerGameFiledCommonParts);
         createElementDiv(variablesGameStatisticsTimeFraud.containerGameFiledStatisticsFraudCountParts, variablesGameStatisticsTimeFraud.containerGameFiledStatisticsFraudCountGamePlay);
         createElementDiv(variablesGameStatisticsTimeFraud.containerGameFiledStatisticsFraudCountParts, variablesGameStatisticsTimeFraud.containerGameFiledStatisticsFraudCountText);
-        this.createContainerStatisticsFraudMain(variablesGameStatisticsTimeFraud.containerGameFiledStatisticsFraudCountText, variablesGameStatisticsTimeFraud.gameFiledStatisticsFraudCountText, variablesGameStatisticsTimeGeneral.commonGameFiledDisplay, variablesGameStatisticsTimeFraud.statisticsFraudCountText, variablesGameStatisticsTimeGeneral);
+        this.createContainerStatisticsFraudMain(variablesGameStatisticsTimeFraud.containerGameFiledStatisticsFraudCountText, variablesGameStatisticsTimeFraud.gameFiledStatisticsFraudCountText, variablesGameStatisticsTimeGeneral.commonGameFiledDisplay, variablesGameStatisticsTimeFraud.statisticsFraudCountText, variablesGameStatisticsTimeGeneral.commonStaticText);
         setElementClassNameSameAsIdAndSetText(variablesGameStatisticsTimeFraud.statisticsFraudCountText, variablesGameStatisticsTimeFraud.statisticsFraudCountTextDisplay);
     }
 
-    createGameFieldStatisticsFraud() {
+    createGameFieldStatisticsFraud(maxClicksNumber) {
         createElementDivWithTheSameIdAndClassName(variablesGameStatisticsTimeFraud.containerGameFiledStatisticsFraud, variablesGameStatisticsTimeFraud.containerGameFiledStatisticsFraudParts);
         this.createContainerStatisticsFraudSum();
         this.createContainerStatisticsFraudRoundUpdate();
-        this.createContainerStatisticsFraudCountPerRound();
+        this.createContainerStatisticsFraudCountPerRound(maxClicksNumber);
     }
 
     createElementFraudCountRoundInner(parentId, childId) {
@@ -73,9 +70,17 @@ export class ViewGameStatisticsTimeFraud {
     }
 
     createContainerStatisticsFraudCountPerRound(maxClicksNumber) {
+    // createContainerStatisticsFraudCountPerRound() {
 
-        let parentId = variablesGameStatisticsTimeFraud.containerGameFiledStatisticsFraudCountGamePlay;
-        let fraudNumber = maxClicksNumber;
+        // to remove
+        // let maxClicksNumberTempToRemoveLetMaxClicksNumber = 5;
+
+        // let parentId = variablesGameStatisticsTimeFraud.containerGameFiledStatisticsFraudCountGamePlay;
+        // // let fraudNumber = maxClicksNumber;
+
+        // to remove
+        // let fraudNumber = maxClicksNumberTempToRemoveLetMaxClicksNumber;
+        // let fraudNumber = maxClicksNumberTempToRemoveLetMaxClicksNumber;
 
         let gridRowStartNumber = 1;
         let gridColumnStartNumber = 1;
@@ -108,45 +113,10 @@ export class ViewGameStatisticsTimeFraud {
         }
     }
 
-    setGameStatisticFraudData(fraudCountedSumNumber, fraudCountedNumber) {
-        this.getGameStatisticFraudData(fraudCountedSumNumber, fraudCountedNumber);
-        this.setGameStatisticFraudCountedNumber();
-        this.setGameStatisticFraudCountedSumNumber();
-        this.setGameSConfigurationStatisticFraud();
-    }
+    // createContainersGameFiledStatistics() {
+    //     viewGameStatisticsTimeGeneral.createGameFieldStatisticsTime();
+    //     this.createGameFieldStatisticsFraud();
+    // }
 
-    getGameStatisticFraudData(fraudCountedSumNumber, fraudCountedNumber) {
-        return fraudCountedSumNumber += fraudCountedNumber;
-    }
 
-    setGameSConfigurationStatisticFraud(fraudCountRoundIndex, fraudCountedNumber) {
-        fraudCountRoundIndex++;
-        fraudCountedNumber = 0;
-    }
-
-    setGameStatisticFraudCountedNumber(fraudCountedNumber, fraudCountRoundIndex) {
-        let result;
-        if (fraudCountedNumber < 10)
-            result = valueToString(fraudCountedNumber) + variablesGameStatisticsTimeFraud.statisticsFraudCountNumberTextDisplayLessThanTen;
-        else
-            result = fraudCountedNumber;
-
-        let elementId = variablesGameStatisticsTimeFraud.fraudCountRoundGamePlayUpdateNumberPrefix + fraudCountRoundIndex;
-        let text = variablesGameStatisticsTimeFraud.statisticsFraudCountNumberTextDisplay + result;
-        setElementTextById(elementId, text);
-    }
-
-    setGameStatisticFraudCountedSumNumber(fraudCountedSumNumber) {
-        setElementTextById(variablesGameStatisticsTimeFraud.statisticsFraudBestGamePlay, fraudCountedSumNumber);
-    }
-
-    createContainersGameFiledStatistics() {
-        viewGameStatisticsTimeGeneral.createGameFieldStatisticsTime();
-        this.createGameFieldStatisticsFraud();
-    }
-
-    removeContainersGameFiledStatistics() {
-        removeElementById(variablesGameStatisticsTimeGeneral.containerGameFiledStatisticsTimeParts);
-        removeElementById(variablesGameStatisticsTimeFraud.containerGameFiledStatisticsFraudParts);
-    }
 }

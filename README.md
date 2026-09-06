@@ -1,11 +1,11 @@
-# 🐭 Clicker GameAction 🐭
+# 🐭 Clicker ActionGame 🐭
 
-**Clicker GameAction** is a game that tests your reflexes.
+**Clicker ActionGame** is a game that tests your reflexes.
 Your goal is to click on the color as quickly as possible when it changes.
 
 ---
 
-## GameAction Rules
+## ActionGame Rules
 
 * Click on the color **as soon as it changes**.
 * The game also tracks the number of clicks **before the color changes** to catch any attempts to “cheat”.
@@ -31,6 +31,6 @@ The game is responsive and works smoothly on computers and tablets.
 
 ---
 
-Here is a short preview of Clicker GameAction:
+Here is a short preview of Clicker ActionGame:
   
-![Clicker GameAction](docs/gif/clickerGame.gif)
+![Clicker ActionGame](docs/gif/clickerGame.gif)

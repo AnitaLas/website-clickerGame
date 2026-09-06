@@ -5,7 +5,7 @@ import {
 } from "../common/function/commonFunctions.js";
 import * as variablesGameButtons from "../common/variable/clickerGame/variablesGameButtons.js";
 
-export class GameButtonsPlayAction {
+export class ActionGameButtonPlayClickColor {
 
     removeContainersGameFiledButtonsMainStop() {
         removeElementById(variablesGameButtons.containerGameFiledButtonsMainStop);

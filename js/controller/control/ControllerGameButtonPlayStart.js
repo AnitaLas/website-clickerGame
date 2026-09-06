@@ -1,25 +1,20 @@
-import {
-    getElementById,
-    removeElementClassNameById,
-    setElementClassNameById
-} from "../common/function/commonFunctions.js";
-import * as variablesGameButtons from "../common/variable/clickerGame/variablesGameButtons.js";
-import * as variableGameConfigurationRound from "../common/variable/clickerGame/variableGameConfigurationRound.js";
+import {getElementById, removeElementClassNameById, setElementClassNameById} from "../../common/function/commonFunctions.js";
+import * as variablesGameButtons from "../../common/variable/clickerGame/variablesGameButtons.js";
+import * as variableGameConfigurationRound from "../../common/variable/clickerGame/variableGameConfigurationRound.js";
 
+export class ControllerGameButtonPlayStart {
 
-export class GameButtonsPlayController {
-
-    constructor(gameButtonsView, gameButtonsAction, gameRoundAction) {
-        this.gameButtonsView = gameButtonsView;
-        this.gameButtonsAction = gameButtonsAction;
+    constructor(viewGameButtonsPlayStart, gameButtonsPlayStartAction, gameRoundAction) {
+        this.viewGameButtonsPlayStart = viewGameButtonsPlayStart;
+        this.gameButtonsPlayStartAction = gameButtonsPlayStartAction;
         this.gameRoundAction = gameRoundAction;
+        this.onStart = null;
     }
 
     createGameButtonsView() {
-        this.gameButtonsView.createViewGameButtonPlay();
+        this.viewGameButtonsPlayStart.createGameFieldPButtonMainStart();
         this.configureStartButton();
     }
-
 
     setFunctionOnClickButton(buttonId, functionToCall) {
         const button = getElementById(buttonId);
@@ -28,15 +23,17 @@ export class GameButtonsPlayController {
         });
     }
 
+    setOnStart(onStart) {
+        this.onStart = onStart;
+    }
+
     setConfigurationStartForPlay(event) {
         // console.log("START GAME");
-        // this.gameRoundAction.setButtonIdChosenFinaRoundNumberForGame(event);
-
         this.setConfigurationButtonsFinalNumberForPlay();
-        this.gameButtonsView.createGameFieldPButtonMainStop();
-        //
-        // this.gameEngine.playGameSetConfigurationStart();
-        // this.gameButtonPlayAction.removeContainersGameFiledButtonsMainStop();
+
+        if (this.onStart) {
+            this.onStart();
+        }
 
     }
 
@@ -57,14 +54,5 @@ export class GameButtonsPlayController {
         removeElementClassNameById(buttonIdPrevious, variableGameConfigurationRound.menuGameConfigurationButtonCurrentNumber);
         removeElementClassNameById(max, variableGameConfigurationRound.menuGameConfigurationButtonChosenNumber);
         setElementClassNameById(currentButtonId, variableGameConfigurationRound.menuGameConfigurationButtonChosenNumber);
-    }
-
-
-    setConfigurationStopForPlay(event) {
-        console.log("STOP GAME ");
-
-
-        // this.createGameFieldPButtonMainStop();
-
     }
 }

@@ -1,11 +1,11 @@
-import * as variableGameConfigurationRound from "../common/variable/clickerGame/variableGameConfigurationRound.js";
+import * as variableGameConfigurationRound from "../../common/variable/clickerGame/variableGameConfigurationRound.js";
 
 import {
     removeElementClassNameById, setElementClassNameById, valueToString
-} from "../common/function/commonFunctions.js";
+} from "../../common/function/commonFunctions.js";
 
 
-export class GameButtonsRoundController {
+export class ControllerGameButtonRound {
 
     constructor(viewGameConfigurationRound, gameRoundAction) {
         this.viewGameConfigurationRound = viewGameConfigurationRound;
@@ -37,5 +37,9 @@ export class GameButtonsRoundController {
 
         removeElementClassNameById(buttonIdPrevious, variableGameConfigurationRound.menuGameConfigurationButtonCurrentNumber);
         setElementClassNameById(currentButtonId, variableGameConfigurationRound.menuGameConfigurationButtonCurrentNumber);
+    }
+
+    getMaxClicksNumberSetByUser(){
+        return this.gameRoundAction.getMaxClicksNumberSetByUser();
     }
 }

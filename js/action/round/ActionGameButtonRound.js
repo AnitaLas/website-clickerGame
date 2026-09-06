@@ -1,11 +1,11 @@
 import {
     getElementAttributeValueById,
     valueToString
-} from "../common/function/commonFunctions.js";
+} from "../../common/function/commonFunctions.js";
 
-import * as variableGameConfigurationRound from "../common/variable/clickerGame/variableGameConfigurationRound.js";
+import * as variableGameConfigurationRound from "../../common/variable/clickerGame/variableGameConfigurationRound.js";
 
-export class GameRoundAction {
+export class ActionGameButtonRound {
 
     buttonIdPrevious = variableGameConfigurationRound.menuGameConfigurationButtonClickNumberPrefix + valueToString(5)
     buttonIdCurrent = variableGameConfigurationRound.menuGameConfigurationButtonClickNumberPrefix + valueToString(5);

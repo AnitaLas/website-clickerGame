@@ -238,6 +238,12 @@
 //     gameRandomTimeToChangeColor = randomSecond * 1000;
 // }
 //
+
+
+
+
+
+//xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 // function getGameStatisticTimeInSeconds(timeInMilliseconds) {
 //     return (timeInMilliseconds / 1000).toFixed(4);
 // }
@@ -298,6 +304,15 @@
 //     setGameStatisticTimeMaxInMilliseconds();
 //     setGameStatisticTimeBestInMilliseconds();
 // }
+
+
+//xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+
+
+
+
+
 //
 // function playClickerGame() {
 //
@@ -376,42 +391,7 @@
 //     setElementClassNameById(parentId, fraudCountRound);
 //     setElementClassNameById(parentId, fraudCountRoundUpdateNumber);
 // }
-//
-// function createContainerStatisticsFraudCountPerRound() {
-//
-//     let parentId = containerGameFiledStatisticsFraudCountGamePlay;
-//     let fraudNumber = maxClicksNumber;
-//
-//     let gridRowStartNumber = 1;
-//     let gridColumnStartNumber = 1;
-//     let gridRowEndNumber = 2;
-//     let gridColumnEndNumber = 2;
-//
-//     let gridTemplateRows = "repeat(1, 2fr 6fr 2fr)";
-//     let gridTemplateColumns = "repeat(" + fraudNumber + ", 1fr 100fr 1fr)";
-//     setElementStyletAsGrid(parentId, gridRowStartNumber, gridColumnStartNumber, gridRowEndNumber, gridColumnEndNumber, gridTemplateRows, gridTemplateColumns);
-//
-//     let gridRowStartNumberChild = 2;
-//     let gridColumnStartNumberChild = 2;
-//     let gridRowEndNumberChild = 3;
-//     let gridColumnEndNumberChild = 3;
-//
-//     for (let i = 0; i < fraudNumber; i++) {
-//
-//         let childId = containerGameFiledStatisticsFraudCountGamePlay + "-" + valueToString(i);
-//         createElementFraudCountRoundMain(parentId, childId);
-//
-//         let gridTemplateRowsChild = "1fr";
-//         let gridTemplateColumnsChild = "1fr";
-//         setElementStyletAsGrid(childId, gridRowStartNumberChild, gridColumnStartNumberChild, gridRowEndNumberChild, gridColumnEndNumberChild, gridTemplateRowsChild, gridTemplateColumnsChild);
-//
-//         let grandChildId = fraudCountRoundGamePlayUpdateNumberPrefix + valueToString(i);
-//         createElementFraudCountRoundInner(childId, grandChildId);
-//
-//         gridColumnStartNumberChild += 3;
-//         gridColumnEndNumberChild += 3;
-//     }
-// }
+
 //
 // function playClickerGameClickBeforeNewRound() {
 //     fraudCountedNumber++;
