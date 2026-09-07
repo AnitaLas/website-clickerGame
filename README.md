@@ -1,11 +1,11 @@
-# 🐭 Clicker ActionGame 🐭
+# 🐭 Clicker ActionGameOldToRemove 🐭
 
-**Clicker ActionGame** is a game that tests your reflexes.
+**Clicker ActionGameOldToRemove** is a game that tests your reflexes.
 Your goal is to click on the color as quickly as possible when it changes.
 
 ---
 
-## ActionGame Rules
+## ActionGameOldToRemove Rules
 
 * Click on the color **as soon as it changes**.
 * The game also tracks the number of clicks **before the color changes** to catch any attempts to “cheat”.
@@ -31,6 +31,6 @@ The game is responsive and works smoothly on computers and tablets.
 
 ---
 
-Here is a short preview of Clicker ActionGame:
+Here is a short preview of Clicker ActionGameOldToRemove:
   
-![Clicker ActionGame](docs/gif/clickerGame.gif)
+![Clicker ActionGameOldToRemove](docs/gif/clickerGame.gif)
