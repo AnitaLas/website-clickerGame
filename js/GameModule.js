@@ -26,6 +26,7 @@ import {ControllerStatisticsFraud} from "./controller/statistic/ControllerStatis
 import {ControllerStatisticsMain} from "./controller/statistic/ControllerStatisticsMain.js";
 
 import {ControllerMain} from "./controller/ControllerMain.js";
+import {ActionStatisticsFraud} from "./action/statistic/ActionStatisticsFraud.js";
 
 export class GameModule {
 
@@ -103,16 +104,16 @@ export class GameModule {
         this.viewStatisticsFraud =
             new ViewStatisticsFraud();
 
-        this.actionStatisticsTime =
-            new ActionStatisticsTime();
+        this.actionStatisticsFraud =
+            new ActionStatisticsFraud();
 
         this.controllerStatisticsFraud =
             new ControllerStatisticsFraud(
                 this.viewStatisticsFraud,
-                this.actionStatisticsTime);
+                this.actionStatisticsFraud);
 
 
-        this.controllerGameStatisticsMain =
+        this.controllerStatisticsMain =
             new ControllerStatisticsMain(
                 this.controllerStatisticsTime,
                 this.controllerStatisticsFraud);
@@ -121,10 +122,11 @@ export class GameModule {
         this.controllerMain =
             new ControllerMain(
                 this.controllerButtonsMain,
-                this.controllerGameStatisticsMain,
+                this.controllerStatisticsMain,
             );
 
         this.controllerMain.configureStartGame();
+        // this.controllerMain.configureClickColor();
     }
 
     createGame() {

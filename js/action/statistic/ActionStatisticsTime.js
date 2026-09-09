@@ -15,21 +15,9 @@ export class ActionStatisticsTime {
         removeElementById(variablesStatisticsFraud.containerGameFiledStatisticsFraudParts);
     }
 
-    setGameStatisticFraudData(fraudCountedSumNumber, fraudCountedNumber) {
-        this.getGameStatisticFraudData(fraudCountedSumNumber, fraudCountedNumber);
-        this.setGameStatisticFraudCountedNumber();
-        this.setGameStatisticFraudCountedSumNumber();
-        this.setGameSConfigurationStatisticFraud();
-    }
 
-    getGameStatisticFraudData(fraudCountedSumNumber, fraudCountedNumber) {
-        return fraudCountedSumNumber += fraudCountedNumber;
-    }
 
-    setGameSConfigurationStatisticFraud(fraudCountRoundIndex, fraudCountedNumber) {
-        fraudCountRoundIndex++;
-        fraudCountedNumber = 0;
-    }
+
 
     setGameStatisticFraudCountedNumber(fraudCountedNumber, fraudCountRoundIndex) {
         let result;

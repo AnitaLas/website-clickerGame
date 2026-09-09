@@ -37,6 +37,6 @@ export class ActionButtonsRound {
     }
 
     getMaxClicksNumberSetByUser() {
-        return getElementAttributeValueById(this.buttonIdPrevious);
+        return getElementAttributeValueById(this.buttonIdCurrent);
     }
 }

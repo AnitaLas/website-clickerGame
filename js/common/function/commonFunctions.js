@@ -136,3 +136,17 @@ export function createContainerMainElements(containerMainSectionName, sectionNam
     createElementDiv(containerMainSectionName, containerSectionName)
     createElementDivWithTheSameIdAndClassName(containerSectionName, containerSectionMainName);
 }
+
+// export function addEventListenerOnClickButton(buttonId, functionToCall) {
+//     const button = getElementById(buttonId);
+//     button.addEventListener("click", (event) => {
+//         functionToCall.call(this, event);
+//     });
+// }
+
+export function addEventListenerOnClickButton(buttonId, functionToCall, context) {
+    const button = getElementById(buttonId);
+    button.addEventListener("click", (event) => {
+        functionToCall.call(context, event);
+    });
+}

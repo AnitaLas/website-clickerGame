@@ -5,16 +5,20 @@ export class ControllerButtonsMain {
         this.controllerButtonStart = controllerButtonStart;
         this.controllerButtonStop = controllerButtonStop;
         this.controllerButtonClickColor = controllerButtonClickColor;
-        this.onStart = null;
     }
 
     setOnStart(onStart) {
         this.controllerButtonStart.setOnStart(onStart);
     }
 
+    setOnClickColor(onClickColor) {
+        this.controllerButtonClickColor.setOnClickColor(onClickColor);
+    }
+
     setConfigurationForButtons() {
         this.createButtonsStop();
         this.setConfigurationForRoundNumber();
+        // this.setConfigurationForButtonClickColor();
     }
 
     createButtonsStop() {
@@ -22,10 +26,19 @@ export class ControllerButtonsMain {
     }
 
     setConfigurationForRoundNumber() {
-        this.controllerButtonsRound.setConfigurationButtonsFinalNumberForPlay()
+        this.controllerButtonsRound.setConfigurationButtonsFinalNumberForPlay();
+    }
+
+    configureClickColor() {
+        this.controllerButtonClickColor.configureButtonClickColor();
+    }
+
+    configureClickColorGameOver(){
+        this.controllerButtonClickColor.configureClickColorGameOver();
     }
 
     getMaxClicksNumberSetByUser() {
         return this.controllerButtonsRound.getMaxClicksNumberSetByUser();
     }
+
 }

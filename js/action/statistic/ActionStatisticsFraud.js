@@ -1,34 +1,27 @@
 import {
     setElementTextById,
     valueToString
-} from "../../common/function/commonFunctions";
+} from "../../common/function/commonFunctions.js";
 
-import * as variablesStatisticsFraud from "../../common/variable/statistic/variablesStatisticsFraud";
+import * as variablesStatisticsFraud from "../../common/variable/statistic/variablesStatisticsFraud.js";
 
 
 export class ActionStatisticsFraud {
 
-    setGameStatisticFraudData(fraudCountedSumNumber, fraudCountedNumber) {
-        this.getGameStatisticFraudData(fraudCountedSumNumber, fraudCountedNumber);
-        this.setGameStatisticFraudCountedNumber();
-        this.setGameStatisticFraudCountedSumNumber();
-        // this.setGameSConfigurationStatisticFraud();
+    setGameStatisticFraudData(fraudCountedRoundNumber, fraudCountedSumNumber, fraudRoundIndex) {
+        this.setGameStatisticFraudCountedNumber(fraudCountedRoundNumber, fraudRoundIndex);
+        this.setGameStatisticFraudCountedSumNumber(fraudCountedSumNumber);
     }
 
-    getGameStatisticFraudData(fraudCountedSumNumber, fraudCountedNumber) {
-        return fraudCountedSumNumber += fraudCountedNumber;
-    }
 
-    // setGameSConfigurationStatisticFraud(fraudCountRoundIndex, fraudCountedNumber) {
-    //     // fraudCountRoundIndex++;
-    //     // fraudCountedNumber = 0;
-    // }
-
-    setGameStatisticFraudCountedNumber(fraudCountedNumber, fraudCountRoundIndex) {
+    setGameStatisticFraudCountedNumber(fraudCountedRoundNumber, fraudRoundIndex) {
         let result;
-        if (fraudCountedNumber < 10) result = valueToString(fraudCountedNumber) + variablesStatisticsFraud.statisticsFraudCountNumberTextDisplayLessThanTen; else result = fraudCountedNumber;
+        if (fraudCountedRoundNumber < 10)
+            result = valueToString(fraudCountedRoundNumber) + variablesStatisticsFraud.statisticsFraudCountNumberTextDisplayLessThanTen;
+        else
+            result = fraudCountedRoundNumber;
 
-        let elementId = variablesStatisticsFraud.fraudCountRoundGamePlayUpdateNumberPrefix + fraudCountRoundIndex;
+        let elementId = variablesStatisticsFraud.fraudCountRoundGamePlayUpdateNumberPrefix + fraudRoundIndex;
         let text = variablesStatisticsFraud.statisticsFraudCountNumberTextDisplay + result;
         setElementTextById(elementId, text);
     }

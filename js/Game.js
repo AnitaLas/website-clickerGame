@@ -1,15 +1,38 @@
-import {rootVariables} from "./common/variable/main/variablesMain.js";
+import * as variablesMain from "./common/variable/main/variablesMain.js";
 
 export class Game {
 
     constructor(roundNumberSetupByUser,) {
         this.roundNumberSetupByUser = roundNumberSetupByUser;
-        this.gameStart();
+        this.roundNumber = this.roundNumberSetupByUser;
+        this.countedRoundNumber = 0;
+        this.onTime = null;
+        this.isGameStarted  = false;
     }
 
-    maxClicksNumber = 5;
+    getCountedRoundNumber(){
+        return this.countedRoundNumber;
+    }
+
     roundNumber = this.roundNumberSetupByUser;
-    countedClicksNumber = 0;
+    countedRoundNumber = 0;
+
+    maxClicksNumber = 5;
+    // roundNumber = this.roundNumberSetupByUser;
+    // countedRoundNumber = 0;
+
+    isGameRunning(){
+        // this.countedRoundNumber++;
+
+        // console.log("countedRoundNumber = " + this.countedRoundNumber);
+        // console.log("roundNumber = " + this.roundNumber);
+
+        return this.countedRoundNumber < this.roundNumber;
+    }
+
+    startNextRound() {
+        this.countedRoundNumber++;
+    }
 
     gameRandomColor = "#ac4a71";
     gameRandomTimeToChangeColor = 1;
@@ -27,9 +50,9 @@ export class Game {
     gameStatisticTimeBestInMilliseconds = this.gameStatisticTimeMinInMilliseconds;
 
     currentFunctionOnclickName;
-    fraudCountedNumber = 0;
     fraudCountedSumNumber = 0;
-    fraudCountRoundIndex = 0;
+    fraudCountedRoundNumber = 0;
+    fraudRoundIndex = 0;
 
     timeoutButtonStop;
 
@@ -40,214 +63,62 @@ export class Game {
     gameColors = this.colors;
 
 
-    // playGameColorStart() {
-    gameStart() {
-        // view
-        this.removeContainersGameFiledButtonsMainStop();
-        this.createContainersGameFiledButtonsMainStop();
-        this.removeContainersGameFiledStatistics();
+    setOnTime(onTime) {
+        this.onTime = onTime;
+    }
 
-        // view
-        this.setGameButtonStartColor();
+    playClickColorCounterFraud() {
+        this.fraudCountedRoundNumber++;
+        console.log("fraudCountedRoundNumber = " + this.fraudCountedRoundNumber);
+    }
+
+    updateCounterFraudData() {
+        // this.setFraudCountedRoundNumber();
+        this.setFraudCountedSumNumber();
+        // this.setFraudRoundIndex();
+    }
+
+
+    resetCounterFraudData() {
+        this.resetFraudCountedRoundNumber();
+        // this.setFraudCountedSumNumber();
+        this.setFraudRoundIndex();
+    }
+
+    setFraudCountedSumNumber() {
+        this.fraudCountedSumNumber = this.fraudCountedSumNumber + this.fraudCountedRoundNumber;
+    }
+
+    getFraudCountedSumNumber() {
+        return this.fraudCountedSumNumber;
+    }
+
+    resetFraudCountedRoundNumber() {
+        this.fraudCountedRoundNumber = 0;
+    }
+
+    getFraudCountedRoundNumber() {
+        return this.fraudCountedRoundNumber;
+    }
+
+    setFraudRoundIndex() {
+        this.fraudRoundIndex++;
+    }
+
+    getFraudRoundIndex() {
+        return this.fraudRoundIndex;
+    }
+
+
+
+    playClickColorCounterTime() {
+
+        console.log("playClickColorCounterTime ---- STRAT");
+
+
+        // this.setGameButtonStartColor();
 
         this.setConfigurationGameRound();
-
-
-        // this.removeConfigurationGameOver();
-
-
-        // this.setConfigurationMaxClicksNumber();
-        // this.setConfigurationButtonMainGameStart();
-
-        // this.countedClicksNumber = 0;
-
-        // this.fraudCountedNumber = 0;
-        // this.fraudCountedSumNumber = 0;
-        // this.fraudCountRoundIndex = 0;
-        //
-        // this.gameStatisticTimeMinInMilliseconds = 1300000;
-        // this.gameStatisticTimeAvgInMilliseconds = 0;
-        // this.gameStatisticTimeSumInMilliseconds = 0;
-        // this.gameStatisticTimeMaxInMilliseconds = 0;
-
-        this.countedClicksNumber++;
-    }
-
-    // funTimeoutButtonStop = function setTimeoutButtonStop() {
-    //     this.setGameFieldColor(gameRandomColor);
-    //     setFunctionOnclick(gameFiledButtonPlay, functionNameOnclickPlayGameColor);
-    //     this.startTime = performance.now();
-    // }
-
-
-    playGameColorStop() {
-        this.clearTimeoutButtonStop();
-        // [extension V1] button continue is active -> // setConfigurationGameStop();
-        this.setConfigurationGameStop();
-        // [extension V1] do not even think of removing this function !!!
-        // setConfigurationGameContinue();
-    }
-
-    setConfigurationGameStop() {
-        // removeFunctionOnclick(gameFiledButtonPlay);
-        // removeFunctionOnclick(buttonMainStop);
-        //
-        //
-        // this.removeConfigurationButtonChosenNumber();
-        // this.setConfigurationButtonMainGameStop();
-
-    }
-
-    getRandomNumber(maxNumber) {
-        return Math.floor((Math.random() * maxNumber));
-    }
-
-    setGameRandomColor() {
-        let randomNumber = this.getRandomNumber(colors.length);
-        let tempColor = this.gameRandomColor;
-        this.gameRandomColor = this.colors[randomNumber];
-        this.colors[randomNumber] = tempColor;
-    }
-
-    setGameFieldColor(colorName) {
-        rootVariables.style.setProperty(cssGameFiledButtonPlayColor, colorName);
-    }
-
-
-    runTimeoutButtonStop() {
-        this.timeoutButtonStop = setTimeout(this.funTimeoutButtonStop, this.gameRandomTimeToChangeColor);
-    }
-
-    clearTimeoutButtonStop() {
-        clearTimeout(this.timeoutButtonStop);
-    }
-
-    setFunctionOnclickPlayGameColorClickBeforeNewRound() {
-        // setFunctionOnclick(gameFiledButtonPlay, functionNameOnclickPlayGameColorClickBeforeNewRound);
-    }
-
-    setGameButtonStartColor() {
-        this.setGameFieldColor(gameFiledButtonPlayStartColor);
-    }
-
-    setGameRandomTimeInMillisecondsToChangeColor() {
-        let randomSecond = this.getRandomNumber(this.gameRandomTimeMaxSecond) + 1;
-        this.gameRandomTimeToChangeColor = randomSecond * 1000;
-    }
-
-    getGameStatisticTimeInSeconds(timeInMilliseconds) {
-        return (timeInMilliseconds / 1000).toFixed(4);
-    }
-
-    setGameStatisticTimeMinInSeconds() {
-        // let timeInSeconds = this.getGameStatisticTimeInSeconds(gameStatisticTimeMinInMilliseconds);
-        // setElementTextById(statisticsTimeMinGamePlay, timeInSeconds);
-    }
-
-    setGameStatisticTimeAvgInSeconds() {
-        // let timeInSeconds = this.getGameStatisticTimeInSeconds(gameStatisticTimeAvgInMilliseconds);
-        // setElementTextById(statisticsTimeAvgGamePlay, timeInSeconds);
-    }
-
-    setGameStatisticTimeMaxInSeconds() {
-        // let timeInSeconds = this.getGameStatisticTimeInSeconds(gameStatisticTimeMaxInMilliseconds);
-        // setElementTextById(statisticsTimeMaxGamePlay, timeInSeconds);
-    }
-
-    setGameStatisticTimeBestInSeconds() {
-        // let timeInSeconds = this.getGameStatisticTimeInSeconds(gameStatisticTimeBestInMilliseconds);
-        // setElementTextById(statisticsTimeBestGamePlay, timeInSeconds);
-    }
-
-    setGameStatisticTimeInSeconds() {
-        this.setGameStatisticTimeMinInSeconds();
-        this.setGameStatisticTimeAvgInSeconds();
-        this.setGameStatisticTimeMaxInSeconds();
-        this.setGameStatisticTimeBestInSeconds();
-    }
-
-    setGameStatisticTimeMinInMilliseconds() {
-        if (this.gameStatisticTimeMinInMilliseconds > this.reactionTime)
-            this.gameStatisticTimeMinInMilliseconds = this.reactionTime;
-    }
-
-    setGameStatisticTimeSumInMilliseconds() {
-        this.gameStatisticTimeSumInMilliseconds += this.reactionTime;
-    }
-
-    setGameStatisticTimeAvgInMilliseconds() {
-        this.gameStatisticTimeAvgInMilliseconds = this.gameStatisticTimeSumInMilliseconds / this.countedClicksNumber;
-    }
-
-    setGameStatisticTimeMaxInMilliseconds() {
-        if (this.gameStatisticTimeMaxInMilliseconds < this.reactionTime)
-            this.gameStatisticTimeMaxInMilliseconds = this.reactionTime;
-    }
-
-    setGameStatisticTimeBestInMilliseconds() {
-        if (this.gameStatisticTimeBestInMilliseconds > this.gameStatisticTimeMinInMilliseconds)
-            this.gameStatisticTimeBestInMilliseconds = this.gameStatisticTimeMinInMilliseconds;
-    }
-
-    setGameStatisticTimeInMilliseconds() {
-        this.setGameStatisticTimeMinInMilliseconds();
-        this.setGameStatisticTimeAvgInMilliseconds();
-        this.setGameStatisticTimeMaxInMilliseconds();
-        this.setGameStatisticTimeBestInMilliseconds();
-    }
-
-    // color change
-    playClickerGame() {
-
-        if (this.countedClicksNumber === 1)
-            this.createContainersGameFiledStatistics();
-
-        this.setEndTime();
-        this.setClickReactionTime();
-        this.setGameStatisticTimeSumInMilliseconds();
-        this.setGameStatisticTimeInMilliseconds();
-        this.setGameStatisticTimeInSeconds();
-        this.setGameStatisticFraudData();
-
-        // origin
-        // if (this.countedClicksNumber < this.maxClicksNumber) {
-        if (this.countedClicksNumber < this.roundNumber) {
-            this.setConfigurationGameRound();
-            this.countedClicksNumber++;
-        } else {
-            // console.log("GAME OVER");
-            this.setConfigurationGameOver();
-        }
-    }
-
-    setConfigurationGameOver() {
-        // removeFunctionOnclick(gameFiledButtonPlay);
-        // removeFunctionOnclick(buttonMainStop);
-        // setElementTextById(gameFiledButtonPlay, gameFiledButtonPlayGameOverTextDisplay);
-        // setElementClassNameById(gameFiledButtonPlay, gameFiledButtonPlayGameOver);
-        // this.setConfigurationButtonMainGameOver();
-        // this.removeConfigurationButtonChosenNumber();
-    }
-
-    removeConfigurationGameOver() {
-        // setElementTextById(gameFiledButtonPlay, "");
-        // removeElementClassNameById(gameFiledButtonPlay, gameFiledButtonPlayGameOver);
-    }
-
-    setClickReactionTime() {
-        this.reactionTime = this.endTime - this.startTime + this.reactionTimeTimeout;
-    }
-
-    setClickReactionTimeTimeout() {
-        this.reactionTimeTimeout = this.endTime - this.startTime;
-    }
-
-    setEndTime() {
-        this.endTime = performance.now();
-    }
-
-    setGameTimeTimeoutStart() {
-        this.gameTimeTimeoutStart = performance.now();
     }
 
     setConfigurationGameRound() {
@@ -262,92 +133,75 @@ export class Game {
         this.setGameTimeTimeoutStart();
 
         // logic ?
-        this.setFunctionOnclickPlayGameColorClickBeforeNewRound();
+        // this.setFunctionOnclickPlayGameColorClickBeforeNewRound();
 
         // logic
         this.runTimeoutButtonStop();
     }
 
-    createElementFraudCountRoundInner(parentId, childId) {
-
-        // VIEW FRAUD
-        // createElementDiv(parentId, childId);
-        // setElementClassNameById(childId, commonGameFiledDisplay);
-        // setElementClassNameById(childId, commonStaticText);
-        // setElementClassNameById(childId, fraudCountRoundCommon);
-        // setElementTextById(childId, statisticsFraudCountNumberTextDisplaySetUp);
+    getRandomNumber(maxNumber) {
+        return Math.floor((Math.random() * maxNumber));
     }
 
-    createElementFraudCountRoundMain(parentId, childId) {
-        // createElementDiv(parentId, childId);
-        // setElementClassNameById(parentId, fraudCountRound);
-        // setElementClassNameById(parentId, fraudCountRoundUpdateNumber);
+    setGameRandomColor() {
+        let randomNumber = this.getRandomNumber(this.colors.length);
+        let tempColor = this.gameRandomColor;
+        this.gameRandomColor = this.colors[randomNumber];
+        this.colors[randomNumber] = tempColor;
+    }
+
+    setGameRandomTimeInMillisecondsToChangeColor() {
+        let randomSecond = this.getRandomNumber(this.gameRandomTimeMaxSecond) + 1;
+        this.gameRandomTimeToChangeColor = randomSecond * 1000;
+        console.log(
+            "WYLOSOWANY CZAS = " +
+            this.gameRandomTimeToChangeColor
+        );
+    }
+
+    setGameTimeTimeoutStart() {
+        this.gameTimeTimeoutStart = performance.now();
+    }
+
+    funTimeoutButtonStop = () => {
+
+        console.log(
+            "TIMEOUT - zmiana koloru, runda = " +
+            this.countedRoundNumber
+        );
+
+        // zmiana koloru
+        this.setGameFieldColor(this.gameRandomColor);
+
+        // rozpoczęcie pomiaru czasu reakcji
+        this.startTime = performance.now();
+
+        // poinformowanie ControllerMain,
+        // że teraz CLICK COLOR ma być traktowany jako TIME
+        if (this.onTime) {
+            this.onTime();
+        }
+    };
+
+    runTimeoutButtonStop() {
+        console.log(
+            "SET TIMEOUT, czas = " +
+            this.gameRandomTimeToChangeColor
+        );
+
+        this.timeoutButtonStop = setTimeout(
+            this.funTimeoutButtonStop,
+            this.gameRandomTimeToChangeColor
+        );
     }
 
 
-    playClickerGameClickBeforeNewRound() {
-        this.fraudCountedNumber++;
+    setGameFieldColor(colorName) {
+        variablesMain.rootVariables.style.setProperty(variablesMain.cssGameFiledButtonPlayColor, colorName);
     }
 
-    setGameStatisticFraudData() {
-        this.fraudCountedSumNumber += this.fraudCountedNumber;
-
-
-        // ACTION - FRAUD
-        this.setGameStatisticFraudCountedNumber();
-
-
-        // ACTION - FRAUD
-        this.setGameStatisticFraudCountedSumNumber();
-
-        // LOGIC
-        this.setGameSConfigurationStatisticFraud();
+    setGameButtonStartColor() {
+        this.setGameFieldColor(variablesMain.gameFiledButtonPlayStartColor);
     }
 
-    setGameSConfigurationStatisticFraud() {
-        this.fraudCountRoundIndex++;
-        this.fraudCountedNumber = 0;
-    }
-
-    setGameStatisticFraudCountedNumber() {
-
-        // ACTION - FRAUD
-
-        // let result;
-        // if (this.fraudCountedNumber < 10)
-        //     result = valueToString(this.fraudCountedNumber) + statisticsFraudCountNumberTextDisplayLessThanTen;
-        // else
-        //     result = this.fraudCountedNumber;
-
-        // let elementId = fraudCountRoundGamePlayUpdateNumberPrefix + this.fraudCountRoundIndex;
-        // let text = statisticsFraudCountNumberTextDisplay + result;
-        // setElementTextById(elementId, text);
-    }
-
-    setGameStatisticFraudCountedSumNumber() {
-        // ACTION - FRAUD
-        // setElementTextById(statisticsFraudBestGamePlay, this.fraudCountedSumNumber);
-    }
-
-    createContainersGameFiledStatistics() {
-
-        // VIEW TIME - FRAUD
-
-        // this.createGameFieldStatisticsTime();
-        // this.createGameFieldStatisticsFraud();
-    }
-
-    removeContainersGameFiledStatistics() {
-        // removeElementById(containerGameFiledStatisticsTimeParts);
-        // removeElementById(containerGameFiledStatisticsFraudParts);
-    }
-
-    createContainersGameFiledButtonsMainStop() {
-        // this.createGameFieldPButtonMainStop();
-    }
-
-    removeContainersGameFiledButtonsMainStop() {
-        // removeElementById(containerGameFiledButtonsMainStop);
-
-    }
 }
