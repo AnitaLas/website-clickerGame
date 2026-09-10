@@ -10,10 +10,10 @@ export class ControllerStatisticsTime {
     }
 
     removeGameFieldStatisticsTime() {
-        this.actionStatisticsTime.removeGameFieldStatisticsTime();
+        this.viewStatisticsTime.removeGameFieldStatisticsTime();
     }
 
     setGameStatisticTimeData(statisticTimeInSecondsMin, statisticTimeInSecondsAvg, statisticTimeInSecondsMax, statisticTimeInSecondsBest) {
-        this.actionStatisticsTime.setGameStatisticTimeData(statisticTimeInSecondsMin, statisticTimeInSecondsAvg, statisticTimeInSecondsMax, statisticTimeInSecondsBest);
+        this.viewStatisticsTime.setGameStatisticTimeData(statisticTimeInSecondsMin, statisticTimeInSecondsAvg, statisticTimeInSecondsMax, statisticTimeInSecondsBest);
     }
 }

@@ -1,25 +1,54 @@
+import {ViewButtons} from "./ViewButtons.js";
+
 import {
     createElementDiv,
     createElementButton,
-    setElementClassNameById
+    setElementClassNameById, setElementTextById, removeElementClassNameById
 } from "../../common/function/commonFunctions.js";
 
 import * as variablesGameButtons from "../../common/variable/control/variablesGameButtons.js";
+import * as variablesMain from "../../common/variable/main/variablesMain.js";
 
 
-export class ViewButtonClickColor {
+export class ViewButtonClickColor extends ViewButtons {
 
-    createViewGameButtonPlay() {
-        this.createGameFieldPButtonMain();
-        this.createGameFieldPButtonPlay();
+    createButton() {
+        this.createContainerMain();
+        this.createContainerParts();
     }
 
-    createGameFieldPButtonMain() {
+    createContainerMain() {
         createElementDiv(variablesGameButtons.containerGameFiledButtonMain, variablesGameButtons.containerGameFiledButtonsMainParts);
     }
 
-    createGameFieldPButtonPlay() {
+    createContainerParts() {
         createElementButton(variablesGameButtons.containerGameFiledButtonPlay, variablesGameButtons.gameFiledButtonPlay);
         setElementClassNameById(variablesGameButtons.gameFiledButtonPlay, variablesGameButtons.gameFiledButtonPlay);
+    }
+
+    setButtonClickColorRandom(gameRandomColor) {
+        variablesMain.rootVariables.style.setProperty(variablesMain.cssGameFiledButtonPlayColor, gameRandomColor);
+    }
+
+    setButtonClickColorAtStart() {
+        this.setButtonClickColorRandom(variablesMain.gameFiledButtonPlayStartColor);
+    }
+
+    setConfigurationGameOver() {
+        // removeFunctionOnclick(buttonMainStop);
+        setElementTextById(variablesGameButtons.gameFiledButtonPlay, variablesGameButtons.gameFiledButtonPlayGameOverTextDisplay);
+        setElementClassNameById(variablesGameButtons.gameFiledButtonPlay, variablesGameButtons.gameFiledButtonPlayGameOver);
+        this.setConfigurationButtonClickColorGameOver();
+        // this.removeConfigurationButtonChosenNumber();
+    }
+
+    setConfigurationButtonClickColorGameOver() {
+        this.removeConfigurationButtonMainAfterClick(variablesGameButtons.containerGameFiledButtonsMainStartTextDisplayId);
+        setElementClassNameById(variablesGameButtons.gameFiledButtonMainStop, variablesGameButtons.gameFiledButtonMainInactive);
+    }
+
+    removeConfigurationGameOver() {
+        setElementTextById(variablesGameButtons.gameFiledButtonPlay, "");
+        removeElementClassNameById(variablesGameButtons.gameFiledButtonPlay, variablesGameButtons.gameFiledButtonPlayGameOver);
     }
 }

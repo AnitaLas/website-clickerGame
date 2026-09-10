@@ -1,4 +1,5 @@
 import {
+    getElementById,
     removeElementClassNameById,
     setElementClassNameById,
     valueToString
@@ -29,7 +30,7 @@ export class ControllerButtonsRound {
         for (let clickNumber = 1; clickNumber <= 10; clickNumber++) {
 
             const buttonId = variableButtonRound.menuGameConfigurationButtonClickNumberPrefix + valueToString(clickNumber);
-            const button = document.getElementById(buttonId);
+            const button = getElementById(buttonId);
 
             button.addEventListener("click", (event) => {
                 this.setConfigurationClickNumberRoundButtons(event);
@@ -47,7 +48,8 @@ export class ControllerButtonsRound {
     }
 
     getMaxClicksNumberSetByUser() {
-        return this.actionButtonsRound.getMaxClicksNumberSetByUser();
+        const currentButtonId = this.actionButtonsRound.getButtonIdCurrent();
+        return this.viewButtonsRound.getMaxClicksNumberSetByUser(currentButtonId);
     }
 
     setConfigurationButtonsFinalNumberForPlay() {

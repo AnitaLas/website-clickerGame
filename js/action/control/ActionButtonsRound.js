@@ -1,5 +1,4 @@
 import {
-    getElementAttributeValueById,
     valueToString
 } from "../../common/function/commonFunctions.js";
 
@@ -34,9 +33,5 @@ export class ActionButtonsRound {
 
     getButtonIdPMaxClicksNumberSetByUser() {
         return this.buttonIdMaxClicksNumberSetByUser;
-    }
-
-    getMaxClicksNumberSetByUser() {
-        return getElementAttributeValueById(this.buttonIdCurrent);
     }
 }

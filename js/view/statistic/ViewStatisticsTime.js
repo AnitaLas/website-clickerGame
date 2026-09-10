@@ -2,6 +2,8 @@ import {
     createElementDiv,
     createElementDivWithIdAndSetClassName,
     createElementDivWithTheSameIdAndClassName,
+    isElementsExistById,
+    removeElementById,
     setElementClassNameById,
     setElementClassNames,
     setElementClassNameSameAsIdAndSetText,
@@ -89,5 +91,33 @@ export class ViewStatisticsTime {
         this.createContainerStatisticsTimeMin();
         this.createContainerStatisticsTimeAvg();
         this.createContainerStatisticsTimeMax();
+    }
+
+    setGameStatisticTimeData(statisticTimeInSecondsMin, statisticTimeInSecondsAvg, statisticTimeInSecondsMax, statisticTimeInSecondsBest) {
+        this.setStatisticTimeInSecondsMin(statisticTimeInSecondsMin);
+        this.setStatisticTimeInSecondsAvg(statisticTimeInSecondsAvg);
+        this.setStatisticTimeInSecondsMax(statisticTimeInSecondsMax);
+        this.setStatisticTimeInSecondsBest(statisticTimeInSecondsBest);
+    }
+
+    setStatisticTimeInSecondsMin(statisticTimeInSecondsMin) {
+        setElementTextById(variablesStatisticsTime.statisticsTimeMinGamePlay, statisticTimeInSecondsMin);
+    }
+
+    setStatisticTimeInSecondsAvg(statisticTimeInSecondsAvg) {
+        setElementTextById(variablesStatisticsTime.statisticsTimeAvgGamePlay, statisticTimeInSecondsAvg);
+    }
+
+    setStatisticTimeInSecondsMax(statisticTimeInSecondsMax) {
+        setElementTextById(variablesStatisticsTime.statisticsTimeMaxGamePlay, statisticTimeInSecondsMax);
+    }
+
+    setStatisticTimeInSecondsBest(statisticTimeInSecondsBest) {
+        setElementTextById(variablesStatisticsTime.statisticsTimeBestGamePlay, statisticTimeInSecondsBest);
+    }
+
+    removeGameFieldStatisticsTime() {
+        if (isElementsExistById(variablesStatisticsTime.containerGameFiledStatisticsTimeParts))
+            removeElementById(variablesStatisticsTime.containerGameFiledStatisticsTimeParts);
     }
 }

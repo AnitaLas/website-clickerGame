@@ -35,7 +35,7 @@ export class ControllerMain {
 
         // tutaj ustawienie początkowego koloru
         this.controllerButtonsMain
-            .setGameButtonClickColorAtStart();
+            .setButtonClickColorAtStart();
 
         // pierwsza runda / druga runda / trzecia runda / .......
         this.startRound();

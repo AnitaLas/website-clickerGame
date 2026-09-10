@@ -2,7 +2,7 @@ import {
     createElementButton,
     createElementDiv,
     createElementDivAnaDivChild,
-    createElementDivWithTheSameIdAndClassName,
+    createElementDivWithTheSameIdAndClassName, getElementAttributeValueById,
     setElementAttributeValueById,
     setElementClassNameById,
     setElementClassNamedAndText,
@@ -116,5 +116,9 @@ export class ViewButtonsRound {
         setElementAttributeValueById(buttonId, valueToString(attributeValue));
         setElementClassNames(buttonId, variablesStatisticsTime.commonGameFiledDisplay, variableButtonRound.menuGameConfigurationButton);
         setElementClassNamedAndText(buttonId, variableButtonRound.menuGameConfigurationText, elementText);
+    }
+
+    getMaxClicksNumberSetByUser(buttonIdCurrent) {
+        return getElementAttributeValueById(buttonIdCurrent);
     }
 }

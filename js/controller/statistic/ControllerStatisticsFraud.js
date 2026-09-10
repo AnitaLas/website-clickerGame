@@ -11,11 +11,11 @@ export class ControllerStatisticsFraud {
         );
     }
 
-    setGameStatisticFraudData(fraudCountedSumNumber, fraudCountedNumber, fraudCountRoundIndex){
-        this.actionStatisticsFraud.setGameStatisticFraudData(fraudCountedSumNumber, fraudCountedNumber, fraudCountRoundIndex);
+    setGameStatisticFraudData(fraudCountedSumNumber, fraudCountedNumber, fraudCountRoundIndex) {
+        this.viewStatisticsFraud.setGameStatisticFraudData(fraudCountedSumNumber, fraudCountedNumber, fraudCountRoundIndex);
     }
 
-    removeGameFieldStatisticsFraud(){
-        this.actionStatisticsFraud.removeGameFieldStatisticsFraud();
+    removeGameFieldStatisticsFraud() {
+        this.viewStatisticsFraud.removeGameFieldStatisticsFraud();
     }
 }

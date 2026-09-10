@@ -4,8 +4,6 @@ import {
 } from "../../common/function/commonFunctions.js";
 
 import * as variablesGameButtons from "../../common/variable/control/variablesGameButtons.js";
-import * as variablesMain from "../../common/variable/main/variablesMain.js";
-
 
 export class ControllerButtonClickColor {
 
@@ -21,7 +19,7 @@ export class ControllerButtonClickColor {
     }
 
     createGameButtonsView() {
-        this.viewButtonClickColor.createViewGameButtonPlay();
+        this.viewButtonClickColor.createButton();
     }
 
     setConfiguration(event) {
@@ -42,12 +40,12 @@ export class ControllerButtonClickColor {
             );
     }
 
-    setGameFieldColor(colorName) {
-        variablesMain.rootVariables.style.setProperty(
-            variablesMain.cssGameFiledButtonPlayColor,
-            colorName
-        );
-    }
+    // setGameFieldColor(colorName) {
+    //     variablesMain.rootVariables.style.setProperty(
+    //         variablesMain.cssGameFiledButtonPlayColor,
+    //         colorName
+    //     );
+    // }
 
     removeEventListenerOnClickButtonClickColor() {
 
@@ -60,18 +58,18 @@ export class ControllerButtonClickColor {
     }
 
     configureClickColorGameOver() {
-        this.actionButtonClickColor.setConfigurationGameOver();
+        this.viewButtonClickColor.setConfigurationGameOver();
     }
 
-    setGameButtonClickColorAtStart() {
-        this.actionButtonClickColor.setGameButtonClickColorAtStart();
+    setButtonClickColorAtStart() {
+        this.viewButtonClickColor.setButtonClickColorAtStart();
     }
 
     setButtonClickColorRandom(gameRandomColor) {
-        this.actionButtonClickColor.setButtonClickColorRandom(gameRandomColor);
+        this.viewButtonClickColor.setButtonClickColorRandom(gameRandomColor);
     }
 
     removeConfigurationGameOver() {
-        this.actionButtonClickColor.removeConfigurationGameOver();
+        this.viewButtonClickColor.removeConfigurationGameOver();
     }
 }

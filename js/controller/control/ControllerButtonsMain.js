@@ -45,8 +45,8 @@ export class ControllerButtonsMain {
         this.controllerButtonClickColor.removeEventListenerOnClickButtonClickColor();
     }
 
-    setGameButtonClickColorAtStart() {
-        this.controllerButtonClickColor.setGameButtonClickColorAtStart();
+    setButtonClickColorAtStart() {
+        this.controllerButtonClickColor.setButtonClickColorAtStart();
     }
 
     setButtonClickColorRandom(gameRandomColor) {
