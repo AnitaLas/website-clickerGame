@@ -8,4 +8,8 @@ export class ControllerStatisticsTime {
     createConfigurationGameStatisticsTimeGeneral() {
         this.viewStatisticsTime.createGameFieldStatisticsTime();
     }
+
+    setGameStatisticTimeData(statisticTimeInSecondsMin, statisticTimeInSecondsAvg, statisticTimeInSecondsMax, statisticTimeInSecondsBest){
+        this.actionStatisticsTime.setGameStatisticTimeData(statisticTimeInSecondsMin, statisticTimeInSecondsAvg, statisticTimeInSecondsMax, statisticTimeInSecondsBest);
+    }
 }

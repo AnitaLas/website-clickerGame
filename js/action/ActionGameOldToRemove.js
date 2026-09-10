@@ -61,39 +61,39 @@ export class ActionGameOldToRemove {
         this.gameRoundAction = gameRoundAction;
     }
 
-     // maxClicksNumber = 5;
-     // maxClicksNumberSetByUser = this.gameRoundAction.getMaxClicksNumberSetByUser();
-     countedClicksNumber = 0;
+    // maxClicksNumber = 5;
+    // maxClicksNumberSetByUser = this.gameRoundAction.getMaxClicksNumberSetByUser();
+    countedClicksNumber = 0;
 
-     gameRandomColor = "#ac4a71";
-     gameRandomTimeToChangeColor = 1;
-     gameRandomTimeMaxSecond = 10;
-     reactionTime = 0;
-     reactionTimeTimeout = 0;
-     startTime = 0;
-     endTime = 0;
-     gameTimeTimeoutStart;
+    gameRandomColor = "#ac4a71";
+    gameRandomTimeToChangeColor = 1;
+    gameRandomTimeMaxSecond = 10;
+    reactionTime = 0;
+    reactionTimeTimeout = 0;
+    startTime = 0;
+    endTime = 0;
+    gameTimeTimeoutStart;
 
-     gameStatisticTimeMinInMilliseconds = 1300000;
-     gameStatisticTimeAvgInMilliseconds = 0;
-     gameStatisticTimeSumInMilliseconds = 0;
-     gameStatisticTimeMaxInMilliseconds = 0;
-     gameStatisticTimeBestInMilliseconds = this.gameStatisticTimeMinInMilliseconds;
+    gameStatisticTimeMinInMilliseconds = 1300000;
+    gameStatisticTimeAvgInMilliseconds = 0;
+    gameStatisticTimeSumInMilliseconds = 0;
+    gameStatisticTimeMaxInMilliseconds = 0;
+    gameStatisticTimeBestInMilliseconds = this.gameStatisticTimeMinInMilliseconds;
 
-     currentFunctionOnclickName;
-     fraudCountedNumber = 0;
-     fraudCountedSumNumber = 0;
-     fraudCountRoundIndex = 0;
+    currentFunctionOnclickName;
+    fraudCountedNumber = 0;
+    fraudCountedSumNumber = 0;
+    fraudCountRoundIndex = 0;
 
-     timeoutButtonStop;
+    timeoutButtonStop;
 
-     clickNumberButton = 1;
+    clickNumberButton = 1;
 
-     fileWithColors = "#1A1A1D, #3B1C32, #6A1E55, #A64D79, #251B37, #372948, #FFCACA, #FFECEF, " +
+    fileWithColors = "#1A1A1D, #3B1C32, #6A1E55, #A64D79, #251B37, #372948, #FFCACA, #FFECEF, " +
         "#F3F2DA, #4E8D7C, #045762, #EA97AD, #FAD9E6, #E4AEC5, #5F7464, #243D25";
-     colors = this.fileWithColors.split(", ");
+    colors = this.fileWithColors.split(", ");
 
-     gameColors = this.colors;
+    gameColors = this.colors;
 
     // funTimeoutButtonStop = function setTimeoutButtonStop() {
     //     this.setGameFieldColor(gameRandomColor);
@@ -114,24 +114,24 @@ export class ActionGameOldToRemove {
         // this.setConfigurationButtonMainGameStart();
         // setConfigurationButtonMainGameStart();
 
-        this.countedClicksNumber = 0;
-        this.fraudCountedNumber = 0;
-        this.fraudCountedSumNumber = 0;
-        this.fraudCountRoundIndex = 0;
-        this.gameStatisticTimeMinInMilliseconds = 1300000;
-        this.gameStatisticTimeAvgInMilliseconds = 0;
-        this.gameStatisticTimeSumInMilliseconds = 0;
-        this.gameStatisticTimeMaxInMilliseconds = 0;
-        this.countedClicksNumber++;
+        // this.countedClicksNumber = 0;
+        // this.fraudCountedNumber = 0;
+        // this.fraudCountedSumNumber = 0;
+        // this.fraudCountRoundIndex = 0;
+        // this.gameStatisticTimeMinInMilliseconds = 1300000;
+        // this.gameStatisticTimeAvgInMilliseconds = 0;
+        // this.gameStatisticTimeSumInMilliseconds = 0;
+        // this.gameStatisticTimeMaxInMilliseconds = 0;
+        // this.countedClicksNumber++;
     }
 
-    playGameColorStop() {
-        // this.clearTimeoutButtonStop();
-        // [extension V1] button continue is active -> // setConfigurationGameStop();
-        // this.setConfigurationGameStop();
-        // [extension V1] do not even think of removing this function !!!
-        // setConfigurationGameContinue();
-    }
+    // playGameColorStop() {
+    //     // this.clearTimeoutButtonStop();
+    //     // [extension V1] button continue is active -> // setConfigurationGameStop();
+    //     // this.setConfigurationGameStop();
+    //     // [extension V1] do not even think of removing this function !!!
+    //     // setConfigurationGameContinue();
+    // }
 
     setConfigurationGameStop() {
         // removeFunctionOnclick(variablesGameButtons.gameFiledButtonPlay);
@@ -193,10 +193,6 @@ export class ActionGameOldToRemove {
     // }
 
 
-
-
-
-
     /*let funTimeoutButtonStop = function setTimeoutButtonStop() {
         setGameFieldColor(gameRandomColor);
         setFunctionOnclick(gameFiledButtonPlay, functionNameOnclickPlayGameColor);
@@ -230,22 +226,22 @@ export class ActionGameOldToRemove {
     // }
     //
     // setGameStatisticTimeMinInSeconds() {
-    //     let timeInSeconds = this.getGameStatisticTimeInSeconds(gameStatisticTimeMinInMilliseconds);
+    //     let timeInSeconds = this.getGameStatisticTimeInSeconds(this.gameStatisticTimeMinInMilliseconds);
     //     setElementTextById(variablesGameStatisticsTimeGeneral.statisticsTimeMinGamePlay, timeInSeconds);
     // }
     //
     // setGameStatisticTimeAvgInSeconds() {
-    //     let timeInSeconds = this.getGameStatisticTimeInSeconds(gameStatisticTimeAvgInMilliseconds);
+    //     let timeInSeconds = this.getGameStatisticTimeInSeconds(this.gameStatisticTimeAvgInMilliseconds);
     //     setElementTextById(variablesGameStatisticsTimeGeneral.statisticsTimeAvgGamePlay, timeInSeconds);
     // }
     //
     // setGameStatisticTimeMaxInSeconds() {
-    //     let timeInSeconds = this.getGameStatisticTimeInSeconds(gameStatisticTimeMaxInMilliseconds);
+    //     let timeInSeconds = this.getGameStatisticTimeInSeconds(this.gameStatisticTimeMaxInMilliseconds);
     //     setElementTextById(variablesGameStatisticsTimeGeneral.statisticsTimeMaxGamePlay, timeInSeconds);
     // }
     //
     // setGameStatisticTimeBestInSeconds() {
-    //     let timeInSeconds = this.getGameStatisticTimeInSeconds(gameStatisticTimeBestInMilliseconds);
+    //     let timeInSeconds = this.getGameStatisticTimeInSeconds(this.gameStatisticTimeBestInMilliseconds);
     //     setElementTextById(variablesGameStatisticsTimeGeneral.statisticsTimeBestGamePlay, timeInSeconds);
     // }
     //
@@ -257,16 +253,16 @@ export class ActionGameOldToRemove {
     // }
     //
     // setGameStatisticTimeMinInMilliseconds() {
-    //     if (gameStatisticTimeMinInMilliseconds > reactionTime)
-    //         this.gameStatisticTimeMinInMilliseconds = reactionTime;
+    //     if (this.gameStatisticTimeMinInMilliseconds > this.reactionTime)
+    //         this.gameStatisticTimeMinInMilliseconds = this.reactionTime;
     // }
     //
     // setGameStatisticTimeSumInMilliseconds() {
-    //     this.gameStatisticTimeSumInMilliseconds += reactionTime;
+    //     this.gameStatisticTimeSumInMilliseconds += this.reactionTime;
     // }
     //
     // setGameStatisticTimeAvgInMilliseconds() {
-    //     this.gameStatisticTimeAvgInMilliseconds = gameStatisticTimeSumInMilliseconds / countedClicksNumber;
+    //     this.gameStatisticTimeAvgInMilliseconds = this.gameStatisticTimeSumInMilliseconds / this.countedClicksNumber;
     // }
     //
     // setGameStatisticTimeMaxInMilliseconds() {
@@ -288,23 +284,23 @@ export class ActionGameOldToRemove {
     //
     // playClickerGame() {
     //
-    //     if (this.countedClicksNumber === 1)
-    //         createContainersGameFiledStatistics();
+    //     // if (this.countedClicksNumber === 1)
+    //     //     createContainersGameFiledStatistics();
     //
-    //     this.setEndTime();
-    //     this.setClickReactionTime();
-    //     this.setGameStatisticTimeSumInMilliseconds();
-    //     this.setGameStatisticTimeInMilliseconds();
-    //     this.setGameStatisticTimeInSeconds();
-    //     this.setGameStatisticFraudData();
+    //     // this.setEndTime();
+    //     // this.setClickReactionTime();
+    //     // this.setGameStatisticTimeSumInMilliseconds();
+    //     // this.setGameStatisticTimeInMilliseconds();
+    //     // this.setGameStatisticTimeInSeconds();
+    //     // this.setGameStatisticFraudData();
     //
-    //     if (this.countedClicksNumber < this.maxClicksNumber) {
-    //         this.setConfigurationGame();
-    //         this.countedClicksNumber++;
-    //     } else {
-    //         // console.log("GAME OVER");
-    //         this.setConfigurationGameOver();
-    //     }
+    //     // if (this.countedClicksNumber < this.maxClicksNumber) {
+    //     //     this.setConfigurationGame();
+    //     //     this.countedClicksNumber++;
+    //     // } else {
+    //     //     console.log("GAME OVER");
+    //         // this.setConfigurationGameOver();
+    //     // }
     // }
     //
     // setConfigurationGameOver() {

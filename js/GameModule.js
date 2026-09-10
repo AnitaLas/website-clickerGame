@@ -126,7 +126,6 @@ export class GameModule {
             );
 
         this.controllerMain.configureStartGame();
-        // this.controllerMain.configureClickColor();
     }
 
     createGame() {

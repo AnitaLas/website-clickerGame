@@ -238,10 +238,6 @@ export class GameOld {
         this.reactionTime = this.endTime - this.startTime + this.reactionTimeTimeout;
     }
 
-    setClickReactionTimeTimeout() {
-        this.reactionTimeTimeout = this.endTime - this.startTime;
-    }
-
     setEndTime() {
         this.endTime = performance.now();
     }

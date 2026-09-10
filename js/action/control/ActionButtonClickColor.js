@@ -6,6 +6,7 @@ import {
 } from "../../common/function/commonFunctions.js";
 
 import * as variablesGameButtons from "../../common/variable/control/variablesGameButtons.js";
+import * as variablesMain from "../../common/variable/main/variablesMain.js";
 
 
 export class ActionButtonClickColor extends ActionButton {
@@ -27,11 +28,6 @@ export class ActionButtonClickColor extends ActionButton {
         this.removeConfigurationButtonMainAfterClick(variablesGameButtons.containerGameFiledButtonsMainStartTextDisplayId);
     }
 
-    // setConfigurationButtonClickColorGameOver() {
-    //     this.removeConfigurationButtonMainAfterClick(variablesGameButtons.containerGameFiledButtonsMainStartTextDisplayId);
-    //     setElementClassNameById(variablesGameButtons.gameFiledButtonMainStop, variablesGameButtons.gameFiledButtonMainInactive);
-    // }
-
     setConfigurationGameOver() {
         // removeFunctionOnclick(gameFiledButtonPlay);
         // removeFunctionOnclick(buttonMainStop);
@@ -44,5 +40,14 @@ export class ActionButtonClickColor extends ActionButton {
     setConfigurationButtonClickColorGameOver() {
         this.removeConfigurationButtonMainAfterClick(variablesGameButtons.containerGameFiledButtonsMainStartTextDisplayId);
         setElementClassNameById(variablesGameButtons.gameFiledButtonMainStop, variablesGameButtons.gameFiledButtonMainInactive);
+    }
+
+    setButtonClickColorRandom(gameRandomColor) {
+        // variablesMain.rootVariables.style.setProperty(variablesMain.cssGameFiledButtonPlayColor, this.gameRandomColor);
+        variablesMain.rootVariables.style.setProperty(variablesMain.cssGameFiledButtonPlayColor, gameRandomColor);
+    }
+
+    setGameButtonClickColorAtStart(){
+        this.setButtonClickColorRandom(variablesMain.gameFiledButtonPlayStartColor);
     }
 }

@@ -1,4 +1,6 @@
-import {addEventListenerOnClickButton, getElementById} from "../../common/function/commonFunctions.js";
+import {
+    addEventListenerOnClickButton
+} from "../../common/function/commonFunctions.js";
 import * as variablesGameButtons from "../../common/variable/control/variablesGameButtons.js";
 
 export class ControllerStatisticsMain {
@@ -23,9 +25,6 @@ export class ControllerStatisticsMain {
     }
 
     setConfigurationCLickColor(event) {
-
-        // this.createConfigurationStatisticsMain(maxClicksNumber);
-
         if (this.onStart) {
             this.onStart();
         }
@@ -45,5 +44,9 @@ export class ControllerStatisticsMain {
 
     setGameStatisticFraudData(fraudCountedRoundNumber, fraudCountedSumNumber, fraudRoundIndex) {
         this.controllerStatisticsFraud.setGameStatisticFraudData(fraudCountedRoundNumber, fraudCountedSumNumber, fraudRoundIndex);
+    }
+
+    configureStatisticTime(statisticTimeInSecondsMin, statisticTimeInSecondsAvg, statisticTimeInSecondsMax, statisticTimeInSecondsBest) {
+        this.controllerStatisticsTime.setGameStatisticTimeData(statisticTimeInSecondsMin, statisticTimeInSecondsAvg, statisticTimeInSecondsMax, statisticTimeInSecondsBest);
     }
 }

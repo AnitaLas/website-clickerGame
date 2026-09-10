@@ -73,7 +73,7 @@ export function setElementClassNamedAndText(elementId, className, text) {
     setElementTextById(elementId, text);
 }
 
-export function setElementClassNames(elementId, classNameOne, classNameTwo){
+export function setElementClassNames(elementId, classNameOne, classNameTwo) {
     setElementClassNameById(elementId, classNameTwo);
     setElementClassNameById(elementId, classNameTwo);
 }
@@ -137,16 +137,19 @@ export function createContainerMainElements(containerMainSectionName, sectionNam
     createElementDivWithTheSameIdAndClassName(containerSectionName, containerSectionMainName);
 }
 
-// export function addEventListenerOnClickButton(buttonId, functionToCall) {
-//     const button = getElementById(buttonId);
-//     button.addEventListener("click", (event) => {
-//         functionToCall.call(this, event);
-//     });
-// }
-
 export function addEventListenerOnClickButton(buttonId, functionToCall, context) {
     const button = getElementById(buttonId);
-    button.addEventListener("click", (event) => {
+    const buttonClickEvent = (event) => {
         functionToCall.call(context, event);
-    });
+    };
+    button.addEventListener("click", buttonClickEvent);
+    return buttonClickEvent;
+}
+
+export function removeEventListenerOnClickButton(buttonId, buttonClick) {
+    const button = getElementById(buttonId);
+    button.removeEventListener(
+        "click",
+        buttonClick
+    );
 }

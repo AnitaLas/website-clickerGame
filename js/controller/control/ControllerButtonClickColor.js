@@ -1,5 +1,9 @@
-import {addEventListenerOnClickButton} from "../../common/function/commonFunctions.js";
+import {
+    addEventListenerOnClickButton,
+    removeEventListenerOnClickButton
+} from "../../common/function/commonFunctions.js";
 import * as variablesGameButtons from "../../common/variable/control/variablesGameButtons.js";
+import * as variablesMain from "../../common/variable/main/variablesMain.js";
 
 
 export class ControllerButtonClickColor {
@@ -8,6 +12,7 @@ export class ControllerButtonClickColor {
         this.viewButtonClickColor = viewButtonClickColor;
         this.actionButtonClickColor = actionButtonClickColor;
         this.onClickColor = null;
+        this.buttonClickEvent = null;
     }
 
     setOnClickColor(onClickColor) {
@@ -27,15 +32,41 @@ export class ControllerButtonClickColor {
         }
     }
 
-    configureButtonClickColor(){
-        addEventListenerOnClickButton(
-            variablesGameButtons.gameFiledButtonPlay,
-            this.setConfiguration,
-            this
+    configureButtonClickColor() {
+        this.buttonClickEvent =
+            addEventListenerOnClickButton(
+                variablesGameButtons.gameFiledButtonPlay,
+                this.setConfiguration,
+                this
+            );
+    }
+
+    setGameFieldColor(colorName) {
+        variablesMain.rootVariables.style.setProperty(
+            variablesMain.cssGameFiledButtonPlayColor,
+            colorName
         );
     }
 
-    configureClickColorGameOver(){
+    removeEventListenerOnClickButtonClickColor() {
+
+        removeEventListenerOnClickButton(
+            variablesGameButtons.gameFiledButtonPlay,
+            this.buttonClickEvent
+        );
+
+        this.buttonClickEvent = null;
+    }
+
+    configureClickColorGameOver() {
         this.actionButtonClickColor.setConfigurationGameOver();
+    }
+
+    setGameButtonClickColorAtStart(){
+        this.actionButtonClickColor.setGameButtonClickColorAtStart();
+    }
+
+    setButtonClickColorRandom(gameRandomColor){
+        this.actionButtonClickColor.setButtonClickColorRandom(gameRandomColor);
     }
 }

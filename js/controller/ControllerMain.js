@@ -1,6 +1,4 @@
 import {Game} from "../Game.js";
-import * as variablesGameButtons from "../common/variable/control/variablesGameButtons.js";
-import {getElementById} from "../common/function/commonFunctions.js";
 
 export class ControllerMain {
 
@@ -10,39 +8,11 @@ export class ControllerMain {
         this.game = null;
     }
 
-    // roundNumberSetupByUser = 5;
-    // currenRoundNumber = 1;
-
     configureStartGame() {
-
         this.controllerButtonsMain.setOnStart(() =>
-            // this.startGameVol0());
             this.startGame());
     }
 
-    // startGameVol0(){
-    //
-    //     const roundNumberSetupByUser = this.controllerButtonsMain
-    //         .getMaxClicksNumberSetByUser();
-    //
-    //     this.game = new Game(roundNumberSetupByUser);
-    //
-    //     this.controllerButtonsMain
-    //         .setConfigurationForButtons();
-    //
-    //         this.configureClickColorCounterFraud();
-    //
-    //
-    //         this.game.setOnTime(() =>
-    //             this.configureClickColorCounterTime());
-    //
-    //         this.game.playClickColorCounterTime();
-    //
-    //         this.currenRoundNumber++;
-    //
-    // }
-
-    // startGameVol1() {
     startGame() {
 
         const roundNumberSetupByUser =
@@ -61,112 +31,69 @@ export class ControllerMain {
         this.controllerButtonsMain
             .configureClickColor();
 
-        // "teraz CLICK COLOR = TIME"
-        this.game.setOnTime(() =>
-            this.configureClickColorCounterTime());
+        // tutaj ustawienie początkowego koloru
+        this.controllerButtonsMain
+            .setGameButtonClickColorAtStart();
 
-        // tutaj ustawienie początkowego wyglądu
-        this.game.setGameButtonStartColor();
-
-        // pierwsza runda
+        // pierwsza runda / druga runda / trzecia runda / .......
         this.startRound();
     }
 
-
     startRound() {
 
-        console.log("========== START ROUND ==========");
-        console.log(
-            "START ROUND - przed sprawdzeniem: " +
-            this.game.getCountedRoundNumber()
-        );
+        // Sprawdzamy, czy są jeszcze rundy.
 
-
-        /*
-         * Sprawdzamy, czy są jeszcze rundy.
-         */
         if (!this.game.isGameRunning()) {
-
-            console.log("BRAK KOLEJNEJ RUNDY");
             this.gameOver();
-
             return;
         }
 
-
-        /*
-         * Zwiększamy numer rundy.
-         */
-        this.game.startNextRound();
-
-        console.log(
-            "START ROUND - rozpoczęto rundę: " +
-            this.game.getCountedRoundNumber()
-        );
-
+        this.game.setCountedRoundNumber();
 
         this.configureClickColorCounterFraud();
 
-
-        console.log("URUCHAMIAM NOWY TIMEOUT");
-        console.log("GAME =", this.game);
-
-        /*
-         * Rozpoczynamy oczekiwanie
-         * na pojawienie się koloru.
-         */
-
-        console.log("PRZED playClickColorCounterTime");
-
-        console.log(
-            "typeof =",
-            typeof this.game.playClickColorCounterTime
-        );
-        console.log(
-            "method =",
-            this.game.playClickColorCounterTime
-        );
-
         this.game.playClickColorCounterTime();
 
-        console.log("PO playClickColorCounterTime");
+        this.runClickColorTimeout();
+    }
 
+    runClickColorTimeout() {
 
+        const timeout =
+            this.game.getRandomTimeBeforeChangeColor();
+
+        // console.log("TIMEOUT =", timeout);
+
+        setTimeout(() => {
+
+            const color =
+                this.game.getGameRandomColor();
+
+            // console.log("COLOR =", color);
+
+            this.controllerButtonsMain.setButtonClickColorRandom(color);
+
+            this.game.setStartTime();
+
+            this.configureClickColorCounterTime();
+
+        }, timeout);
     }
 
     configureClickColorCounterFraud() {
-
-        console.log("counter fraud - start");
-
         this.controllerButtonsMain.setOnClickColor(() =>
-            this.setFunctionCounterFraud());
-
-
-        // // reset function
-        // this.controllerButtonsMain
-        //     .configureClickColor();
-
+            this.setGameCounterFraud());
     }
 
-    setFunctionCounterFraud() {
-
-        console.log("fraud");
+    setGameCounterFraud() {
 
         this.game.playClickColorCounterFraud();
     }
 
-
     configureClickColorCounterTime() {
-
-        console.log("CLICK COLOR = TIME");
-
         this.controllerButtonsMain.setOnClickColor(() =>
             this.createStatistic());
-
-        // this.controllerButtonsMain
-        //     .configureClickColor();
     }
-
 
     createStatistic() {
 
@@ -176,68 +103,72 @@ export class ControllerMain {
             this.configureStatistic();
         }
 
-
-        this.updateStatistic();
-
+        this.updateStatisticTime();
+        this.updateStatisticFraud();
         this.startRound();
     }
-
 
     configureStatistic() {
 
         const maxClicksNumber = this.controllerButtonsMain
             .getMaxClicksNumberSetByUser();
 
-        console.log("maxClicksNumber = " + maxClicksNumber);
+        // console.log("maxClicksNumber = " + maxClicksNumber);
 
         this.controllerStatisticsMain
             .createConfigurationStatisticsMain(maxClicksNumber);
     }
 
-    updateStatistic() {
+    updateStatisticFraud() {
 
         this.game.setFraudCountedSumNumber();
 
-        this.fraudCountedRoundNumber = this.game
+        let fraudCountedRoundNumber = this.game
             .getFraudCountedRoundNumber();
-        console.log("fraudCountedRoundNumber = " + this.fraudCountedRoundNumber);
+        // console.log("fraudCountedRoundNumber = " + this.fraudCountedRoundNumber);
 
-        this.fraudCountedSumNumber = this.game
+        let fraudCountedSumNumber = this.game
             .getFraudCountedSumNumber();
-        console.log("fraudCountedSumNumber = " + this.fraudCountedSumNumber);
+        // console.log("fraudCountedSumNumber = " + this.fraudCountedSumNumber);
 
-        this.fraudRoundIndex = this.game
+        let fraudRoundIndex = this.game
             .getFraudRoundIndex();
-        console.log("fraudRoundIndex = " + this.fraudRoundIndex);
+        // console.log("fraudRoundIndex = " + this.fraudRoundIndex);
 
-        this.controllerStatisticsMain.setGameStatisticFraudData(this.fraudCountedRoundNumber, this.fraudCountedSumNumber, this.fraudRoundIndex)
+        this.controllerStatisticsMain.setGameStatisticFraudData(fraudCountedRoundNumber, fraudCountedSumNumber, fraudRoundIndex);
 
         this.game.resetFraudCountedRoundNumber();
         this.game.setFraudRoundIndex();
+    }
 
+    updateStatisticTime() {
+        console.log("static time == start");
 
+        this.game.setConfigurationTime();
+
+        let statisticTimeInSecondsMin = this.game.getStatisticTimeInSecondsMin();
+        let statisticTimeInSecondsAvg = this.game.getStatisticTimeInSecondsAvg();
+        let statisticTimeInSecondsMax = this.game.getStatisticTimeInSecondsMax();
+        let statisticTimeInSecondsBest = this.game.getStatisticTimeInSecondsBest();
+
+        // console.log("min = " + statisticTimeInSecondsMin);
+        // console.log("avg = " + statisticTimeInSecondsAvg);
+        // console.log("max = " + statisticTimeInSecondsMax);
+        // console.log("best = " + statisticTimeInSecondsBest);
+
+        this.controllerStatisticsMain.configureStatisticTime(
+            statisticTimeInSecondsMin,
+            statisticTimeInSecondsAvg,
+            statisticTimeInSecondsMax,
+            statisticTimeInSecondsBest
+        );
     }
 
     gameOver() {
 
         console.log("GAME OVER");
 
-        this.removeButtonClickColorListener();
-
+        this.controllerButtonsMain.removeEventListenerOnClickButtonClickColor();
         this.controllerButtonsMain.configureClickColorGameOver();
-    }
-
-    removeButtonClickColorListener() {
-
-        const button = getElementById(
-            variablesGameButtons.gameFiledButtonPlay
-        );
-
-        button.removeEventListener(
-            "click",
-            this.clickColorListener
-        );
-
-        this.clickColorListener = null;
     }
 }

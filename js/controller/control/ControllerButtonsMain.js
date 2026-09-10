@@ -41,4 +41,16 @@ export class ControllerButtonsMain {
         return this.controllerButtonsRound.getMaxClicksNumberSetByUser();
     }
 
+    removeEventListenerOnClickButtonClickColor(){
+        this.controllerButtonClickColor.removeEventListenerOnClickButtonClickColor();
+    }
+
+    setGameButtonClickColorAtStart(){
+        this.controllerButtonClickColor.setGameButtonClickColorAtStart();
+    }
+
+    setButtonClickColorRandom(gameRandomColor){
+        this.controllerButtonClickColor.setButtonClickColorRandom(gameRandomColor);
+    }
+
 }

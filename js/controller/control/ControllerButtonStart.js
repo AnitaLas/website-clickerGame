@@ -22,7 +22,6 @@ export class ControllerButtonStart {
         this.configureStartButton();
     }
 
-
     setConfigurationStartForPlay(event) {
 
         // console.log("button start clicked");
@@ -38,8 +37,5 @@ export class ControllerButtonStart {
             this.setConfigurationStartForPlay,
             this
         );
-
-
     }
-
 }
