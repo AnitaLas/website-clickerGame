@@ -1,18 +1,13 @@
 import {
+    isElementsExistById,
     removeElementById,
     setElementTextById
 } from "../../common/function/commonFunctions.js";
 
 import * as variablesStatisticsTime from "../../common/variable/statistic/variablesStatisticsTime.js";
-import * as variablesStatisticsFraud from "../../common/variable/statistic/variablesStatisticsFraud.js";
 
 
 export class ActionStatisticsTime {
-
-    removeContainersGameFiledStatistics() {
-        removeElementById(variablesStatisticsTime.containerGameFiledStatisticsTimeParts);
-        removeElementById(variablesStatisticsFraud.containerGameFiledStatisticsFraudParts);
-    }
 
     setGameStatisticTimeData(statisticTimeInSecondsMin, statisticTimeInSecondsAvg, statisticTimeInSecondsMax, statisticTimeInSecondsBest){
         this.setStatisticTimeInSecondsMin(statisticTimeInSecondsMin);
@@ -35,5 +30,10 @@ export class ActionStatisticsTime {
 
     setStatisticTimeInSecondsBest(statisticTimeInSecondsBest) {
         setElementTextById(variablesStatisticsTime.statisticsTimeBestGamePlay, statisticTimeInSecondsBest);
+    }
+
+    removeGameFieldStatisticsTime() {
+        if (isElementsExistById(variablesStatisticsTime.containerGameFiledStatisticsTimeParts))
+            removeElementById(variablesStatisticsTime.containerGameFiledStatisticsTimeParts);
     }
 }

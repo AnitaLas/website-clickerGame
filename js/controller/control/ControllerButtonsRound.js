@@ -1,12 +1,10 @@
 import {
-    getElementById,
     removeElementClassNameById,
     setElementClassNameById,
     valueToString
 } from "../../common/function/commonFunctions.js";
 
 import * as variableButtonRound from "../../common/variable/control/variableButtonRound.js";
-import * as variablesGameButtons from "../../common/variable/control/variablesGameButtons.js";
 
 
 export class ControllerButtonsRound {
@@ -64,26 +62,26 @@ export class ControllerButtonsRound {
         setElementClassNameById(currentButtonId, variableButtonRound.menuGameConfigurationButtonChosenNumber);
     }
 
-    setFunctionOnClickButton(buttonId, functionToCall) {
-        const button = getElementById(buttonId);
-        button.addEventListener("click", (event) => {
-            functionToCall.call(this, event);
-        });
-    }
+    // setFunctionOnClickButton(buttonId, functionToCall) {
+    //     const button = getElementById(buttonId);
+    //     button.addEventListener("click", (event) => {
+    //         functionToCall.call(this, event);
+    //     });
+    // }
 
-    setConfigurationRoundNumberForGame(event) {
-        // console.log("START GAME");
-        this.setConfigurationButtonsFinalNumberForPlay();
+    // setConfigurationRoundNumberForGame(event) {
+    //     // console.log("START GAME");
+    //     this.setConfigurationButtonsFinalNumberForPlay();
+    //
+    //     if (this.onStart) {
+    //         this.onStart();
+    //     }
+    // }
 
-        if (this.onStart) {
-            this.onStart();
-        }
-    }
-
-    configureStartButton() {
-        this.setFunctionOnClickButton(
-            variablesGameButtons.buttonMainStart,
-            this.setConfigurationRoundNumberForGame
-        );
-    }
+    // configureStartButton() {
+    //     this.setFunctionOnClickButton(
+    //         variablesGameButtons.buttonMainStart,
+    //         this.setConfigurationRoundNumberForGame
+    //     );
+    // }
 }

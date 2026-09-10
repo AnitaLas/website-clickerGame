@@ -10,11 +10,11 @@ import * as variablesGameButtons from "../../common/variable/control/variablesGa
 export class ViewButtonStop extends ViewButtons {
 
     createGameFieldPButtonMainStop() {
-        let result = isElementsExistById(variablesGameButtons.containerGameFiledButtonsMainStop);
-        if (!result) {
+        // let result = isElementsExistById(variablesGameButtons.containerGameFiledButtonsMainStop);
+        // if (!result) {
+        if (!isElementsExistById(variablesGameButtons.containerGameFiledButtonsMainStop)) {
             this.createContainerGameFieldButtonMain(variablesGameButtons.containerGameFiledButtonsMainStop, variablesGameButtons.gameFiledButtonMainStop);
-            // this.createAndConfigureGameButton(variablesGameButtons.gameFiledButtonMainStop, variablesGameButtons.buttonMainStop, variablesGameButtons.functionNameOnclickPlayGameColorStop, variablesGameButtons.containerGameFiledButtonsMainStopTextDisplay)
-            this.createAndConfigureGameButton(variablesGameButtons.gameFiledButtonMainStop, variablesGameButtons.buttonMainStop, variablesGameButtons.containerGameFiledButtonsMainStopTextDisplay)
+            this.createAndConfigureGameButton(variablesGameButtons.gameFiledButtonMainStop, variablesGameButtons.buttonMainStop, variablesGameButtons.containerGameFiledButtonsMainStopTextDisplay);
         }
     }
 }

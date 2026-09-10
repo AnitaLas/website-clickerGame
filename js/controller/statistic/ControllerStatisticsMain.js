@@ -1,6 +1,7 @@
 import {
     addEventListenerOnClickButton
 } from "../../common/function/commonFunctions.js";
+
 import * as variablesGameButtons from "../../common/variable/control/variablesGameButtons.js";
 
 export class ControllerStatisticsMain {
@@ -16,12 +17,12 @@ export class ControllerStatisticsMain {
     }
 
     createConfigurationStatisticsMain(maxClicksNumber) {
-        this.createConfigurationStatisticsTime();
+        this.createGameFieldStatisticsTime();
         this.createConfigurationStatisticsFraud(maxClicksNumber);
     }
 
-    createConfigurationStatisticsTime() {
-        this.controllerStatisticsTime.createConfigurationGameStatisticsTimeGeneral();
+    createGameFieldStatisticsTime() {
+        this.controllerStatisticsTime.createGameFieldStatisticsTime();
     }
 
     setConfigurationCLickColor(event) {
@@ -48,5 +49,18 @@ export class ControllerStatisticsMain {
 
     configureStatisticTime(statisticTimeInSecondsMin, statisticTimeInSecondsAvg, statisticTimeInSecondsMax, statisticTimeInSecondsBest) {
         this.controllerStatisticsTime.setGameStatisticTimeData(statisticTimeInSecondsMin, statisticTimeInSecondsAvg, statisticTimeInSecondsMax, statisticTimeInSecondsBest);
+    }
+
+    removeGameFieldStatisticsTime() {
+        this.controllerStatisticsTime.removeGameFieldStatisticsTime();
+    }
+
+    removeGameFieldStatisticsFraud(){
+        this.controllerStatisticsFraud.removeGameFieldStatisticsFraud();
+    }
+
+    removeContainerStatisticParts() {
+        this.removeGameFieldStatisticsTime();
+        this.removeGameFieldStatisticsFraud();
     }
 }

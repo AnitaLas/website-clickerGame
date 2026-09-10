@@ -33,7 +33,7 @@ export class ControllerButtonsMain {
         this.controllerButtonClickColor.configureButtonClickColor();
     }
 
-    configureClickColorGameOver(){
+    configureClickColorGameOver() {
         this.controllerButtonClickColor.configureClickColorGameOver();
     }
 
@@ -41,16 +41,19 @@ export class ControllerButtonsMain {
         return this.controllerButtonsRound.getMaxClicksNumberSetByUser();
     }
 
-    removeEventListenerOnClickButtonClickColor(){
+    removeEventListenerOnClickButtonClickColor() {
         this.controllerButtonClickColor.removeEventListenerOnClickButtonClickColor();
     }
 
-    setGameButtonClickColorAtStart(){
+    setGameButtonClickColorAtStart() {
         this.controllerButtonClickColor.setGameButtonClickColorAtStart();
     }
 
-    setButtonClickColorRandom(gameRandomColor){
+    setButtonClickColorRandom(gameRandomColor) {
         this.controllerButtonClickColor.setButtonClickColorRandom(gameRandomColor);
     }
 
+    removeConfigurationGameOver() {
+        this.controllerButtonClickColor.removeConfigurationGameOver();
+    }
 }

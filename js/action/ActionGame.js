@@ -1,7 +1,3 @@
-
-
-export class ActionGame{
-
-
+export class ActionGame {
 
 }

@@ -65,8 +65,7 @@ export class GameModule {
         this.controllerButtonStart =
             new ControllerButtonStart(
                 this.viewButtonStart,
-                this.actionButtonStart,
-                this.actionButtonsRound);
+                this.actionButtonStart);
 
 
         this.viewButtonStop =

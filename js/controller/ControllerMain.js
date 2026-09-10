@@ -15,6 +15,8 @@ export class ControllerMain {
 
     startGame() {
 
+        this.removeContainerStatisticParts();
+
         const roundNumberSetupByUser =
             this.controllerButtonsMain
                 .getMaxClicksNumberSetByUser();
@@ -67,7 +69,7 @@ export class ControllerMain {
         setTimeout(() => {
 
             const color =
-                this.game.getGameRandomColor();
+                this.game.getRandomColor();
 
             // console.log("COLOR =", color);
 
@@ -119,26 +121,31 @@ export class ControllerMain {
             .createConfigurationStatisticsMain(maxClicksNumber);
     }
 
+    removeContainerStatisticParts() {
+        this.controllerStatisticsMain.removeContainerStatisticParts();
+        this.controllerButtonsMain.removeConfigurationGameOver();
+    }
+
     updateStatisticFraud() {
 
-        this.game.setFraudCountedSumNumber();
+        this.game.setFraudCountedSum();
 
         let fraudCountedRoundNumber = this.game
-            .getFraudCountedRoundNumber();
+            .getFraudCountedClicks();
         // console.log("fraudCountedRoundNumber = " + this.fraudCountedRoundNumber);
 
         let fraudCountedSumNumber = this.game
-            .getFraudCountedSumNumber();
+            .getFraudCountedSum();
         // console.log("fraudCountedSumNumber = " + this.fraudCountedSumNumber);
 
         let fraudRoundIndex = this.game
-            .getFraudRoundIndex();
+            .getFraudRoundElementIndexToUpdate();
         // console.log("fraudRoundIndex = " + this.fraudRoundIndex);
 
         this.controllerStatisticsMain.setGameStatisticFraudData(fraudCountedRoundNumber, fraudCountedSumNumber, fraudRoundIndex);
 
-        this.game.resetFraudCountedRoundNumber();
-        this.game.setFraudRoundIndex();
+        this.game.resetFraudCountedClicks();
+        this.game.setFraudRoundElementIndexToUpdate();
     }
 
     updateStatisticTime() {
@@ -150,11 +157,6 @@ export class ControllerMain {
         let statisticTimeInSecondsAvg = this.game.getStatisticTimeInSecondsAvg();
         let statisticTimeInSecondsMax = this.game.getStatisticTimeInSecondsMax();
         let statisticTimeInSecondsBest = this.game.getStatisticTimeInSecondsBest();
-
-        // console.log("min = " + statisticTimeInSecondsMin);
-        // console.log("avg = " + statisticTimeInSecondsAvg);
-        // console.log("max = " + statisticTimeInSecondsMax);
-        // console.log("best = " + statisticTimeInSecondsBest);
 
         this.controllerStatisticsMain.configureStatisticTime(
             statisticTimeInSecondsMin,

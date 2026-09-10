@@ -2,7 +2,9 @@ import {ActionButton} from "./ActionButton.js";
 
 import {
     removeElementById,
-    setElementClassNameById, setElementTextById
+    removeElementClassNameById,
+    setElementClassNameById,
+    setElementTextById
 } from "../../common/function/commonFunctions.js";
 
 import * as variablesGameButtons from "../../common/variable/control/variablesGameButtons.js";
@@ -20,16 +22,7 @@ export class ActionButtonClickColor extends ActionButton {
         this.removeConfigurationButtonMainAfterClick(variablesGameButtons.containerGameFiledButtonsMainStartTextDisplayId);
     }
 
-    setConfigurationButtonMainGameContinue() {
-        this.setConfigurationButtonMainAfterClick(variablesGameButtons.containerGameFiledButtonsMainStartTextDisplayId);
-    }
-
-    removeConfigurationButtonMainGameContinue() {
-        this.removeConfigurationButtonMainAfterClick(variablesGameButtons.containerGameFiledButtonsMainStartTextDisplayId);
-    }
-
     setConfigurationGameOver() {
-        // removeFunctionOnclick(gameFiledButtonPlay);
         // removeFunctionOnclick(buttonMainStop);
         setElementTextById(variablesGameButtons.gameFiledButtonPlay, variablesGameButtons.gameFiledButtonPlayGameOverTextDisplay);
         setElementClassNameById(variablesGameButtons.gameFiledButtonPlay, variablesGameButtons.gameFiledButtonPlayGameOver);
@@ -43,11 +36,15 @@ export class ActionButtonClickColor extends ActionButton {
     }
 
     setButtonClickColorRandom(gameRandomColor) {
-        // variablesMain.rootVariables.style.setProperty(variablesMain.cssGameFiledButtonPlayColor, this.gameRandomColor);
         variablesMain.rootVariables.style.setProperty(variablesMain.cssGameFiledButtonPlayColor, gameRandomColor);
     }
 
     setGameButtonClickColorAtStart(){
         this.setButtonClickColorRandom(variablesMain.gameFiledButtonPlayStartColor);
+    }
+
+    removeConfigurationGameOver() {
+        setElementTextById(variablesGameButtons.gameFiledButtonPlay, "");
+        removeElementClassNameById(variablesGameButtons.gameFiledButtonPlay, variablesGameButtons.gameFiledButtonPlayGameOver);
     }
 }

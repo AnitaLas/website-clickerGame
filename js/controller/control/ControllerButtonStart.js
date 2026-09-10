@@ -6,10 +6,9 @@ import * as variablesGameButtons from "../../common/variable/control/variablesGa
 
 export class ControllerButtonStart {
 
-    constructor(viewButtonStart, actionButtonStart, actionButtonsRound) {
+    constructor(viewButtonStart, actionButtonStart) {
         this.viewButtonStart = viewButtonStart;
         this.actionButtonStart = actionButtonStart;
-        this.actionButtonsRound = actionButtonsRound;
         this.onStart = null;
     }
 

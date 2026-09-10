@@ -1,13 +1,19 @@
 import {
     createElementDiv,
     createElementDivAnaDivChild,
-    createElementDivWithIdAndSetClassName, createElementDivWithTheSameIdAndClassName,
-    setElementClassNameById, setElementClassNamedAndText, setElementClassNameSameAsIdAndSetText,
-    setElementStyletAsGrid, setElementTextById, valueToString
+    createElementDivWithIdAndSetClassName,
+    createElementDivWithTheSameIdAndClassName,
+    setElementClassNameById,
+    setElementClassNamedAndText,
+    setElementClassNameSameAsIdAndSetText,
+    setElementStyletAsGrid,
+    setElementTextById,
+    valueToString
 } from "../../common/function/commonFunctions.js";
 
 import * as variablesGameStatisticsTimeFraud from "../../common/variable/statistic/variablesStatisticsFraud.js";
 import * as variablesGameStatisticsTimeGeneral from "../../common/variable/statistic/variablesStatisticsTime.js";
+
 
 export class ViewStatisticsFraud {
 

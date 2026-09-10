@@ -1,4 +1,5 @@
 import {
+    isElementsExistById, removeElementById,
     setElementTextById,
     valueToString
 } from "../../common/function/commonFunctions.js";
@@ -28,5 +29,10 @@ export class ActionStatisticsFraud {
 
     setGameStatisticFraudCountedSumNumber(fraudCountedSumNumber) {
         setElementTextById(variablesStatisticsFraud.statisticsFraudBestGamePlay, fraudCountedSumNumber);
+    }
+
+    removeGameFieldStatisticsFraud() {
+        if (isElementsExistById(variablesStatisticsFraud.containerGameFiledStatisticsFraudParts))
+            removeElementById(variablesStatisticsFraud.containerGameFiledStatisticsFraudParts);
     }
 }

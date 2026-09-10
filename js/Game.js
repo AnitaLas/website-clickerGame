@@ -6,20 +6,20 @@ export class Game {
         this.countedRoundNumber = 0;
     }
 
-    gameRandomColor = "#ac4a71";
-    gameRandomTimeToChangeColor = 1;
-    gameRandomTimeMaxSecond = 10;
+    randomColor = "#ac4a71";
+    randomTimeToChangeColor = 1;
+    randomTimeMaxSecond = 10;
     reactionTime = 0;
     reactionTimeTimeout = 0;
     startTime = 0;
     endTime = 0;
     gameTimeTimeoutStart;
 
-    gameStatisticTimeMinInMilliseconds = 1300000;
-    gameStatisticTimeAvgInMilliseconds = 0;
-    gameStatisticTimeSumInMilliseconds = 0;
-    gameStatisticTimeMaxInMilliseconds = 0;
-    gameStatisticTimeBestInMilliseconds = this.gameStatisticTimeMinInMilliseconds;
+    statisticTimeInMillisecondsMin = 1300000;
+    statisticTimeInMillisecondsAvg = 0;
+    statisticTimeInMillisecondsSum = 0;
+    statisticTimeInMillisecondsMax = 0;
+    statisticTimeInMillisecondsBest = this.statisticTimeInMillisecondsMin;
 
     statisticsTimeInSecondsMin = 0;
     statisticsTimeInSecondsAvg = 0;
@@ -27,8 +27,8 @@ export class Game {
     statisticsTimeInSecondsBest = 0;
 
     fraudCountedSumNumber = 0;
-    fraudCountedRoundNumber = 0;
-    fraudRoundIndex = 0;
+    fraudCountedClicks = 0;
+    fraudRoundElementIndexToUpdate = 0;
 
     // timeoutButtonStop;
 
@@ -53,32 +53,34 @@ export class Game {
 
 
     playClickColorCounterFraud() {
-        this.fraudCountedRoundNumber++;
+        this.fraudCountedClicks++;
         // console.log("fraudCountedRoundNumber = " + this.fraudCountedRoundNumber);
     }
 
-    setFraudCountedSumNumber() {
-        this.fraudCountedSumNumber = this.fraudCountedSumNumber + this.fraudCountedRoundNumber;
+    setFraudCountedSum() {
+        this.fraudCountedSumNumber = this.fraudCountedSumNumber + this.fraudCountedClicks;
     }
 
-    getFraudCountedSumNumber() {
+    getFraudCountedSum() {
         return this.fraudCountedSumNumber;
     }
 
-    resetFraudCountedRoundNumber() {
-        this.fraudCountedRoundNumber = 0;
+    resetFraudCountedClicks() {
+        this.fraudCountedClicks = 0;
     }
 
-    getFraudCountedRoundNumber() {
-        return this.fraudCountedRoundNumber;
+    getFraudCountedClicks() {
+        return this.fraudCountedClicks;
     }
 
-    setFraudRoundIndex() {
-        this.fraudRoundIndex++;
+
+
+    setFraudRoundElementIndexToUpdate() {
+        this.fraudRoundElementIndexToUpdate++;
     }
 
-    getFraudRoundIndex() {
-        return this.fraudRoundIndex;
+    getFraudRoundElementIndexToUpdate() {
+        return this.fraudRoundElementIndexToUpdate;
     }
 
 
@@ -92,7 +94,7 @@ export class Game {
         this.endTime = 0;
         this.reactionTimeTimeout = 0;
 
-        this.setGameRandomColor();
+        this.setRandomColor();
         this.setRandomTimeBeforeChangeColor();
         this.setGameTimeTimeoutStart();
 
@@ -103,63 +105,36 @@ export class Game {
         return Math.floor((Math.random() * maxNumber));
     }
 
-    setGameRandomColor() {
+    setRandomColor() {
         let randomNumber = this.getRandomNumber(this.colors.length);
-        let tempColor = this.gameRandomColor;
-        this.gameRandomColor = this.colors[randomNumber];
+        let tempColor = this.randomColor;
+        this.randomColor = this.colors[randomNumber];
         this.colors[randomNumber] = tempColor;
     }
 
+    getRandomColor() {
+        return this.randomColor;
+    }
+
     setRandomTimeBeforeChangeColor() {
-        let randomSecond = this.getRandomNumber(this.gameRandomTimeMaxSecond) + 1;
-        this.gameRandomTimeToChangeColor = randomSecond * 1000;
+        let randomSecond = this.getRandomNumber(this.randomTimeMaxSecond) + 1;
+        this.randomTimeToChangeColor = randomSecond * 1000;
     }
 
     getRandomTimeBeforeChangeColor() {
-        return this.gameRandomTimeToChangeColor;
-    }
-
-    getGameRandomColor() {
-        return this.gameRandomColor;
+        return this.randomTimeToChangeColor;
     }
 
 
-    // funTimeoutButtonCLickColorBeforeColorChange = () => {
-    //     // zmiana koloru
-    //     this.setGameFieldColor(this.gameRandomColor);
-    //
-    //     // rozpoczęcie pomiaru czasu reakcji
-    //     this.setStartTime();
-    //
-    //     // że teraz CLICK COLOR ma być traktowany jako TIME
-    //     if (this.onTime) {
-    //         this.onTime();
-    //     }
-    // };
-
-    // runTimeoutButtonStop() {
-    //     this.timeoutButtonStop = setTimeout(
-    //         this.funTimeoutButtonCLickColorBeforeColorChange,
-    //         this.gameRandomTimeToChangeColor
-    //     );
-    // }
-
-    // // setGameFieldColor(colorName) {
-    // setGameFieldColor() {
-    //     // variablesMain.rootVariables.style.setProperty(variablesMain.cssGameFiledButtonPlayColor, colorName);
-    //     variablesMain.rootVariables.style.setProperty(variablesMain.cssGameFiledButtonPlayColor, this.gameRandomColor);
-    // }
-
-    // setGameButtonClickColor() {
-    //     this.setGameFieldColor(variablesMain.gameFiledButtonPlayStartColor);
-    // }
 
 
-    setClickReactionTime() {
+
+
+    setReactionTime() {
         this.reactionTime = this.endTime - this.startTime + this.reactionTimeTimeout;
     }
 
-    getClickReactionTime() {
+    getReactionTime() {
         return this.reactionTime;
     }
 
@@ -187,20 +162,20 @@ export class Game {
         return this.gameTimeTimeoutStart;
     }
 
-    getGameStatisticTimeInSeconds(timeInMilliseconds) {
+    getStatisticTimeInSeconds(timeInMilliseconds) {
         return (timeInMilliseconds / 1000).toFixed(4);
     }
 
     setConfigurationTime() {
         this.setEndTime();
-        this.setClickReactionTime();
+        this.setReactionTime();
         this.setStatisticTimeInMillisecondsSum();
         this.setStatisticTimeInMilliseconds();
         this.setStatisticTimeInSeconds();
     }
 
     setStatisticTimeInSecondsMin() {
-        this.statisticsTimeInSecondsMin = this.getGameStatisticTimeInSeconds(this.gameStatisticTimeMinInMilliseconds);
+        this.statisticsTimeInSecondsMin = this.getStatisticTimeInSeconds(this.statisticTimeInMillisecondsMin);
     }
 
     getStatisticTimeInSecondsMin() {
@@ -208,7 +183,7 @@ export class Game {
     }
 
     setStatisticTimeInSecondsAvg() {
-        this.statisticsTimeInSecondsAvg = this.getGameStatisticTimeInSeconds(this.gameStatisticTimeAvgInMilliseconds);
+        this.statisticsTimeInSecondsAvg = this.getStatisticTimeInSeconds(this.statisticTimeInMillisecondsAvg);
     }
 
     getStatisticTimeInSecondsAvg() {
@@ -216,7 +191,7 @@ export class Game {
     }
 
     setStatisticTimeInSecondsMax() {
-        this.statisticsTimeInSecondsMax = this.getGameStatisticTimeInSeconds(this.gameStatisticTimeMaxInMilliseconds);
+        this.statisticsTimeInSecondsMax = this.getStatisticTimeInSeconds(this.statisticTimeInMillisecondsMax);
     }
 
     getStatisticTimeInSecondsMax() {
@@ -224,7 +199,7 @@ export class Game {
     }
 
     setStatisticTimeInSecondsBest() {
-        this.statisticsTimeInSecondsBest = this.getGameStatisticTimeInSeconds(this.gameStatisticTimeBestInMilliseconds);
+        this.statisticsTimeInSecondsBest = this.getStatisticTimeInSeconds(this.statisticTimeInMillisecondsBest);
     }
 
     getStatisticTimeInSecondsBest() {
@@ -239,26 +214,26 @@ export class Game {
     }
 
     setStatisticTimeInMillisecondsMin() {
-        if (this.gameStatisticTimeMinInMilliseconds > this.reactionTime)
-            this.gameStatisticTimeMinInMilliseconds = this.reactionTime;
+        if (this.statisticTimeInMillisecondsMin > this.reactionTime)
+            this.statisticTimeInMillisecondsMin = this.reactionTime;
     }
 
     setStatisticTimeInMillisecondsSum() {
-        this.gameStatisticTimeSumInMilliseconds += this.reactionTime;
+        this.statisticTimeInMillisecondsSum += this.reactionTime;
     }
 
     setStatisticTimeInMillisecondsAvg() {
-        this.gameStatisticTimeAvgInMilliseconds = this.gameStatisticTimeSumInMilliseconds / this.countedRoundNumber;
+        this.statisticTimeInMillisecondsAvg = this.statisticTimeInMillisecondsSum / this.countedRoundNumber;
     }
 
     setStatisticTimeInMillisecondsMax() {
-        if (this.gameStatisticTimeMaxInMilliseconds < this.reactionTime)
-            this.gameStatisticTimeMaxInMilliseconds = this.reactionTime;
+        if (this.statisticTimeInMillisecondsMax < this.reactionTime)
+            this.statisticTimeInMillisecondsMax = this.reactionTime;
     }
 
     setStatisticTimeInMillisecondsBest() {
-        if (this.gameStatisticTimeBestInMilliseconds > this.gameStatisticTimeMinInMilliseconds)
-            this.gameStatisticTimeBestInMilliseconds = this.gameStatisticTimeMinInMilliseconds;
+        if (this.statisticTimeInMillisecondsBest > this.statisticTimeInMillisecondsMin)
+            this.statisticTimeInMillisecondsBest = this.statisticTimeInMillisecondsMin;
     }
 
     setStatisticTimeInMilliseconds() {
