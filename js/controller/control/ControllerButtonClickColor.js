@@ -40,13 +40,6 @@ export class ControllerButtonClickColor {
             );
     }
 
-    // setGameFieldColor(colorName) {
-    //     variablesMain.rootVariables.style.setProperty(
-    //         variablesMain.cssGameFiledButtonPlayColor,
-    //         colorName
-    //     );
-    // }
-
     removeEventListenerOnClickButtonClickColor() {
 
         removeEventListenerOnClickButton(

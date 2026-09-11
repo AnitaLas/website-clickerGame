@@ -51,39 +51,4 @@ export class ControllerButtonsRound {
         const currentButtonId = this.actionButtonsRound.getButtonIdCurrent();
         return this.viewButtonsRound.getMaxClicksNumberSetByUser(currentButtonId);
     }
-
-    setConfigurationButtonsFinalNumberForPlay() {
-
-        const roundNumberFinal = this.actionButtonsRound.getButtonIdPMaxClicksNumberSetByUser();
-        this.actionButtonsRound.setButtonIdPMaxClicksNumberSetByUser();
-        const buttonIdPrevious = this.actionButtonsRound.getButtonIdPrevious();
-        const currentButtonId = this.actionButtonsRound.getButtonIdCurrent();
-
-        removeElementClassNameById(buttonIdPrevious, variableButtonRound.menuGameConfigurationButtonCurrentNumber);
-        removeElementClassNameById(roundNumberFinal, variableButtonRound.menuGameConfigurationButtonChosenNumber);
-        setElementClassNameById(currentButtonId, variableButtonRound.menuGameConfigurationButtonChosenNumber);
-    }
-
-    // setFunctionOnClickButton(buttonId, functionToCall) {
-    //     const button = getElementById(buttonId);
-    //     button.addEventListener("click", (event) => {
-    //         functionToCall.call(this, event);
-    //     });
-    // }
-
-    // setConfigurationRoundNumberForGame(event) {
-    //     // console.log("START GAME");
-    //     this.setConfigurationButtonsFinalNumberForPlay();
-    //
-    //     if (this.onStart) {
-    //         this.onStart();
-    //     }
-    // }
-
-    // configureStartButton() {
-    //     this.setFunctionOnClickButton(
-    //         variablesGameButtons.buttonMainStart,
-    //         this.setConfigurationRoundNumberForGame
-    //     );
-    // }
 }

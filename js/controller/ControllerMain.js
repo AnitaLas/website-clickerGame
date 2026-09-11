@@ -6,6 +6,7 @@ export class ControllerMain {
         this.controllerButtonsMain = controllerButtonsMain;
         this.controllerStatisticsMain = controllerStatisticsMain;
         this.game = null;
+        this.clickColorTimeout = null;
     }
 
     configureStartGame() {
@@ -15,8 +16,6 @@ export class ControllerMain {
 
     startGame() {
 
-        this.controllerButtonsMain.setConfigurationButtonsAfterClickPlay();
-
         this.setConfigurationGameAtStart();
 
         const roundNumberSetupByUser =
@@ -25,8 +24,9 @@ export class ControllerMain {
 
         this.game = new Game(roundNumberSetupByUser);
 
-        this.controllerButtonsMain
-            .setConfigurationForButtons();
+        // this.controllerButtonsMain
+        //     .setConfigurationForButtonStop();
+        this.setConfigurationButtonStop();
 
         // ustawiamy callback FRAUD
         this.configureClickColorCounterFraud();
@@ -43,9 +43,34 @@ export class ControllerMain {
         this.startRound();
     }
 
-    startRound() {
+    setConfigurationGameAtStart() {
+        this.controllerStatisticsMain.removeContainerStatisticParts();
+        this.controllerButtonsMain.setConfigurationButtonsAtStart();
+    }
 
-        // Sprawdzamy, czy są jeszcze rundy.
+    setConfigurationButtonStop() {
+        this.controllerButtonsMain.createButtonsStop();
+        this.configureButtonStop();
+    }
+
+    configureButtonStop() {
+        this.controllerButtonsMain.setOnStop(() =>
+            this.setConfigurationClickForButtonStop());
+    }
+
+    setConfigurationClickForButtonStop() {
+        this.controllerButtonsMain.setConfigurationAfterClickStop();
+        this.clearClickColorTimeout();
+    }
+
+    clearClickColorTimeout() {
+        if (this.clickColorTimeout) {
+            clearTimeout(this.clickColorTimeout);
+            this.clickColorTimeout = null;
+        }
+    }
+
+    startRound() {
 
         if (!this.game.isGameRunning()) {
             this.gameOver();
@@ -58,8 +83,6 @@ export class ControllerMain {
 
         this.game.playClickColorCounterTime();
 
-
-
         this.runClickColorTimeout();
     }
 
@@ -68,22 +91,18 @@ export class ControllerMain {
         const timeout =
             this.game.getRandomTimeBeforeChangeColor();
 
-        // console.log("TIMEOUT =", timeout);
+        this.clickColorTimeout =
+            setTimeout(() => {
 
-        setTimeout(() => {
+                const color = this.game.getRandomColor();
 
-            const color =
-                this.game.getRandomColor();
+                this.controllerButtonsMain.setButtonClickColorRandom(color);
 
-            // console.log("COLOR =", color);
+                this.game.setStartTime();
 
-            this.controllerButtonsMain.setButtonClickColorRandom(color);
+                this.configureClickColorCounterTime();
 
-            this.game.setStartTime();
-
-            this.configureClickColorCounterTime();
-
-        }, timeout);
+            }, timeout);
     }
 
     configureClickColorCounterFraud() {
@@ -92,7 +111,6 @@ export class ControllerMain {
     }
 
     setGameCounterFraud() {
-
         this.game.playClickColorCounterFraud();
     }
 
@@ -103,11 +121,8 @@ export class ControllerMain {
 
     createStatistic() {
 
-        // console.log("time");
-
-        if (this.game.getCountedRoundNumber() === 1) {
+        if (this.game.getCountedRoundNumber() === 1)
             this.configureStatistic();
-        }
 
         this.updateStatisticTime();
         this.updateStatisticFraud();
@@ -119,16 +134,10 @@ export class ControllerMain {
         const maxClicksNumber = this.controllerButtonsMain
             .getMaxClicksNumberSetByUser();
 
-        // console.log("maxClicksNumber = " + maxClicksNumber);
-
         this.controllerStatisticsMain
             .createConfigurationStatisticsMain(maxClicksNumber);
     }
 
-    setConfigurationGameAtStart() {
-        this.controllerStatisticsMain.removeContainerStatisticParts();
-        this.controllerButtonsMain.setConfigurationButtonsAtStart();
-    }
 
     updateStatisticFraud() {
 
@@ -136,15 +145,12 @@ export class ControllerMain {
 
         let fraudCountedRoundNumber = this.game
             .getFraudCountedClicks();
-        // console.log("fraudCountedRoundNumber = " + this.fraudCountedRoundNumber);
 
         let fraudCountedSumNumber = this.game
             .getFraudCountedSum();
-        // console.log("fraudCountedSumNumber = " + this.fraudCountedSumNumber);
 
         let fraudRoundIndex = this.game
             .getFraudRoundElementIndexToUpdate();
-        // console.log("fraudRoundIndex = " + this.fraudRoundIndex);
 
         this.controllerStatisticsMain.setGameStatisticFraudData(fraudCountedRoundNumber, fraudCountedSumNumber, fraudRoundIndex);
 
@@ -153,14 +159,20 @@ export class ControllerMain {
     }
 
     updateStatisticTime() {
-        // console.log("static time == start");
 
         this.game.setConfigurationTime();
 
-        let statisticTimeInSecondsMin = this.game.getStatisticTimeInSecondsMin();
-        let statisticTimeInSecondsAvg = this.game.getStatisticTimeInSecondsAvg();
-        let statisticTimeInSecondsMax = this.game.getStatisticTimeInSecondsMax();
-        let statisticTimeInSecondsBest = this.game.getStatisticTimeInSecondsBest();
+        let statisticTimeInSecondsMin =
+            this.game.getStatisticTimeInSecondsMin();
+
+        let statisticTimeInSecondsAvg =
+            this.game.getStatisticTimeInSecondsAvg();
+
+        let statisticTimeInSecondsMax =
+            this.game.getStatisticTimeInSecondsMax();
+
+        let statisticTimeInSecondsBest =
+            this.game.getStatisticTimeInSecondsBest();
 
         this.controllerStatisticsMain.configureStatisticTime(
             statisticTimeInSecondsMin,
@@ -171,10 +183,6 @@ export class ControllerMain {
     }
 
     gameOver() {
-
-        console.log("GAME OVER");
-
         this.controllerButtonsMain.configureButtonsAfterGameOver();
-
     }
 }

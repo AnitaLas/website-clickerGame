@@ -16,17 +16,12 @@ export class ViewButtonStop extends ViewButtons {
         }
     }
 
-    setConfigurationButtonMainGameStop() {
-        this.setConfigurationButtonsAfterClick(variablesGameButtons.containerGameFiledButtonsMainStopTextDisplayId);
-        this.setConfigurationButtonsBeforeClick(variablesGameButtons.containerGameFiledButtonsMainStartTextDisplayId);
-    }
-
     setIconColorAfterClick() {
         this.setConfigurationButtonsAfterClick(variablesGameButtons.containerGameFiledButtonsMainStopTextDisplayId);
     }
 
     setIconColorBeforeClick() {
-        if(isElementsExistById(variablesGameButtons.containerGameFiledButtonsMainStopTextDisplayId))
-        this.setConfigurationButtonsBeforeClick(variablesGameButtons.containerGameFiledButtonsMainStopTextDisplayId);
+        if (isElementsExistById(variablesGameButtons.containerGameFiledButtonsMainStopTextDisplayId))
+            this.setConfigurationButtonsBeforeClick(variablesGameButtons.containerGameFiledButtonsMainStopTextDisplayId);
     }
 }

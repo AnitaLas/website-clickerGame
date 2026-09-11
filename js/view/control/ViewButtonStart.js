@@ -15,7 +15,6 @@ export class ViewButtonStart extends ViewButtons {
     }
 
     setIconColorBeforeClick() {
-        console.log("removeIconColorAfterClick start")
         this.setConfigurationButtonsBeforeClick(variablesGameButtons.containerGameFiledButtonsMainStartTextDisplayId);
     }
 }

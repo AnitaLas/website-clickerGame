@@ -35,11 +35,9 @@ export class ViewButtonClickColor extends ViewButtons {
     }
 
     setConfigurationGameOver() {
-        // removeFunctionOnclick(buttonMainStop);
         setElementTextById(variablesGameButtons.gameFiledButtonPlay, variablesGameButtons.gameFiledButtonPlayGameOverTextDisplay);
         setElementClassNameById(variablesGameButtons.gameFiledButtonPlay, variablesGameButtons.gameFiledButtonPlayGameOver);
         this.setConfigurationButtonClickColorGameOver();
-        // this.removeConfigurationButtonChosenNumber();
     }
 
     setConfigurationButtonClickColorGameOver() {

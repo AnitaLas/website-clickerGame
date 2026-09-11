@@ -12,19 +12,16 @@ export class ControllerButtonStart {
         this.onStart = null;
     }
 
-    setOnStart(onStart) {
-        this.onStart = onStart;
-    }
-
     createGameButtonsView() {
         this.viewButtonStart.createGameFieldPButtonMainStart();
         this.configureStartButton();
     }
 
+    setOnStart(onStart) {
+        this.onStart = onStart;
+    }
+
     setConfigurationStartForPlay(event) {
-
-        // console.log("button start clicked");
-
         if (this.onStart) {
             this.onStart();
         }
