@@ -1,6 +1,9 @@
 import {
     createElementButton,
-    createElementDivWithTheSameIdAndClassName, isElementsExistById, removeElementClassNameById, setElementClassNameById,
+    createElementDivWithTheSameIdAndClassName,
+    isElementsExistById,
+    removeElementClassNameById,
+    setElementClassNameById,
     setElementClassNamedAndText
 } from "../../common/function/commonFunctions.js";
 

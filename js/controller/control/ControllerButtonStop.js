@@ -46,7 +46,6 @@ export class ControllerButtonStop {
         );
 
         this.buttonClickEvent = null;
-
     }
 
     setConfigurationAfterClick() {
@@ -60,6 +59,5 @@ export class ControllerButtonStop {
 
     setConfigurationGameOver() {
         this.viewButtonStop.setConfigurationGameOver();
-        // this.viewButtonStop.removeConfigurationButtonStopGameOver();
     }
 }

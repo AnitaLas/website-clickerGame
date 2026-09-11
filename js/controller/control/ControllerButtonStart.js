@@ -35,11 +35,11 @@ export class ControllerButtonStart {
         );
     }
 
-    setConfigurationAfterClick(){
+    setConfigurationAfterClick() {
         this.viewButtonStart.setIconColorAfterClick();
     }
 
-    setConfigurationBeforeClick(){
+    setConfigurationBeforeClick() {
         this.viewButtonStart.setIconColorBeforeClick();
     }
 }

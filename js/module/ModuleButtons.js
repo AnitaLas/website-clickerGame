@@ -77,7 +77,6 @@ export class ModuleButtons {
                 this.controllerButtonClickColor);
     }
 
-
     createGame() {
         this.controllerButtonsRound.createConfigurationRound();
         this.controllerButtonClickColor.createGameButtonsView();
@@ -87,22 +86,4 @@ export class ModuleButtons {
     getControllerButtonsMain() {
         return this.controllerButtonsMain;
     }
-
-    // createGame() {
-    //     this.createGameConfigurationRoundView();
-    //     this.createGameButtonPlayClickColorView();
-    //     this.createGameGameButtonsPlayStartView();
-    // }
-
-    // createGameConfigurationRoundView() {
-    //     this.controllerButtonsRound.createConfigurationRound();
-    // }
-    //
-    // createGameButtonPlayClickColorView() {
-    //     this.controllerButtonClickColor.createGameButtonsView();
-    // }
-    //
-    // createGameGameButtonsPlayStartView() {
-    //     this.controllerButtonStart.createGameButtonsView();
-    // }
 }

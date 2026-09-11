@@ -8,16 +8,18 @@ export class ControllerButtonsMain {
     }
 
     setOnClickColor(onClickColor) {
-        this.controllerButtonClickColor.setOnClickColor(onClickColor);
+        this.controllerButtonClickColor
+            .setOnClickColor(onClickColor);
     }
 
     setOnStart(onStart) {
-        this.controllerButtonStart.setOnStart(onStart);
+        this.controllerButtonStart
+            .setOnStart(onStart);
     }
 
     setOnStop(onStop) {
-        this.controllerButtonStop.setOnStop(onStop);
-
+        this.controllerButtonStop
+            .setOnStop(onStop);
     }
 
     setConfigurationAfterClickStop() {
@@ -77,7 +79,7 @@ export class ControllerButtonsMain {
         this.controllerButtonStop.setConfigurationBeforeClick();
     }
 
-    setConfigurationButtonStopGameOver(){
+    setConfigurationButtonStopGameOver() {
         this.controllerButtonStop.setConfigurationGameOver();
     }
 

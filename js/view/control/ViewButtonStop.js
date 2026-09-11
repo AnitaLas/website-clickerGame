@@ -32,8 +32,8 @@ export class ViewButtonStop extends ViewButtons {
         setElementClassNameById(variablesGameButtons.gameFiledButtonMainStop, variablesGameButtons.gameFiledButtonMainInactive);
     }
 
-    removeConfigurationButtonStop(){
+    removeConfigurationButtonStop() {
         if (isElementsExistById(variablesGameButtons.gameFiledButtonMainStop))
-        removeElementClassNameById(variablesGameButtons.gameFiledButtonMainStop, variablesGameButtons.gameFiledButtonMainInactive);
+            removeElementClassNameById(variablesGameButtons.gameFiledButtonMainStop, variablesGameButtons.gameFiledButtonMainInactive);
     }
 }

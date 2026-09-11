@@ -55,7 +55,7 @@ export class ControllerStatisticsMain {
         this.controllerStatisticsTime.removeGameFieldStatisticsTime();
     }
 
-    removeGameFieldStatisticsFraud(){
+    removeGameFieldStatisticsFraud() {
         this.controllerStatisticsFraud.removeGameFieldStatisticsFraud();
     }
 
