@@ -55,5 +55,11 @@ export class ControllerButtonStop {
 
     setConfigurationBeforeClick() {
         this.viewButtonStop.setIconColorBeforeClick();
+        this.viewButtonStop.removeConfigurationButtonStop();
+    }
+
+    setConfigurationGameOver() {
+        this.viewButtonStop.setConfigurationGameOver();
+        // this.viewButtonStop.removeConfigurationButtonStopGameOver();
     }
 }

@@ -9,6 +9,16 @@ export class ControllerMainGame {
         this.clickColorTimeout = null;
     }
 
+    // constructor(moduleButtons, moduleStatistics) {
+    //     this.controllerButtonsMain =
+    //         moduleButtons.controllerButtonsMain;
+    //
+    //     this.controllerStatisticsMain =
+    //         moduleStatistics.controllerStatisticsMain;
+    //     this.game = null;
+    //     this.clickColorTimeout = null;
+    // }
+
     configureStartGame() {
         this.controllerButtonsMain.setOnStart(() =>
             this.startGame());

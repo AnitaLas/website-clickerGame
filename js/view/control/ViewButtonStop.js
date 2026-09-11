@@ -1,7 +1,9 @@
 import {ViewButtons} from "./ViewButtons.js";
 
 import {
-    isElementsExistById
+    isElementsExistById,
+    removeElementClassNameById,
+    setElementClassNameById
 } from "../../common/function/commonFunctions.js";
 
 import * as variablesGameButtons from "../../common/variable/control/variablesGameButtons.js";
@@ -23,5 +25,15 @@ export class ViewButtonStop extends ViewButtons {
     setIconColorBeforeClick() {
         if (isElementsExistById(variablesGameButtons.containerGameFiledButtonsMainStopTextDisplayId))
             this.setConfigurationButtonsBeforeClick(variablesGameButtons.containerGameFiledButtonsMainStopTextDisplayId);
+    }
+
+    setConfigurationGameOver() {
+        this.setConfigurationButtonsBeforeClick(variablesGameButtons.containerGameFiledButtonsMainStartTextDisplayId);
+        setElementClassNameById(variablesGameButtons.gameFiledButtonMainStop, variablesGameButtons.gameFiledButtonMainInactive);
+    }
+
+    removeConfigurationButtonStop(){
+        if (isElementsExistById(variablesGameButtons.gameFiledButtonMainStop))
+        removeElementClassNameById(variablesGameButtons.gameFiledButtonMainStop, variablesGameButtons.gameFiledButtonMainInactive);
     }
 }

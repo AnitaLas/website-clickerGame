@@ -56,6 +56,8 @@ export class ControllerButtonsMain {
         this.removeEventListenerOnClickButtonClickColor();
         this.configureClickColorGameOver();
         this.setIconsColorAfterGameOver();
+
+        this.setConfigurationButtonStopGameOver();
     }
 
     removeEventListenerOnClickButtonClickColor() {
@@ -73,6 +75,10 @@ export class ControllerButtonsMain {
     setIconsColorAfterGameOver() {
         this.controllerButtonStart.setConfigurationBeforeClick();
         this.controllerButtonStop.setConfigurationBeforeClick();
+    }
+
+    setConfigurationButtonStopGameOver(){
+        this.controllerButtonStop.setConfigurationGameOver();
     }
 
     setButtonClickColorAtStart() {

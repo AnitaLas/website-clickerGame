@@ -39,13 +39,13 @@ export class ViewButtonClickColor extends ViewButtons {
     setConfigurationGameOver() {
         setElementTextById(variablesGameButtons.gameFiledButtonPlay, variablesGameButtons.gameFiledButtonPlayGameOverTextDisplay);
         setElementClassNameById(variablesGameButtons.gameFiledButtonPlay, variablesGameButtons.gameFiledButtonPlayGameOver);
-        this.setConfigurationButtonClickColorGameOver();
+        // this.setConfigurationButtonClickColorGameOver();
     }
 
-    setConfigurationButtonClickColorGameOver() {
-        this.setConfigurationButtonsBeforeClick(variablesGameButtons.containerGameFiledButtonsMainStartTextDisplayId);
-        setElementClassNameById(variablesGameButtons.gameFiledButtonMainStop, variablesGameButtons.gameFiledButtonMainInactive);
-    }
+    // setConfigurationButtonClickColorGameOver() {
+    //     this.setConfigurationButtonsBeforeClick(variablesGameButtons.containerGameFiledButtonsMainStartTextDisplayId);
+    //     setElementClassNameById(variablesGameButtons.gameFiledButtonMainStop, variablesGameButtons.gameFiledButtonMainInactive);
+    // }
 
     removeConfigurationGameOver() {
         setElementTextById(variablesGameButtons.gameFiledButtonPlay, "");
