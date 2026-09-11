@@ -1,7 +1,7 @@
 import {ViewMain} from "./view/ViewMain.js";
-import {ViewMenu} from "./menu/ViewMenu.js";
+import {ViewMenu} from "./view/menu/ViewMenu.js";
 import {GameModule} from "./GameModule.js";
-import {ViewFooter} from "./footer/ViewFooter.js";
+import {ViewFooter} from "./view/footer/ViewFooter.js";
 
 const viewMain = new ViewMain();
 viewMain.setContainerMainSection();
@@ -16,4 +16,4 @@ const viewFooter = new ViewFooter();
 viewFooter.createFooter();
 
 
-console.log("Clicker game: version 20260911v50_branch_class_15");
+console.log("Clicker game: version 20260911v50_branch_class_16");

@@ -4,9 +4,10 @@ import {
     createElementP,
     setElementClassNameById,
     setElementClassNameSameAsIdAndSetText
-} from "../common/function/commonFunctions.js";
-import * as variablesFooter from "../common/variable/footer/variablesFooter.js";
-import * as variablesMain from "../common/variable/main/variablesMain.js";
+} from "../../common/function/commonFunctions.js";
+
+import * as variablesFooter from "../../common/variable/footer/variablesFooter.js";
+import * as variablesMain from "../../common/variable/main/variablesMain.js";
 
 export class ViewFooter {
 

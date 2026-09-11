@@ -2,7 +2,9 @@ import {
     createElementDiv,
     createElementDivAnaDivChild,
     createElementDivWithIdAndSetClassName,
-    createElementDivWithTheSameIdAndClassName, isElementsExistById, removeElementById,
+    createElementDivWithTheSameIdAndClassName,
+    isElementsExistById,
+    removeElementById,
     setElementClassNameById,
     setElementClassNamedAndText,
     setElementClassNameSameAsIdAndSetText,
@@ -112,11 +114,11 @@ export class ViewStatisticsFraud {
     }
 
     setGameStatisticFraudData(fraudCountedRoundNumber, fraudCountedSumNumber, fraudRoundIndex) {
-        this.setGameStatisticFraudCountedNumber(fraudCountedRoundNumber, fraudRoundIndex);
+        this.setGameStatisticFraudRoundCountedNumber(fraudCountedRoundNumber, fraudRoundIndex);
         this.setGameStatisticFraudCountedSumNumber(fraudCountedSumNumber);
     }
 
-    setGameStatisticFraudCountedNumber(fraudCountedRoundNumber, fraudRoundIndex) {
+    setGameStatisticFraudRoundCountedNumber(fraudCountedRoundNumber, fraudRoundIndex) {
         let result;
         if (fraudCountedRoundNumber < 10)
             result = valueToString(fraudCountedRoundNumber) + variablesStatisticsFraud.statisticsFraudCountNumberTextDisplayLessThanTen;

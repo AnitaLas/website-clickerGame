@@ -1,6 +1,6 @@
 import {Game} from "../Game.js";
 
-export class ControllerMain {
+export class ControllerMainGame {
 
     constructor(controllerButtonsMain, controllerStatisticsMain) {
         this.controllerButtonsMain = controllerButtonsMain;
@@ -24,8 +24,8 @@ export class ControllerMain {
 
         this.game = new Game(roundNumberSetupByUser);
 
-        // this.controllerButtonsMain
-        //     .setConfigurationForButtonStop();
+        this.controllerButtonsMain.setConfigurationForRoundNumber();
+
         this.setConfigurationButtonStop();
 
         // ustawiamy callback FRAUD

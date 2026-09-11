@@ -1,6 +1,6 @@
 export class Game {
 
-    constructor(roundNumberSetupByUser,) {
+    constructor(roundNumberSetupByUser) {
         this.roundNumberSetupByUser = roundNumberSetupByUser;
         this.roundNumber = this.roundNumberSetupByUser;
         this.countedRoundNumber = 0;
@@ -51,10 +51,8 @@ export class Game {
         return this.countedRoundNumber;
     }
 
-
     playClickColorCounterFraud() {
         this.fraudCountedClicks++;
-        // console.log("fraudCountedRoundNumber = " + this.fraudCountedRoundNumber);
     }
 
     setFraudCountedSum() {
@@ -94,8 +92,6 @@ export class Game {
         this.setRandomColor();
         this.setRandomTimeBeforeChangeColor();
         this.setGameTimeTimeoutStart();
-
-        // this.runTimeoutButtonStop();
     }
 
     getRandomNumber(maxNumber) {

@@ -51,4 +51,21 @@ export class ControllerButtonsRound {
         const currentButtonId = this.actionButtonsRound.getButtonIdCurrent();
         return this.viewButtonsRound.getMaxClicksNumberSetByUser(currentButtonId);
     }
+
+    setConfigurationButtonsFinalNumberForPlay() {
+
+        const roundNumberFinal = this.actionButtonsRound.getButtonIdPMaxClicksNumberSetByUser();
+        this.actionButtonsRound.setButtonIdPMaxClicksNumberSetByUser();
+        const buttonIdPrevious = this.actionButtonsRound.getButtonIdPrevious();
+        const currentButtonId = this.actionButtonsRound.getButtonIdCurrent();
+
+        removeElementClassNameById(buttonIdPrevious, variableButtonRound.menuGameConfigurationButtonCurrentNumber);
+        removeElementClassNameById(roundNumberFinal, variableButtonRound.menuGameConfigurationButtonChosenNumber);
+        setElementClassNameById(currentButtonId, variableButtonRound.menuGameConfigurationButtonChosenNumber);
+    }
+
+    removeConfigurationButtonsFinalNumberForPlay() {
+        const roundNumberFinal = this.actionButtonsRound.getButtonIdPMaxClicksNumberSetByUser();
+        removeElementClassNameById(roundNumberFinal, variableButtonRound.menuGameConfigurationButtonChosenNumber);
+    }
 }

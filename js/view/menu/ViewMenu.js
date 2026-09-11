@@ -3,10 +3,10 @@ import {
     createElementDivWithTheSameIdAndClassName,
     createElementP,
     setElementClassNamedAndText
-} from "../common/function/commonFunctions.js";
+} from "../../common/function/commonFunctions.js";
 
-import * as variablesMain from "../common/variable/main/variablesMain.js";
-import * as variablesMenu from "../common/variable/menu/variablesMenu.js";
+import * as variablesMain from "../../common/variable/main/variablesMain.js";
+import * as variablesMenu from "../../common/variable/menu/variablesMenu.js";
 
 export class ViewMenu {
 

@@ -3,7 +3,9 @@ import {ViewButtons} from "./ViewButtons.js";
 import {
     createElementDiv,
     createElementButton,
-    setElementClassNameById, setElementTextById, removeElementClassNameById
+    setElementClassNameById,
+    setElementTextById,
+    removeElementClassNameById
 } from "../../common/function/commonFunctions.js";
 
 import * as variablesGameButtons from "../../common/variable/control/variablesGameButtons.js";

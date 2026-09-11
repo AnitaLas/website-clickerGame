@@ -25,7 +25,7 @@ import {ControllerStatisticsFraud} from "./controller/statistic/ControllerStatis
 
 import {ControllerStatisticsMain} from "./controller/statistic/ControllerStatisticsMain.js";
 
-import {ControllerMain} from "./controller/ControllerMain.js";
+import {ControllerMainGame} from "./controller/ControllerMainGame.js";
 import {ActionStatisticsFraud} from "./action/statistic/ActionStatisticsFraud.js";
 
 export class GameModule {
@@ -119,7 +119,7 @@ export class GameModule {
 
 
         this.controllerMain =
-            new ControllerMain(
+            new ControllerMainGame(
                 this.controllerButtonsMain,
                 this.controllerStatisticsMain,
             );

@@ -23,9 +23,6 @@ export class ControllerButtonClickColor {
     }
 
     setConfiguration(event) {
-
-        // console.log("button click color for fraud");
-
         if (this.onClickColor) {
             this.onClickColor();
         }

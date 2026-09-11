@@ -20,22 +20,14 @@ export class ControllerButtonsMain {
 
     }
 
-    configureButtonStop() {
-        // this.controllerButtonStop.setOnStop(() =>
-        //     this.setConfigurationAfterClickStop());
-    }
-
     setConfigurationAfterClickStop() {
         this.controllerButtonStop.setConfigurationAfterClick();
         this.controllerButtonStart.setConfigurationBeforeClick();
 
+        this.removeConfigurationForRoundNumber();
+
         this.removeEventListenerOnClickButtonStop();
         this.removeEventListenerOnClickButtonClickColor();
-    }
-
-    setConfigurationForButtonStop() {
-        // this.createButtonsStop();
-        // this.configureButtonStop();
     }
 
     createButtonsStop() {
@@ -50,7 +42,17 @@ export class ControllerButtonsMain {
         return this.controllerButtonsRound.getMaxClicksNumberSetByUser();
     }
 
+    setConfigurationForRoundNumber() {
+        this.controllerButtonsRound.setConfigurationButtonsFinalNumberForPlay();
+    }
+
+    removeConfigurationForRoundNumber() {
+        this.controllerButtonsRound.removeConfigurationButtonsFinalNumberForPlay();
+    }
+
     configureButtonsAfterGameOver() {
+        this.removeConfigurationForRoundNumber();
+
         this.removeEventListenerOnClickButtonClickColor();
         this.configureClickColorGameOver();
         this.setIconsColorAfterGameOver();
