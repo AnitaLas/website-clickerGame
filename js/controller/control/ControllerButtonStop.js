@@ -8,4 +8,12 @@ export class ControllerButtonStop {
     createButtonsStop() {
         this.viewButtonStop.createGameFieldPButtonMainStop();
     }
+
+    setConfigurationAfterClick(){
+        this.viewButtonStop.setIconColorAfterClick();
+    }
+
+    setConfigurationBeforeClick(){
+        this.viewButtonStop.setIconColorBeforeClick();
+    }
 }

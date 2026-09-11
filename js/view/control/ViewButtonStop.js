@@ -10,8 +10,6 @@ import * as variablesGameButtons from "../../common/variable/control/variablesGa
 export class ViewButtonStop extends ViewButtons {
 
     createGameFieldPButtonMainStop() {
-        // let result = isElementsExistById(variablesGameButtons.containerGameFiledButtonsMainStop);
-        // if (!result) {
         if (!isElementsExistById(variablesGameButtons.containerGameFiledButtonsMainStop)) {
             this.createContainerGameFieldButtonMain(variablesGameButtons.containerGameFiledButtonsMainStop, variablesGameButtons.gameFiledButtonMainStop);
             this.createAndConfigureGameButton(variablesGameButtons.gameFiledButtonMainStop, variablesGameButtons.buttonMainStop, variablesGameButtons.containerGameFiledButtonsMainStopTextDisplay);
@@ -19,7 +17,16 @@ export class ViewButtonStop extends ViewButtons {
     }
 
     setConfigurationButtonMainGameStop() {
-        this.setConfigurationButtonMainAfterClick(variablesGameButtons.containerGameFiledButtonsMainStopTextDisplayId);
-        this.removeConfigurationButtonMainAfterClick(variablesGameButtons.containerGameFiledButtonsMainStartTextDisplayId);
+        this.setConfigurationButtonsAfterClick(variablesGameButtons.containerGameFiledButtonsMainStopTextDisplayId);
+        this.setConfigurationButtonsBeforeClick(variablesGameButtons.containerGameFiledButtonsMainStartTextDisplayId);
+    }
+
+    setIconColorAfterClick() {
+        this.setConfigurationButtonsAfterClick(variablesGameButtons.containerGameFiledButtonsMainStopTextDisplayId);
+    }
+
+    setIconColorBeforeClick() {
+        if(isElementsExistById(variablesGameButtons.containerGameFiledButtonsMainStopTextDisplayId))
+        this.setConfigurationButtonsBeforeClick(variablesGameButtons.containerGameFiledButtonsMainStopTextDisplayId);
     }
 }

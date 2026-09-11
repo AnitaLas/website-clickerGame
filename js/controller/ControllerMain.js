@@ -15,7 +15,9 @@ export class ControllerMain {
 
     startGame() {
 
-        this.removeContainerStatisticParts();
+        this.controllerButtonsMain.setConfigurationButtonsAfterClickPlay();
+
+        this.setConfigurationGameAtStart();
 
         const roundNumberSetupByUser =
             this.controllerButtonsMain
@@ -55,6 +57,8 @@ export class ControllerMain {
         this.configureClickColorCounterFraud();
 
         this.game.playClickColorCounterTime();
+
+
 
         this.runClickColorTimeout();
     }
@@ -99,7 +103,7 @@ export class ControllerMain {
 
     createStatistic() {
 
-        console.log("time");
+        // console.log("time");
 
         if (this.game.getCountedRoundNumber() === 1) {
             this.configureStatistic();
@@ -121,9 +125,9 @@ export class ControllerMain {
             .createConfigurationStatisticsMain(maxClicksNumber);
     }
 
-    removeContainerStatisticParts() {
+    setConfigurationGameAtStart() {
         this.controllerStatisticsMain.removeContainerStatisticParts();
-        this.controllerButtonsMain.removeConfigurationGameOver();
+        this.controllerButtonsMain.setConfigurationButtonsAtStart();
     }
 
     updateStatisticFraud() {
@@ -149,7 +153,7 @@ export class ControllerMain {
     }
 
     updateStatisticTime() {
-        console.log("static time == start");
+        // console.log("static time == start");
 
         this.game.setConfigurationTime();
 
@@ -170,7 +174,7 @@ export class ControllerMain {
 
         console.log("GAME OVER");
 
-        this.controllerButtonsMain.removeEventListenerOnClickButtonClickColor();
-        this.controllerButtonsMain.configureClickColorGameOver();
+        this.controllerButtonsMain.configureButtonsAfterGameOver();
+
     }
 }

@@ -18,15 +18,13 @@ export class ViewButtons {
         createElementDivWithTheSameIdAndClassName(containerGameFiledButtonsMainStart, gameFiledButtonMainStart);
     }
 
-    setConfigurationButtonMainAfterClick(elementId) {
+    setConfigurationButtonsAfterClick(elementId) {
         removeElementClassNameById(elementId, variablesGameButtons.gameFiledButtonMainTextDecorationBeforeClick);
         setElementClassNameById(elementId, variablesGameButtons.gameFiledButtonMainTextDecorationAfterClick);
     }
 
-    removeConfigurationButtonMainAfterClick(elementId) {
-        // let buttonPlay = document.getElementById(elementId);
-        // if (buttonPlay !== null) {
-        if (!isElementsExistById(elementId)) {
+    setConfigurationButtonsBeforeClick(elementId) {
+        if (isElementsExistById(elementId)) {
             removeElementClassNameById(elementId, variablesGameButtons.gameFiledButtonMainTextDecorationAfterClick);
             setElementClassNameById(elementId, variablesGameButtons.gameFiledButtonMainTextDecorationBeforeClick);
         }

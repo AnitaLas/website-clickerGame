@@ -43,7 +43,7 @@ export class ViewButtonClickColor extends ViewButtons {
     }
 
     setConfigurationButtonClickColorGameOver() {
-        this.removeConfigurationButtonMainAfterClick(variablesGameButtons.containerGameFiledButtonsMainStartTextDisplayId);
+        this.setConfigurationButtonsBeforeClick(variablesGameButtons.containerGameFiledButtonsMainStartTextDisplayId);
         setElementClassNameById(variablesGameButtons.gameFiledButtonMainStop, variablesGameButtons.gameFiledButtonMainInactive);
     }
 

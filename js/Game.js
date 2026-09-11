@@ -73,8 +73,6 @@ export class Game {
         return this.fraudCountedClicks;
     }
 
-
-
     setFraudRoundElementIndexToUpdate() {
         this.fraudRoundElementIndexToUpdate++;
     }
@@ -82,7 +80,6 @@ export class Game {
     getFraudRoundElementIndexToUpdate() {
         return this.fraudRoundElementIndexToUpdate;
     }
-
 
     playClickColorCounterTime() {
         this.setConfigurationGameRound();
@@ -124,11 +121,6 @@ export class Game {
     getRandomTimeBeforeChangeColor() {
         return this.randomTimeToChangeColor;
     }
-
-
-
-
-
 
     setReactionTime() {
         this.reactionTime = this.endTime - this.startTime + this.reactionTimeTimeout;
